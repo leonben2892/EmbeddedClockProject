@@ -119,6 +119,8 @@
 //	========================	Global VARIABLES	========================
 #pragma udata
 //You can define Global Data Elements here
+int mainMenuSelectedOption = 2;
+BOOL IsClockSet = FALSE, IsMenuOpen = FALSE;
 
 //	========================	PRIVATE PROTOTYPES	========================
 static void InitializeSystem(void);
@@ -265,7 +267,6 @@ void UserInit(void)
   /* Initialize the oLED Display */
    ResetDevice();  
    FillDisplay(0x00);
-   oledPutROMString((ROM_STRING)" PIC18F Starter Kit  ",0,0);
 }//end UserInit
 
 
@@ -315,7 +316,7 @@ BOOL CheckButtonPressed(void)
 
     if(PORTBbits.RB0 == 0)
     {
-        if(buttonPressCounter++ > 7000)
+        if(buttonPressCounter++ > 1)
         {
             buttonPressCounter = 0;
             buttonPressed = TRUE;
@@ -339,6 +340,192 @@ BOOL CheckButtonPressed(void)
 
     return FALSE;
 }
+
+//Reads L button
+int ReadsLButton()
+{
+	int btnL;
+	btnL = mTouchReadButton(3);
+	if (btnL < 600)
+	{
+		/* wait for the button to be released */
+		while (btnL < 700)
+		{
+			btnL = mTouchReadButton(3);
+		}
+		return 1;
+	}
+	return 0;
+}
+
+//Reads R button
+int ReadsRButton()
+{
+	int btnR;
+	btnR = mTouchReadButton(0);
+	if (btnR < 600)
+	{
+		/* wait for the button to be released */
+		while (btnR < 700)
+		{
+			btnR = mTouchReadButton(0);
+		}
+		return 1;
+	}
+	return 0;
+}
+
+//Reads Potenziometer
+int ReadPotenziometer()
+{
+	int x, a2d;		
+	x = 2;
+	ADCON0 = 0b00010011;
+	while(x){
+		x = x & ADCON0;
+	}
+	a2d =  ((int)ADRESH << 8) + ADRESL;
+	return a2d;
+}
+
+//Funtion to read UP button press
+int ReadUpButton()
+{
+	int btnUp;
+	btnUp = mTouchReadButton(1);
+	if ((btnUp < 800))
+	{
+		/* wait for the button to be released */
+		while ((btnUp < 850))
+		{
+			btnUp = mTouchReadButton(1);
+		}
+		return 1;
+	}
+	return 0;
+}
+
+//Funtion to read DOWN button press
+int ReadDownButton()
+{
+	int btnDown;
+	btnDown = mTouchReadButton(2);
+	if ((btnDown < 800))
+	{
+		/* wait for the button to be released */
+		while ((btnDown < 850))
+		{
+			btnDown = mTouchReadButton(2);
+		}
+		return 1;
+	}
+	return 0;
+}
+
+void DisplayClock()
+{
+
+}
+
+void DisplayModeMenu()
+{
+	oledPutROMString((ROM_STRING)"Display Mode",0,10);
+}
+
+void DisplayIntervalMenu()
+{
+	oledPutROMString((ROM_STRING)"Interval Menu",0,10);
+}
+
+void DisplaySetTimeMenu()
+{
+	oledPutROMString((ROM_STRING)"Set Time Menu",0,10);
+}
+
+void DisplaySetDate()
+{
+	oledPutROMString((ROM_STRING)"Set Date Menu",0,10);
+}
+
+void DisplayAlarmMenu()
+{
+	oledPutROMString((ROM_STRING)"Alarm Menu",0,10);
+}
+
+void SelectedSubMenu()
+{
+	int goBack;
+	FillDisplay(0x00); //Clear Screen
+	while(1)
+	{
+		switch(mainMenuSelectedOption)
+		{
+			case 2: DisplayModeMenu();break;
+			case 3: DisplayIntervalMenu();break;
+			case 4: DisplaySetTimeMenu();break;
+			case 5: DisplaySetDate();break;
+			case 6: DisplayAlarmMenu();break;
+		}
+
+		goBack = ReadsLButton();
+		if(goBack == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			return;
+		}	
+	}
+}
+
+void DisplayMenu()
+{
+	while(1)
+	{
+		int tmpUpBtn, tmpDownBtn, goBack;
+		oledPutROMString((ROM_STRING)"Display Mode",2,6);
+		oledPutROMString((ROM_STRING)"12H/24H Interval",3,6);
+		oledPutROMString((ROM_STRING)"Set Time",4,6);
+		oledPutROMString((ROM_STRING)"Set Date",5,6);
+		oledPutROMString((ROM_STRING)"Alarm",6,6);
+			
+		oledPutROMString((ROM_STRING)"*", mainMenuSelectedOption, 0);
+		oledPutROMString((ROM_STRING)"*", mainMenuSelectedOption, 100);
+	
+		mTouchCalibrate();
+		tmpUpBtn = ReadUpButton();
+		if(tmpUpBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			mainMenuSelectedOption--;
+			if(mainMenuSelectedOption < 2)
+				mainMenuSelectedOption = 6;
+		}
+	
+		tmpDownBtn = ReadDownButton();
+		if(tmpDownBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			mainMenuSelectedOption++;
+			if(mainMenuSelectedOption > 6)
+				mainMenuSelectedOption = 2;
+		}
+		
+		if(CheckButtonPressed())
+		{
+			SelectedSubMenu();
+		}
+
+		goBack = ReadsLButton();
+		if(goBack == 1)
+		{
+			IsMenuOpen = FALSE;
+			FillDisplay(0x00); //Clear Screen
+			return;
+		}	
+	
+	}
+}
+
+
 
 
 
@@ -368,10 +555,27 @@ void main(void)
     // Application-specific tasks.
     // Application related code may be added here
 
-		while( !CheckButtonPressed() )	//Wait for Push-button to be pressed and released
-			;
-
-		oledPutROMString("Button Pressed",4,4*6) ;	
+		if(IsClockSet)
+			DisplayClock();
+		else
+		{
+			if(!IsMenuOpen)
+			{
+				oledPutROMString((ROM_STRING)"Clock is not set!",3,10);
+				oledPutROMString((ROM_STRING)"Black button for menu",5,2);
+			}
+			if(CheckButtonPressed())
+			{
+				if(!IsMenuOpen)
+				{
+					IsMenuOpen = TRUE;
+					FillDisplay(0x00); //Clear Screen
+				}
+	
+			}
+			if(IsMenuOpen == TRUE)
+				DisplayMenu();	
+		}		
     }
 }//end main
 

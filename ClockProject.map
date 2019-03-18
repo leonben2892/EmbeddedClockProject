@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Mon Mar 18 19:55:42 2019
+Linker Map File - Created Mon Mar 18 22:59:24 2019
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -10,39 +10,39 @@ Linker Map File - Created Mon Mar 18 19:55:42 2019
     REMAPPED_RESET_VECTOR       code   0x00a000    program   0x000006
            .code___init.o       code   0x00a006    program   0x000002
 REMAPPED_HIGH_INTERRUPT_VECTOR       code   0x00a008    program   0x000006
-          .idata_main.o_i    romdata   0x00a00e    program   0x000005
+          .idata_main.o_i    romdata   0x00a00e    program   0x000009
+         .idata_c018i.o_i    romdata   0x00a017    program   0x000000
+  .idata_OledGraphics.o_i    romdata   0x00a017    program   0x000000
+            .code_c018i.o       code   0x00a018    program   0x000000
 REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                    .cinit    romdata   0x00a01e    program   0x00001a
      .code_OledGraphics.o       code   0x00a038    program   0x000706
-             .code_oled.o       code   0x00a73e    program   0x0005c4
-           .code_BMA150.o       code   0x00ad02    program   0x000274
-           .code_mtouch.o       code   0x00af76    program   0x0001e4
-          .romdata_oled.o    romdata   0x00b15a    program   0x0001db
-         .romdata_c018i.o    romdata   0x00b335    program   0x000000
-  .romdata_OledGraphics.o    romdata   0x00b335    program   0x000000
-    .idata_soft_start.o_i    romdata   0x00b335    program   0x000001
-    .romdata_soft_start.o    romdata   0x00b335    program   0x000000
-          .romdata_main.o    romdata   0x00b335    program   0x000000
-             .code_main.o       code   0x00b336    program   0x000112
-       .code_soft_start.o       code   0x00b448    program   0x0000f0
-                     PROG       code   0x00b538    program   0x0000a6
-               _cinit_scn       code   0x00b5de    program   0x00009e
-         .code_fxd1616u.o       code   0x00b67c    program   0x00002c
-             .stringtable    romdata   0x00b6a8    program   0x000025
-      .idata_fxd1616u.o_i    romdata   0x00b6cd    program   0x000000
-      .romdata_fxd1616u.o    romdata   0x00b6cd    program   0x000000
-        .idata___init.o_i    romdata   0x00b6cd    program   0x000000
-        .romdata_mtouch.o    romdata   0x00b6cd    program   0x000000
-        .romdata___init.o    romdata   0x00b6cd    program   0x000000
-        .idata_mtouch.o_i    romdata   0x00b6cd    program   0x000000
-        .romdata_BMA150.o    romdata   0x00b6cd    program   0x000000
-        .idata_BMA150.o_i    romdata   0x00b6cd    program   0x000000
-  .idata_OledGraphics.o_i    romdata   0x00b6cd    program   0x000000
-          .idata_oled.o_i    romdata   0x00b6cd    program   0x000000
-         .idata_c018i.o_i    romdata   0x00b6cd    program   0x000000
-                    .code       code   0x00b6ce    program   0x000020
-            .code_c018i.o       code   0x00b6ce    program   0x000000
-             _startup_scn       code   0x00b6ee    program   0x00001c
+             .code_main.o       code   0x00a73e    program   0x0006a8
+             .code_oled.o       code   0x00ade6    program   0x0005c4
+           .code_BMA150.o       code   0x00b3aa    program   0x000274
+           .code_mtouch.o       code   0x00b61e    program   0x0001e4
+          .romdata_oled.o    romdata   0x00b802    program   0x0001db
+         .romdata_c018i.o    romdata   0x00b9dd    program   0x000000
+    .romdata_soft_start.o    romdata   0x00b9dd    program   0x000000
+    .idata_soft_start.o_i    romdata   0x00b9dd    program   0x000001
+  .romdata_OledGraphics.o    romdata   0x00b9dd    program   0x000000
+          .romdata_main.o    romdata   0x00b9dd    program   0x000000
+       .code_soft_start.o       code   0x00b9de    program   0x0000f0
+                     PROG       code   0x00bace    program   0x0000a6
+               _cinit_scn       code   0x00bb74    program   0x00009e
+             .stringtable    romdata   0x00bc12    program   0x000095
+        .romdata___init.o    romdata   0x00bca7    program   0x000000
+        .idata___init.o_i    romdata   0x00bca7    program   0x000000
+        .idata_BMA150.o_i    romdata   0x00bca7    program   0x000000
+        .romdata_BMA150.o    romdata   0x00bca7    program   0x000000
+      .romdata_fxd1616u.o    romdata   0x00bca7    program   0x000000
+        .idata_mtouch.o_i    romdata   0x00bca7    program   0x000000
+        .romdata_mtouch.o    romdata   0x00bca7    program   0x000000
+      .idata_fxd1616u.o_i    romdata   0x00bca7    program   0x000000
+          .idata_oled.o_i    romdata   0x00bca7    program   0x000000
+         .code_fxd1616u.o       code   0x00bca8    program   0x00002c
+                    .code       code   0x00bcd4    program   0x000020
+             _startup_scn       code   0x00bcf4    program   0x00001c
       .config_fff8_main.o    romdata   0x00fff8    program   0x000001
       .config_fff9_main.o    romdata   0x00fff9    program   0x000001
       .config_fffa_main.o    romdata   0x00fffa    program   0x000001
@@ -55,22 +55,22 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                  .tmpdata      udata   0x000014       data   0x000006
             .udata_oled.o      udata   0x000060       data   0x00000b
            .udata_c018i.o      udata   0x00006b       data   0x00000a
-          .udata_BMA150.o      udata   0x000075       data   0x000006
-            .idata_main.o      idata   0x00007b       data   0x000005
-          .udata_mtouch.o      udata   0x000080       data   0x000004
-      .idata_soft_start.o      idata   0x000084       data   0x000001
-            .udata_main.o      udata   0x000085       data   0x000000
-            .idata_oled.o      idata   0x000085       data   0x000000
-    .udata_OledGraphics.o      udata   0x000085       data   0x000000
-    .idata_OledGraphics.o      idata   0x000085       data   0x000000
-           .idata_c018i.o      idata   0x000085       data   0x000000
-          .idata_BMA150.o      idata   0x000085       data   0x000000
-          .idata_mtouch.o      idata   0x000085       data   0x000000
-      .udata_soft_start.o      udata   0x000085       data   0x000000
-          .idata___init.o      idata   0x000085       data   0x000000
-          .udata___init.o      udata   0x000085       data   0x000000
-        .idata_fxd1616u.o      idata   0x000085       data   0x000000
-        .udata_fxd1616u.o      udata   0x000085       data   0x000000
+            .idata_main.o      idata   0x000075       data   0x000009
+          .udata_BMA150.o      udata   0x00007e       data   0x000006
+          .udata_mtouch.o      udata   0x000084       data   0x000004
+      .idata_soft_start.o      idata   0x000088       data   0x000001
+            .udata_main.o      udata   0x000089       data   0x000000
+            .idata_oled.o      idata   0x000089       data   0x000000
+    .udata_OledGraphics.o      udata   0x000089       data   0x000000
+    .idata_OledGraphics.o      idata   0x000089       data   0x000000
+           .idata_c018i.o      idata   0x000089       data   0x000000
+          .idata_BMA150.o      idata   0x000089       data   0x000000
+          .idata_mtouch.o      idata   0x000089       data   0x000000
+      .udata_soft_start.o      udata   0x000089       data   0x000000
+          .idata___init.o      idata   0x000089       data   0x000000
+          .udata___init.o      udata   0x000089       data   0x000000
+        .idata_fxd1616u.o      idata   0x000089       data   0x000000
+        .udata_fxd1616u.o      udata   0x000089       data   0x000000
                    .stack      udata   0x000d00       data   0x000100
               SFR_BANKED0      udata   0x000ec6       data   0x00000e
               SFR_BANKED1      udata   0x000ed7       data   0x000008
@@ -93,80 +93,93 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                             0x000000    0x000005      
                             0x000008    0x00000d      
                             0x000018    0x00001d      
-                            0x00a000    0x00a012      
-                            0x00a018    0x00b6cc      
-                            0x00b6ce    0x00b709      
+                            0x00a000    0x00a016      
+                            0x00a018    0x00bca6      
+                            0x00bca8    0x00bd0f      
                             0x00fff8    0x00ffff      
-            5918 out of 65538 program addresses used, program memory utilization is 9%
+            7464 out of 65538 program addresses used, program memory utilization is 11%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-          AppPowerDisable   0x00b494    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-           AppPowerEnable   0x00b448    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-            AppPowerReady   0x00b4a0    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-          BMA150_ReadByte   0x00aec8    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-         BMA150_WriteByte   0x00ade6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-       CheckButtonPressed   0x00b3b4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                   D1616S   0x00b55a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x00b568    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x00b564    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x00b57a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x00b54a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DelayMs   0x00a73e    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+          AppPowerDisable   0x00ba2a    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+           AppPowerEnable   0x00b9de    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+            AppPowerReady   0x00ba36    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+          BMA150_ReadByte   0x00b570    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+         BMA150_WriteByte   0x00b48e    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+       CheckButtonPressed   0x00a7a4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                   D1616S   0x00baf0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00bafe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00bafa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x00bb10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x00bae0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DelayMs   0x00ade6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         DisplayAlarmMenu   0x00ab1c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             DisplayClock   0x00aaaa    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+      DisplayIntervalMenu   0x00aac8    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              DisplayMenu   0x00abd2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          DisplayModeMenu   0x00aaac    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           DisplaySetDate   0x00ab00    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       DisplaySetTimeMenu   0x00aae4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                  DrawMask   0x00a11e    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
-                 FXD1616S   0x00b538    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616U   0x00b67c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXM1616S   0x00b584    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-              FillDisplay   0x00a962    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                 FXD1616S   0x00bace    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616U   0x00bca8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                 FXM1616S   0x00bb1a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+              FillDisplay   0x00b00a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
                  High_ISR   0x000008    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                  InitADC   0x00af8e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               InitBma150   0x00ad02    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                 InitCTMU   0x00af76    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         InitializeSystem   0x00b3a0    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                  InitADC   0x00b636    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               InitBma150   0x00b3aa    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                 InitCTMU   0x00b61e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         InitializeSystem   0x00a790    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                   Low_ISR   0x000018    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                  ReadData   0x00a038    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
+           ReadDownButton   0x00aa28    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ReadPotenziometer   0x00a912    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadUpButton   0x00a9a4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsLButton   0x00a80e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsRButton   0x00a892    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
         Remapped_High_ISR   0x00a008    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
          Remapped_Low_ISR   0x00a018    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              ResetDevice   0x00a798    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+              ResetDevice   0x00ae40    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+          SelectedSubMenu   0x00ab38    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                SetOLEDPos   0x00a15a    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
-              SpiPinRemap   0x00adc2    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-               TSIGN1616A   0x00b5d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                 UserInit   0x00b36e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             WriteCommand   0x00a912    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                WriteData   0x00a93a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-  YourHighPriorityISRCode   0x00b336    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-   YourLowPriorityISRCode   0x00b348    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         ___else_lbl00009   0x00aeb0    program     static                          
-           ___if_lbl00001   0x00ad48    program     static                          
-           ___if_lbl00005   0x00ae0e    program     static                          
-           ___if_lbl00008   0x00aeb8    program     static                          
-       ___return_lbl00000   0x00b6a6    program     static                          
-       ___return_lbl00000   0x00a004    program     static                          
+              SpiPinRemap   0x00b46a    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+               TSIGN1616A   0x00bb66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                 UserInit   0x00a776    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             WriteCommand   0x00afba    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                WriteData   0x00afe2    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+  YourHighPriorityISRCode   0x00a73e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+   YourLowPriorityISRCode   0x00a750    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         ___else_lbl00009   0x00b558    program     static                          
+           ___if_lbl00001   0x00b3f0    program     static                          
+           ___if_lbl00005   0x00b4b6    program     static                          
+           ___if_lbl00008   0x00b560    program     static                          
        ___return_lbl00000   0x000004    program     static                          
+       ___return_lbl00000   0x00bcd2    program     static                          
        ___return_lbl00000   0x00a06c    program     static                          
-       ___return_lbl00000   0x00adae    program     static                          
-       ___return_lbl00001   0x00b708    program     static                          
+       ___return_lbl00000   0x00b456    program     static                          
+       ___return_lbl00000   0x00a004    program     static                          
+       ___return_lbl00001   0x00bd0e    program     static                          
        ___return_lbl00001   0x00a00c    program     static                          
+       ___return_lbl00002   0x00bc10    program     static                          
        ___return_lbl00002   0x00a01c    program     static                          
-       ___return_lbl00002   0x00b67a    program     static                          
-       ___return_lbl00003   0x00b084    program     static                          
        ___return_lbl00003   0x00000c    program     static                          
-       ___return_lbl00003   0x00aebe    program     static                          
+       ___return_lbl00003   0x00b566    program     static                          
+       ___return_lbl00003   0x00b72c    program     static                          
        ___return_lbl00004   0x00001c    program     static                          
-       ___return_lbl00012   0x00af6e    program     static                          
-        ___while_lbl00004   0x00b066    program     static                          
-        ___while_lbl00005   0x00b06a    program     static                          
-        ___while_lbl00006   0x00ae18    program     static                          
-        ___while_lbl00007   0x00ae1c    program     static                          
-        ___while_lbl00010   0x00aeb8    program     static                          
-        ___while_lbl00011   0x00aebc    program     static                          
-        ___while_lbl00013   0x00aedc    program     static                          
-        ___while_lbl00014   0x00aee0    program     static                          
-        ___while_lbl00015   0x00af64    program     static                          
-        ___while_lbl00016   0x00af68    program     static                          
+       ___return_lbl00012   0x00b616    program     static                          
+        ___while_lbl00004   0x00b70e    program     static                          
+        ___while_lbl00005   0x00b712    program     static                          
+        ___while_lbl00006   0x00b4c0    program     static                          
+        ___while_lbl00007   0x00b4c4    program     static                          
+        ___while_lbl00010   0x00b560    program     static                          
+        ___while_lbl00011   0x00b564    program     static                          
+        ___while_lbl00013   0x00b584    program     static                          
+        ___while_lbl00014   0x00b588    program     static                          
+        ___while_lbl00015   0x00b60c    program     static                          
+        ___while_lbl00016   0x00b610    program     static                          
                __config_0   0x00fff8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_1   0x00fff9    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_2   0x00fffa    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
@@ -176,45 +189,55 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                __config_6   0x00fffe    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_7   0x00ffff    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                    __init   0x00a006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-                   __pa_0   0x00b10e    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_1   0x00b11e    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_2   0x00b132    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_3   0x00b146    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               __string_0   0x00b6b7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_1   0x00b6a8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __tmplbl_0   0x00ae02    program     static                          
-               __tmplbl_1   0x00adfa    program     static                          
-            __zero_memory   0x00b6ce    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                _do_cinit   0x00b5de    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __pa_0   0x00b7b6    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_1   0x00b7c6    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_2   0x00b7da    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_3   0x00b7ee    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               __string_0   0x00bc9a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_1   0x00bc8c    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_10   0x00bc28    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_11   0x00bc12    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_2   0x00bc7e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_3   0x00bc70    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_4   0x00bc65    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_5   0x00bc54    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_6   0x00bc4b    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_7   0x00bc42    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_8   0x00bc3c    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_9   0x00bc3a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __tmplbl_0   0x00b4aa    program     static                          
+               __tmplbl_1   0x00b4a2    program     static                          
+            __zero_memory   0x00bcd4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                _do_cinit   0x00bb74    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _reset   0x00a000    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                 _startup   0x00b6ee    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                compare_l   0x00b6e4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                copy_loop   0x00b650    program     static                          
-            copy_one_byte   0x00b656    program     static                          
-                     done   0x00b67a    program     static                          
-             done_copying   0x00b664    program     static                          
+                 _startup   0x00bcf4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                compare_l   0x00bcea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                copy_loop   0x00bbe6    program     static                          
+            copy_one_byte   0x00bbec    program     static                          
+                     done   0x00bc10    program     static                          
+             done_copying   0x00bbfa    program     static                          
                  drawLine   0x00a38c    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
-                  endloop   0x00b6a2    program     static                          
-                g_pucFont   0x00b15a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                     loop   0x00b6fe    program     static                          
-                     loop   0x00b686    program     static                          
-                   loop_h   0x00b6dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_l   0x00b6e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-          mTouchCalibrate   0x00b098    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               mTouchInit   0x00afc2    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         mTouchReadButton   0x00afc8    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                     main   0x00b41e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             oledPutImage   0x00ac48    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledPutROMString   0x00ab66    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-            oledPutString   0x00abda    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-          oledWriteChar1x   0x00ab0e    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledWriteCharRaw   0x00a9d4    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                  endloop   0x00bcce    program     static                          
+                g_pucFont   0x00b802    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                     loop   0x00bd04    program     static                          
+                     loop   0x00bcb2    program     static                          
+                   loop_h   0x00bce2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_l   0x00bcec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+          mTouchCalibrate   0x00b740    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               mTouchInit   0x00b66a    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         mTouchReadButton   0x00b670    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                     main   0x00ad7a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             oledPutImage   0x00b2f0    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledPutROMString   0x00b20e    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+            oledPutString   0x00b282    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+          oledWriteChar1x   0x00b1b6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledWriteCharRaw   0x00b07c    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
                 setXPixel   0x00a2d2    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
                setYPixels   0x00a1aa    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
                      swap   0x00a076    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
-                     test   0x00b5f8    program     static                          
-               zero_block   0x00b6dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     test   0x00bb8e    program     static                          
+               zero_block   0x00bce2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -329,6 +352,8 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                  IPR2bits   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      IPR3   0x000fa5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  IPR3bits   0x000fa5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               IsClockSet   0x000077       data     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               IsMenuOpen   0x000078       data     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                      LATA   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  LATAbits   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      LATB   0x000f8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -674,17 +699,18 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                _clipRight   0x000067       data     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
                  _clipTop   0x000065       data     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
                    _color   0x000060       data     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         app_power_status   0x000084       data     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-       buttonPressCounter   0x00007c       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-            buttonPressed   0x00007b       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         app_power_status   0x000088       data     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+       buttonPressCounter   0x00007a       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+            buttonPressed   0x000079       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                 curr_byte   0x00006e       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x000070       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x000072       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
- g_mTouchCalibrationITRIM   0x000080       data     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+ g_mTouchCalibrationITRIM   0x000084       data     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+   mainMenuSelectedOption   0x000075       data     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                      prom   0x00006b       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                        x   0x000075       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                        y   0x000077       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                        z   0x000079       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                        x   0x00007e       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                        y   0x000080       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                        z   0x000082       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
 
 
 
@@ -712,88 +738,111 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                setYPixels   0x00a1aa    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
                 setXPixel   0x00a2d2    program     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
                  drawLine   0x00a38c    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
-                  DelayMs   0x00a73e    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-              ResetDevice   0x00a798    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-             WriteCommand   0x00a912    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                WriteData   0x00a93a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-              FillDisplay   0x00a962    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledWriteCharRaw   0x00a9d4    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-          oledWriteChar1x   0x00ab0e    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledPutROMString   0x00ab66    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-            oledPutString   0x00abda    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-             oledPutImage   0x00ac48    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-               InitBma150   0x00ad02    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-           ___if_lbl00001   0x00ad48    program     static                          
-       ___return_lbl00000   0x00adae    program     static                          
-              SpiPinRemap   0x00adc2    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-         BMA150_WriteByte   0x00ade6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-               __tmplbl_1   0x00adfa    program     static                          
-               __tmplbl_0   0x00ae02    program     static                          
-           ___if_lbl00005   0x00ae0e    program     static                          
-        ___while_lbl00006   0x00ae18    program     static                          
-        ___while_lbl00007   0x00ae1c    program     static                          
-         ___else_lbl00009   0x00aeb0    program     static                          
-           ___if_lbl00008   0x00aeb8    program     static                          
-        ___while_lbl00010   0x00aeb8    program     static                          
-        ___while_lbl00011   0x00aebc    program     static                          
-       ___return_lbl00003   0x00aebe    program     static                          
-          BMA150_ReadByte   0x00aec8    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-        ___while_lbl00013   0x00aedc    program     static                          
-        ___while_lbl00014   0x00aee0    program     static                          
-        ___while_lbl00015   0x00af64    program     static                          
-        ___while_lbl00016   0x00af68    program     static                          
-       ___return_lbl00012   0x00af6e    program     static                          
-                 InitCTMU   0x00af76    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                  InitADC   0x00af8e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               mTouchInit   0x00afc2    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         mTouchReadButton   0x00afc8    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-        ___while_lbl00004   0x00b066    program     static                          
-        ___while_lbl00005   0x00b06a    program     static                          
-       ___return_lbl00003   0x00b084    program     static                          
-          mTouchCalibrate   0x00b098    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_0   0x00b10e    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_1   0x00b11e    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_2   0x00b132    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_3   0x00b146    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                g_pucFont   0x00b15a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-  YourHighPriorityISRCode   0x00b336    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-   YourLowPriorityISRCode   0x00b348    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                 UserInit   0x00b36e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         InitializeSystem   0x00b3a0    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-       CheckButtonPressed   0x00b3b4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                     main   0x00b41e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-           AppPowerEnable   0x00b448    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-          AppPowerDisable   0x00b494    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-            AppPowerReady   0x00b4a0    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-                 FXD1616S   0x00b538    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x00b54a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D1616S   0x00b55a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x00b564    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x00b568    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x00b57a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXM1616S   0x00b584    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x00b5d0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                _do_cinit   0x00b5de    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x00b5f8    program     static                          
-                copy_loop   0x00b650    program     static                          
-            copy_one_byte   0x00b656    program     static                          
-             done_copying   0x00b664    program     static                          
-       ___return_lbl00002   0x00b67a    program     static                          
-                     done   0x00b67a    program     static                          
-                 FXD1616U   0x00b67c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x00b686    program     static                          
-                  endloop   0x00b6a2    program     static                          
-       ___return_lbl00000   0x00b6a6    program     static                          
-               __string_1   0x00b6a8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_0   0x00b6b7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-            __zero_memory   0x00b6ce    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               zero_block   0x00b6dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_h   0x00b6dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                compare_l   0x00b6e4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_l   0x00b6e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 _startup   0x00b6ee    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x00b6fe    program     static                          
-       ___return_lbl00001   0x00b708    program     static                          
+  YourHighPriorityISRCode   0x00a73e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+   YourLowPriorityISRCode   0x00a750    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                 UserInit   0x00a776    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         InitializeSystem   0x00a790    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       CheckButtonPressed   0x00a7a4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsLButton   0x00a80e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsRButton   0x00a892    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ReadPotenziometer   0x00a912    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadUpButton   0x00a9a4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           ReadDownButton   0x00aa28    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             DisplayClock   0x00aaaa    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          DisplayModeMenu   0x00aaac    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+      DisplayIntervalMenu   0x00aac8    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       DisplaySetTimeMenu   0x00aae4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           DisplaySetDate   0x00ab00    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         DisplayAlarmMenu   0x00ab1c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          SelectedSubMenu   0x00ab38    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              DisplayMenu   0x00abd2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                     main   0x00ad7a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                  DelayMs   0x00ade6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+              ResetDevice   0x00ae40    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+             WriteCommand   0x00afba    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                WriteData   0x00afe2    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+              FillDisplay   0x00b00a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledWriteCharRaw   0x00b07c    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+          oledWriteChar1x   0x00b1b6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledPutROMString   0x00b20e    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+            oledPutString   0x00b282    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+             oledPutImage   0x00b2f0    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+               InitBma150   0x00b3aa    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+           ___if_lbl00001   0x00b3f0    program     static                          
+       ___return_lbl00000   0x00b456    program     static                          
+              SpiPinRemap   0x00b46a    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+         BMA150_WriteByte   0x00b48e    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+               __tmplbl_1   0x00b4a2    program     static                          
+               __tmplbl_0   0x00b4aa    program     static                          
+           ___if_lbl00005   0x00b4b6    program     static                          
+        ___while_lbl00006   0x00b4c0    program     static                          
+        ___while_lbl00007   0x00b4c4    program     static                          
+         ___else_lbl00009   0x00b558    program     static                          
+           ___if_lbl00008   0x00b560    program     static                          
+        ___while_lbl00010   0x00b560    program     static                          
+        ___while_lbl00011   0x00b564    program     static                          
+       ___return_lbl00003   0x00b566    program     static                          
+          BMA150_ReadByte   0x00b570    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+        ___while_lbl00013   0x00b584    program     static                          
+        ___while_lbl00014   0x00b588    program     static                          
+        ___while_lbl00015   0x00b60c    program     static                          
+        ___while_lbl00016   0x00b610    program     static                          
+       ___return_lbl00012   0x00b616    program     static                          
+                 InitCTMU   0x00b61e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                  InitADC   0x00b636    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               mTouchInit   0x00b66a    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         mTouchReadButton   0x00b670    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+        ___while_lbl00004   0x00b70e    program     static                          
+        ___while_lbl00005   0x00b712    program     static                          
+       ___return_lbl00003   0x00b72c    program     static                          
+          mTouchCalibrate   0x00b740    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_0   0x00b7b6    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_1   0x00b7c6    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_2   0x00b7da    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_3   0x00b7ee    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                g_pucFont   0x00b802    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+           AppPowerEnable   0x00b9de    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+          AppPowerDisable   0x00ba2a    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+            AppPowerReady   0x00ba36    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+                 FXD1616S   0x00bace    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x00bae0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D1616S   0x00baf0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00bafa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00bafe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x00bb10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXM1616S   0x00bb1a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x00bb66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                _do_cinit   0x00bb74    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x00bb8e    program     static                          
+                copy_loop   0x00bbe6    program     static                          
+            copy_one_byte   0x00bbec    program     static                          
+             done_copying   0x00bbfa    program     static                          
+                     done   0x00bc10    program     static                          
+       ___return_lbl00002   0x00bc10    program     static                          
+              __string_11   0x00bc12    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_10   0x00bc28    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_9   0x00bc3a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_8   0x00bc3c    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_7   0x00bc42    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_6   0x00bc4b    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_5   0x00bc54    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_4   0x00bc65    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_3   0x00bc70    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_2   0x00bc7e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_1   0x00bc8c    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_0   0x00bc9a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                 FXD1616U   0x00bca8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x00bcb2    program     static                          
+                  endloop   0x00bcce    program     static                          
+       ___return_lbl00000   0x00bcd2    program     static                          
+            __zero_memory   0x00bcd4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               zero_block   0x00bce2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_h   0x00bce2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                compare_l   0x00bcea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_l   0x00bcec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 _startup   0x00bcf4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x00bd04    program     static                          
+       ___return_lbl00001   0x00bd0e    program     static                          
                __config_0   0x00fff8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_1   0x00fff9    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_2   0x00fffa    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
@@ -803,8 +852,8 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                __config_6   0x00fffe    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_7   0x00ffff    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                      SIGN   0x000000       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
-                __FPFLAGS   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
             __FPFLAGSbits   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
+                __FPFLAGS   0x000001       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\cmath18.asm
                  __AARGB7   0x000002       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                   __REMB3   0x000002       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
                  __AARGB6   0x000003       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\aarg.asm
@@ -826,8 +875,8 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                  __TEMPB3   0x000010       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB2   0x000011       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                  __TEMPB1   0x000012       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
-                 __TEMPB0   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                    __TEMP   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
+                 __TEMPB0   0x000013       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\temparg.asm
                   __tmp_0   0x000014       data     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
                   __tmp_0   0x000014       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                   __tmp_0   0x000014       data     static C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED Graphics\OledGraphics.c
@@ -842,13 +891,16 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                 curr_byte   0x00006e       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                curr_entry   0x000070       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                  data_ptr   0x000072       data     static E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                        x   0x000075       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                        y   0x000077       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                        z   0x000079       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-            buttonPressed   0x00007b       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-       buttonPressCounter   0x00007c       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
- g_mTouchCalibrationITRIM   0x000080       data     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         app_power_status   0x000084       data     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+   mainMenuSelectedOption   0x000075       data     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               IsClockSet   0x000077       data     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               IsMenuOpen   0x000078       data     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+            buttonPressed   0x000079       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       buttonPressCounter   0x00007a       data     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                        x   0x00007e       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                        y   0x000080       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                        z   0x000082       data     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+ g_mTouchCalibrationITRIM   0x000084       data     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         app_power_status   0x000088       data     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
                     RPOR0   0x000ec6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     RPOR1   0x000ec7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     RPOR2   0x000ec8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -890,109 +942,109 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                PPSCONbits   0x000eff       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP0   0x000f26       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP0bits   0x000f26       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 UEP1bits   0x000f27       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP1   0x000f27       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 UEP1bits   0x000f27       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP2   0x000f28       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP2bits   0x000f28       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP3   0x000f29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP3bits   0x000f29       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     UEP4   0x000f2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP4bits   0x000f2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     UEP4   0x000f2a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP5   0x000f2b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP5bits   0x000f2b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP6   0x000f2c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP6bits   0x000f2c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 UEP7bits   0x000f2d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP7   0x000f2d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     UEP8   0x000f2e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 UEP7bits   0x000f2d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP8bits   0x000f2e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     UEP8   0x000f2e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEP9   0x000f2f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEP9bits   0x000f2f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    UEP10   0x000f30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 UEP10bits   0x000f30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                UEP11bits   0x000f31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    UEP10   0x000f30       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     UEP11   0x000f31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                UEP12bits   0x000f32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                UEP11bits   0x000f31       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     UEP12   0x000f32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                UEP13bits   0x000f33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                UEP12bits   0x000f32       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     UEP13   0x000f33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                UEP13bits   0x000f33       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     UEP14   0x000f34       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 UEP14bits   0x000f34       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                UEP15bits   0x000f35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     UEP15   0x000f35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                UEP15bits   0x000f35       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                       UIE   0x000f36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   UIEbits   0x000f36       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 UEIEbits   0x000f37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEIE   0x000f37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    UADDR   0x000f38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 UEIEbits   0x000f37       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 UADDRbits   0x000f38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    UADDR   0x000f38       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UCFG   0x000f39       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UCFGbits   0x000f39       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               PADCFG1bits   0x000f3c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PADCFG1   0x000f3c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              REFOCONbits   0x000f3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   REFOCON   0x000f3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   RTCCAL   0x000f3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              REFOCONbits   0x000f3d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                RTCCALbits   0x000f3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   RTCCFG   0x000f3f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   RTCCAL   0x000f3e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                RTCCFGbits   0x000f3f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   RTCCFG   0x000f3f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ODCON3bits   0x000f40       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ODCON3   0x000f40       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   ODCON2   0x000f41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ODCON2bits   0x000f41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   ODCON1   0x000f42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   ODCON2   0x000f41       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ODCON1bits   0x000f42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   ODCON1   0x000f42       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ANCON0bits   0x000f48       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ANCON0   0x000f48       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ANCON1bits   0x000f49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ANCON1   0x000f49       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   DSWAKEL   0x000f4a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               DSWAKELbits   0x000f4a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  DSWAKEH   0x000f4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               DSWAKEHbits   0x000f4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               DSCONLbits   0x000f4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  DSWAKEH   0x000f4b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    DSCONL   0x000f4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   DSCONH   0x000f4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               DSCONLbits   0x000f4c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                DSCONHbits   0x000f4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   DSCONH   0x000f4d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    DSGPR0   0x000f4e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    DSGPR1   0x000f4f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   TCLKCON   0x000f52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               TCLKCONbits   0x000f52       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    CVRCON   0x000f53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                CVRCONbits   0x000f53       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  PMSTATL   0x000f54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               PMSTATLbits   0x000f54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  PMSTATH   0x000f55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  PMSTATL   0x000f54       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               PMSTATHbits   0x000f55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  PMSTATH   0x000f55       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PMELbits   0x000f56       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      PMEL   0x000f56       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 PMEHbits   0x000f57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      PMEH   0x000f57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 PMEHbits   0x000f57       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PMDIN2L   0x000f58       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PMDIN2H   0x000f59       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PMDOUT2L   0x000f5a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PMDOUT2H   0x000f5b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  PMMODEL   0x000f5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               PMMODELbits   0x000f5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  PMMODEL   0x000f5c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PMMODEH   0x000f5d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               PMMODEHbits   0x000f5d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                PMCONLbits   0x000f5e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    PMCONL   0x000f5e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               PMCONHbits   0x000f5f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    PMCONH   0x000f5f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     UFRM   0x000f60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               PMCONHbits   0x000f5f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     UFRML   0x000f60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     UFRM   0x000f60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 UFRMLbits   0x000f60       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    UFRMH   0x000f61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 UFRMHbits   0x000f61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  UIRbits   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    UFRMH   0x000f61       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                       UIR   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  UIRbits   0x000f62       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UEIRbits   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      UEIR   0x000f63       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 USTATbits   0x000f64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     USTAT   0x000f64       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     UCON   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  UCONbits   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     UCON   0x000f65       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    DMABCH   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                DMABCHbits   0x000f66       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    DMABCL   0x000f67       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -1006,13 +1058,13 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                   PMDIN1H   0x000f6d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PMDOUT1L   0x000f6e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PMADDRL   0x000f6e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 PMDOUT1H   0x000f6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PMADDRH   0x000f6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               PMADDRHbits   0x000f6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 PMDOUT1H   0x000f6f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-             CMSTATUSbits   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                CMSTATbits   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 CMSTATUS   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+             CMSTATUSbits   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    CMSTAT   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 CMSTATUS   0x000f70       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              SSP2CON2bits   0x000f71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  SSP2CON2   0x000f71       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              SSP2CON1bits   0x000f72       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -1022,25 +1074,25 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
               SSP2ADDbits   0x000f74       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   SSP2ADD   0x000f74       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   SSP2BUF   0x000f75       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    T4CON   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 T4CONbits   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    T4CON   0x000f76       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                       PR4   0x000f77       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      TMR4   0x000f78       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    T3CON   0x000f79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 T3CONbits   0x000f79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    T3CON   0x000f79       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TMR3L   0x000f7a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TMR3H   0x000f7b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              BAUDCON2bits   0x000f7c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  BAUDCON2   0x000f7c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   SPBRGH2   0x000f7d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              BAUDCONbits   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              BAUDCTLbits   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  BAUDCTL   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   BAUDCON   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  BAUDCON1   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              BAUDCTLbits   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  BAUDCTL   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              BAUDCONbits   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              BAUDCON1bits   0x000f7e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   SPBRGH   0x000f7f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   SPBRGH1   0x000f7f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   SPBRGH   0x000f7f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     PORTA   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 PORTAbits   0x000f80       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     PORTB   0x000f81       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -1049,16 +1101,16 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                 PORTCbits   0x000f82       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     PORTD   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 PORTDbits   0x000f83       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    PORTE   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 PORTEbits   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    PORTE   0x000f84       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   HLVDCON   0x000f85       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               HLVDCONbits   0x000f85       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              DMACON2bits   0x000f86       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   DMACON2   0x000f86       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              DMACON2bits   0x000f86       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               DMACON1bits   0x000f88       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   DMACON1   0x000f88       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     LATA   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  LATAbits   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     LATA   0x000f89       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      LATB   0x000f8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  LATBbits   0x000f8a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      LATC   0x000f8b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -1079,129 +1131,129 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                     TRISB   0x000f93       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 TRISCbits   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TRISC   0x000f94       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                TRISDbits   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TRISD   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                TRISEbits   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                TRISDbits   0x000f95       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TRISE   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   T3GCON   0x000f97       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                TRISEbits   0x000f96       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                T3GCONbits   0x000f97       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   T3GCON   0x000f97       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   RTCVALL   0x000f98       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   RTCVALH   0x000f99       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   T1GCON   0x000f9a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                T1GCONbits   0x000f9a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              OSCTUNEbits   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   T1GCON   0x000f9a       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   OSCTUNE   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   RCSTA2   0x000f9c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              OSCTUNEbits   0x000f9b       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                RCSTA2bits   0x000f9c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     PIE1   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   RCSTA2   0x000f9c       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PIE1bits   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     PIE1   0x000f9d       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      PIR1   0x000f9e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PIR1bits   0x000f9e       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  IPR1bits   0x000f9f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      IPR1   0x000f9f       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      PIE2   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PIE2bits   0x000fa0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     PIR2   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PIR2bits   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     IPR2   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     PIR2   0x000fa1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  IPR2bits   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 PIE3bits   0x000fa3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     IPR2   0x000fa2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      PIE3   0x000fa3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 PIE3bits   0x000fa3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PIR3bits   0x000fa4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      PIR3   0x000fa4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     IPR3   0x000fa5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  IPR3bits   0x000fa5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     IPR3   0x000fa5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                EECON1bits   0x000fa6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    EECON1   0x000fa6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    EECON2   0x000fa7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               TXSTA2bits   0x000fa8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    TXSTA2   0x000fa8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               TXSTA2bits   0x000fa8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    TXREG2   0x000fa9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    RCREG2   0x000faa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    SPBRG2   0x000fab       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                RCSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                RCSTA1bits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                RCSTAbits   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    RCSTA1   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     RCSTA   0x000fac       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    TXSTA   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   TXSTA1   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 TXSTAbits   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                TXSTA1bits   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   TXSTA1   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    TXSTA   0x000fad       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TXREG   0x000fae       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    TXREG1   0x000fae       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    RCREG1   0x000faf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     RCREG   0x000faf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    SPBRG1   0x000fb0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     SPBRG   0x000fb0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-             CTMUICONbits   0x000fb1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  CTMUICON   0x000fb1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-             CTMUCONLbits   0x000fb2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+             CTMUICONbits   0x000fb1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  CTMUCONL   0x000fb2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-             CTMUCONHbits   0x000fb3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+             CTMUCONLbits   0x000fb2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  CTMUCONH   0x000fb3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  CCP2CON   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              CCP2CONbits   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+             CTMUCONHbits   0x000fb3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              ECCP2CONbits   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  ECCP2CON   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    CCPR2   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  CCP2CON   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              CCP2CONbits   0x000fb4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    CCPR2L   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    CCPR2   0x000fb5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    CCPR2H   0x000fb6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              PWM2CONbits   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  PWM2CON   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              ECCP2DELbits   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  ECCP2DEL   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  PWM2CON   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              ECCP2ASbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              PWM2CONbits   0x000fb7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   ECCP2AS   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-             PSTR2CONbits   0x000fb9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              ECCP2ASbits   0x000fb8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PSTR2CON   0x000fb9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  CCP1CON   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              CCP1CONbits   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+             PSTR2CONbits   0x000fb9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              ECCP1CONbits   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  ECCP1CON   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  CCP1CON   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              CCP1CONbits   0x000fba       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     CCPR1   0x000fbb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    CCPR1L   0x000fbb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    CCPR1H   0x000fbc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              PWM1CONbits   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  PWM1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              ECCP1DELbits   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  ECCP1DEL   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              ECCP1ASbits   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  PWM1CON   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              PWM1CONbits   0x000fbd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   ECCP1AS   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-             PSTR1CONbits   0x000fbf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              ECCP1ASbits   0x000fbe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  PSTR1CON   0x000fbf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+             PSTR1CONbits   0x000fbf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                WDTCONbits   0x000fc0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    WDTCON   0x000fc0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               ADCON1bits   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               ADCON1bits   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    ADRES   0x000fc3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADRESL   0x000fc3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    ADRES   0x000fc3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADRESH   0x000fc4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-             SSP1CON2bits   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 SSP1CON2   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              SSPCON2bits   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   SSPCON2   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              SSPCON2bits   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 SSP1CON2   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+             SSP1CON2bits   0x000fc5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
               SSPCON1bits   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   SSPCON1   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 SSP1CON1   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              SSP1CON1bits   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  SSPSTAT   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              SSPSTATbits   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 SSP1CON1   0x000fc6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                  SSP1STAT   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
              SSP1STATbits   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               SSPADDbits   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                  SSP1ADD   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-              SSP1ADDbits   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              SSPSTATbits   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  SSPSTAT   0x000fc7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    SSPADD   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               SSPADDbits   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+              SSP1ADDbits   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                  SSP1ADD   0x000fc8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    SSPBUF   0x000fc9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   SSP1BUF   0x000fc9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     T2CON   0x000fca       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                 T2CONbits   0x000fca       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                       PR2   0x000fcb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      TMR2   0x000fcc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                T1CONbits   0x000fcd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     T1CON   0x000fcd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                T1CONbits   0x000fcd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TMR1L   0x000fce       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     TMR1H   0x000fcf       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      RCON   0x000fd0       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -1222,8 +1274,8 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                     TMR0H   0x000fd7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                STATUSbits   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    STATUS   0x000fd8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    FSR2L   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      FSR2   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    FSR2L   0x000fd9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     FSR2H   0x000fda       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    PLUSW2   0x000fdb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PREINC2   0x000fdc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -1240,8 +1292,8 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                  POSTINC1   0x000fe6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     INDF1   0x000fe7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      WREG   0x000fe8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                    FSR0L   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      FSR0   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                    FSR0L   0x000fe9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     FSR0H   0x000fea       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    PLUSW0   0x000feb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   PREINC0   0x000fec       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -1254,22 +1306,22 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
               INTCON2bits   0x000ff1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    INTCON   0x000ff2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                INTCONbits   0x000ff2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     PROD   0x000ff3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     PRODL   0x000ff3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     PROD   0x000ff3       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                     PRODH   0x000ff4       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    TABLAT   0x000ff5       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   TBLPTRL   0x000ff6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    TBLPTR   0x000ff6       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   TBLPTRH   0x000ff7       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                   TBLPTRU   0x000ff8       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                       PC   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                       PCL   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                       PC   0x000ff9       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    PCLATH   0x000ffa       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    PCLATU   0x000ffb       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                STKPTRbits   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    STKPTR   0x000ffc       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                     TOSL   0x000ffd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                       TOS   0x000ffd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                     TOSL   0x000ffd       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      TOSH   0x000ffe       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                      TOSU   0x000fff       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
 

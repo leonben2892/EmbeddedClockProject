@@ -1,6 +1,17 @@
-Warning[2054] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 374 : suspicious pointer conversion
-Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 374 : static function 'YourLowPriorityISRCode' never referenced
-Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 374 : static function 'YourHighPriorityISRCode' never referenced
-Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 374 : static function 'YourLowPriorityISRCode' never referenced
-Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 374 : static function 'YourHighPriorityISRCode' never referenced
-Warning[2064] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 374 : static function 'ProcessIO' not defined
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 463 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 464 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 465 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 466 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 467 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 470 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 494 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 503 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 514 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 517 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 559 : call of function without prototype
+Warning[2058] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 577 : call of function without prototype
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 577 : static function 'YourLowPriorityISRCode' never referenced
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 577 : static function 'YourHighPriorityISRCode' never referenced
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 577 : static function 'YourLowPriorityISRCode' never referenced
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 577 : static function 'YourHighPriorityISRCode' never referenced
+Warning[2064] C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c 577 : static function 'ProcessIO' not defined
