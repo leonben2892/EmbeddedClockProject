@@ -1,0 +1,6 @@
+Warning[2054] C:\Users\Leon\Documents\Embedded Cores\Shenkar\Lab1\main.c 374 : suspicious pointer conversion
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\Lab1\main.c 374 : static function 'YourLowPriorityISRCode' never referenced
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\Lab1\main.c 374 : static function 'YourHighPriorityISRCode' never referenced
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\Lab1\main.c 374 : static function 'YourLowPriorityISRCode' never referenced
+Warning[2065] C:\Users\Leon\Documents\Embedded Cores\Shenkar\Lab1\main.c 374 : static function 'YourHighPriorityISRCode' never referenced
+Warning[2064] C:\Users\Leon\Documents\Embedded Cores\Shenkar\Lab1\main.c 374 : static function 'ProcessIO' not defined
