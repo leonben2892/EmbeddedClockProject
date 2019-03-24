@@ -119,8 +119,18 @@
 //	========================	Global VARIABLES	========================
 #pragma udata
 //You can define Global Data Elements here
-int mainMenuSelectedOption = 2;
-BOOL IsClockSet = FALSE, IsMenuOpen = FALSE;
+
+//Selected option variables
+int mainMenuSelectedOption = 2, displayModeSelectedOption = 3, displayIntervaSelectedOption = 3, setTimeSelectedOption = 43, setDateSelectedOption = 48;
+
+//Time
+int hour = 0, minute = 0, second = 0;
+
+//Date
+int month = 1, day = 1;
+
+//Booleans
+BOOL IsClockSet = FALSE, IsMenuOpen = FALSE, IsDigitalDisplay = TRUE, Is12H = TRUE;
 
 //	========================	PRIVATE PROTOTYPES	========================
 static void InitializeSystem(void);
@@ -349,7 +359,7 @@ int ReadsLButton()
 	if (btnL < 600)
 	{
 		/* wait for the button to be released */
-		while (btnL < 700)
+		while (btnL < 650)
 		{
 			btnL = mTouchReadButton(3);
 		}
@@ -366,7 +376,7 @@ int ReadsRButton()
 	if (btnR < 600)
 	{
 		/* wait for the button to be released */
-		while (btnR < 700)
+		while (btnR < 650)
 		{
 			btnR = mTouchReadButton(0);
 		}
@@ -427,44 +437,417 @@ void DisplayClock()
 
 }
 
-void DisplayModeMenu()
+int DisplayModeMenu()
 {
-	oledPutROMString((ROM_STRING)"Display Mode",0,10);
+	while(1)
+	{
+		int tmpUpBtn, tmpDownBtn;
+		oledPutROMString((ROM_STRING)"Display Mode",0,30);
+		oledPutROMString((ROM_STRING)"Digital",3,30);
+		oledPutROMString((ROM_STRING)"Analog",6,30);
+	
+		//Navigate the menu through UP & DOWN buttons
+		mTouchCalibrate();
+		tmpUpBtn = ReadUpButton();
+		if(tmpUpBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			if(displayModeSelectedOption == 6)
+				displayModeSelectedOption = 3;
+			else
+				displayModeSelectedOption = 6;
+		}
+	
+		tmpDownBtn = ReadDownButton();
+		if(tmpDownBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			if(displayModeSelectedOption == 3)
+				displayModeSelectedOption = 6;
+			else
+				displayModeSelectedOption = 3;
+		}
+		
+		//Indicator of selected option	
+		oledPutROMString((ROM_STRING)"*", displayModeSelectedOption, 22);
+		oledPutROMString((ROM_STRING)"*", displayModeSelectedOption, 75);
+		
+		//Check if any option is selected by pressing the black button
+		if(CheckButtonPressed())
+		{
+			if(displayModeSelectedOption == 3)
+				IsDigitalDisplay = TRUE;
+			else
+				IsDigitalDisplay = FALSE;
+			return 1;
+		}
+	}	
 }
 
-void DisplayIntervalMenu()
+int DisplayIntervalMenu()
 {
-	oledPutROMString((ROM_STRING)"Interval Menu",0,10);
+	while(1)
+	{
+		int tmpUpBtn, tmpDownBtn;
+		oledPutROMString((ROM_STRING)"Interval Menu",0,30);
+		oledPutROMString((ROM_STRING)"12H",3,50);
+		oledPutROMString((ROM_STRING)"24H",6,50);
+	
+		//Navigate the menu through UP & DOWN buttons
+		mTouchCalibrate();
+		tmpUpBtn = ReadUpButton();
+		if(tmpUpBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			if(displayIntervaSelectedOption == 6)
+				displayIntervaSelectedOption = 3;
+			else
+				displayIntervaSelectedOption = 6;
+		}
+	
+		tmpDownBtn = ReadDownButton();
+		if(tmpDownBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			if(displayIntervaSelectedOption == 3)
+				displayIntervaSelectedOption = 6;
+			else
+				displayIntervaSelectedOption = 3;
+		}
+		
+		//Indicator of selected option	
+		oledPutROMString((ROM_STRING)"*", displayIntervaSelectedOption, 42);
+		oledPutROMString((ROM_STRING)"*", displayIntervaSelectedOption, 70);
+		
+		//Check if any option is selected by pressing the black button
+		if(CheckButtonPressed())
+		{
+			if(displayIntervaSelectedOption == 3)
+				Is12H = TRUE;
+			else
+				Is12H = FALSE;
+			return 1;
+		}
+	}	
 }
 
-void DisplaySetTimeMenu()
+void ChangeHour()
 {
-	oledPutROMString((ROM_STRING)"Set Time Menu",0,10);
+	int tmpUpBtn, tmpDownBtn;
+	//Set hour through UP & DOWN buttons
+	mTouchCalibrate();
+	tmpUpBtn = ReadUpButton();
+	if(tmpUpBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		hour++;
+		if(Is12H)
+		{			
+			if(hour > 12)
+				hour = 1;
+		}
+		else
+		{
+			if(hour > 23)
+				hour = 0;
+		}
+	}
+
+	tmpDownBtn = ReadDownButton();
+	if(tmpDownBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		hour--;
+		if(Is12H)
+		{
+			if(hour < 1)
+				hour = 12;
+		}
+		else
+		{
+			if(hour < 0)
+				hour = 23;
+		}
+	}	
 }
 
-void DisplaySetDate()
+void ChangeMinute()
 {
-	oledPutROMString((ROM_STRING)"Set Date Menu",0,10);
+	int tmpUpBtn, tmpDownBtn;
+	//Set minute through UP & DOWN buttons
+	mTouchCalibrate();
+	tmpUpBtn = ReadUpButton();
+	if(tmpUpBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		minute++;
+		if(minute > 59)	
+			minute = 0;
+	}
+
+	tmpDownBtn = ReadDownButton();
+	if(tmpDownBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		minute--;
+		if(minute < 0)
+			minute = 59;
+	}	
 }
 
-void DisplayAlarmMenu()
+void ChangeSecond()
+{
+	int tmpUpBtn, tmpDownBtn;
+	//Set second through UP & DOWN buttons
+	mTouchCalibrate();
+	tmpUpBtn = ReadUpButton();
+	if(tmpUpBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		second++;
+		if(second > 59)	
+			second = 0;
+	}
+
+	tmpDownBtn = ReadDownButton();
+	if(tmpDownBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		second--;
+		if(second < 0)
+			second = 59;
+	}
+}
+
+int DisplaySetTimeMenu()
+{
+	while(1)
+	{
+		char timeBuffer[10];
+		int tmpLeftBtn, tmpRightBtn;
+		oledPutROMString((ROM_STRING)"Set Time Menu",0,25);
+		sprintf(timeBuffer,"%02d:%02d:%02d",hour,minute,second);
+		oledPutString(timeBuffer, 4, 40);
+		
+		//Navigate the menu through LEFT & RIGHT buttons
+		mTouchCalibrate();
+		tmpRightBtn = ReadsRButton();
+		if(tmpRightBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			switch(setTimeSelectedOption)
+			{
+				case 43: setTimeSelectedOption = 61;break;
+				case 61: setTimeSelectedOption = 79;break;
+				case 79: setTimeSelectedOption = 43;break;
+			}
+		}
+
+		tmpLeftBtn = ReadsLButton();
+		if(tmpLeftBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			switch(setTimeSelectedOption)
+			{
+				case 43: setTimeSelectedOption = 79;break;
+				case 61: setTimeSelectedOption = 43;break;
+				case 79: setTimeSelectedOption = 61;break;
+			}
+		}
+	
+		//Indicator of selected option	
+		//43 - hour | 61 - minute | 79 - second
+		oledPutROMString((ROM_STRING)"*", 3, setTimeSelectedOption);
+		oledPutROMString((ROM_STRING)"*", 5, setTimeSelectedOption);
+
+		//Change hour / minute / second
+		switch(setTimeSelectedOption)
+		{
+			case 43: ChangeHour();break;
+			case 61: ChangeMinute();break;
+			case 79: ChangeSecond();break;
+		}
+
+		//Confirm time by pressing the black button
+		if(CheckButtonPressed())
+		{
+			return 1;
+		}
+	}
+}
+
+void ChangeMonth()
+{
+	int tmpUpBtn, tmpDownBtn;
+	//Set second through UP & DOWN buttons
+	mTouchCalibrate();
+	tmpUpBtn = ReadUpButton();
+	if(tmpUpBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		month++;
+		if(month > 12)
+			month = 1;
+	}
+
+	tmpDownBtn = ReadDownButton();
+	if(tmpDownBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		month--;
+		if(month < 1)
+			month = 12;
+	}
+}
+
+void ChangeDay()
+{
+	int tmpUpBtn, tmpDownBtn;
+	//Set second through UP & DOWN buttons
+	mTouchCalibrate();
+	tmpUpBtn = ReadUpButton();
+	if(tmpUpBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		day++;
+		if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+		{
+			if(day > 31)
+				day = 1;
+		}
+		else if(month == 4 || month == 6 || month == 9 || month == 11)
+		{
+			if(day > 30)
+				day = 1;
+		}
+		else
+		{
+			if(day > 28)
+				day = 1;
+		}
+	}
+
+	tmpDownBtn = ReadDownButton();
+	if(tmpDownBtn == 1)
+	{
+		FillDisplay(0x00); //Clear Screen
+		day--;
+		if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+		{
+			if(day < 1)
+				day = 31;
+		}
+		else if(month == 4 || month == 6 || month == 9 || month == 11)
+		{
+			if(day < 1)
+				day = 30;
+		}
+		else
+		{
+			if(day < 1)
+				day = 28;
+		}
+	}
+	
+}
+
+int DisplaySetDate()
+{
+	while(1)
+	{	
+		char timeBuffer[10];
+		int tmpLeftBtn, tmpRightBtn;
+		oledPutROMString((ROM_STRING)"Set Date Menu",0,25);
+		sprintf(timeBuffer,"%02d/%02d",day,month);
+		oledPutString(timeBuffer, 4, 45);
+
+		//Navigate the menu through LEFT & RIGHT buttons
+		mTouchCalibrate();
+		tmpRightBtn = ReadsRButton();
+		if(tmpRightBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			switch(setDateSelectedOption)
+			{
+				case 48: setDateSelectedOption = 66;break;
+				case 66: setDateSelectedOption = 48;break;
+			}
+		}
+
+		tmpLeftBtn = ReadsLButton();
+		if(tmpLeftBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			switch(setDateSelectedOption)
+			{
+				case 48: setDateSelectedOption = 66;break;
+				case 66: setDateSelectedOption = 48;break;
+			}
+		}
+		
+		//Indicator of selected option	
+		//48 - day | 66 - month 
+		oledPutROMString((ROM_STRING)"*", 3, setDateSelectedOption);
+		oledPutROMString((ROM_STRING)"*", 5, setDateSelectedOption);
+
+		//Chane month / day
+		switch(setDateSelectedOption)
+		{
+			case 48: ChangeDay();break;
+			case 66: ChangeMonth();break;
+		}
+
+		//Confirm date by pressing the black button
+		if(CheckButtonPressed())
+		{
+			return 1;
+		}
+	}
+}
+
+int DisplayAlarmMenu()
 {
 	oledPutROMString((ROM_STRING)"Alarm Menu",0,10);
 }
 
 void SelectedSubMenu()
 {
-	int goBack;
 	FillDisplay(0x00); //Clear Screen
 	while(1)
 	{
+		int goBack;
 		switch(mainMenuSelectedOption)
 		{
-			case 2: DisplayModeMenu();break;
-			case 3: DisplayIntervalMenu();break;
-			case 4: DisplaySetTimeMenu();break;
-			case 5: DisplaySetDate();break;
-			case 6: DisplayAlarmMenu();break;
+			case 2: if(DisplayModeMenu() == 1)
+					{
+						FillDisplay(0x00); //Clear Screen
+						return;
+					}
+					break;
+			case 3: if(DisplayIntervalMenu() == 1)
+					{
+						FillDisplay(0x00); //Clear Screen
+						return;
+					}
+					break;
+			case 4: if(DisplaySetTimeMenu() == 1)
+					{
+						FillDisplay(0x00); //Clear Screen
+						return;
+					}
+					break;
+			case 5: if(DisplaySetDate() == 1)
+					{
+						FillDisplay(0x00); //Clear Screen
+						return;
+					}
+					break;
+			case 6: if(DisplayAlarmMenu() == 1)
+					{
+						FillDisplay(0x00); //Clear Screen
+						return;
+					}
+					break;
 		}
 
 		goBack = ReadsLButton();
@@ -486,10 +869,12 @@ void DisplayMenu()
 		oledPutROMString((ROM_STRING)"Set Time",4,6);
 		oledPutROMString((ROM_STRING)"Set Date",5,6);
 		oledPutROMString((ROM_STRING)"Alarm",6,6);
-			
+		
+		//Indicator of selected option	
 		oledPutROMString((ROM_STRING)"*", mainMenuSelectedOption, 0);
 		oledPutROMString((ROM_STRING)"*", mainMenuSelectedOption, 100);
-	
+		
+		//Navigate the menu through UP & DOWN buttons
 		mTouchCalibrate();
 		tmpUpBtn = ReadUpButton();
 		if(tmpUpBtn == 1)
@@ -509,15 +894,18 @@ void DisplayMenu()
 				mainMenuSelectedOption = 2;
 		}
 		
+		//Check if any option is selected by pressing the black button
 		if(CheckButtonPressed())
 		{
 			SelectedSubMenu();
 		}
-
+		
+		//Check if the the L button is pressed in order to go back to previous menu
 		goBack = ReadsLButton();
 		if(goBack == 1)
 		{
 			IsMenuOpen = FALSE;
+			mainMenuSelectedOption = 2;
 			FillDisplay(0x00); //Clear Screen
 			return;
 		}	
@@ -559,21 +947,17 @@ void main(void)
 			DisplayClock();
 		else
 		{
-			if(!IsMenuOpen)
+			if(IsMenuOpen == FALSE)
 			{
 				oledPutROMString((ROM_STRING)"Clock is not set!",3,10);
 				oledPutROMString((ROM_STRING)"Black button for menu",5,2);
-			}
-			if(CheckButtonPressed())
-			{
-				if(!IsMenuOpen)
+				if(CheckButtonPressed())
 				{
 					IsMenuOpen = TRUE;
 					FillDisplay(0x00); //Clear Screen
 				}
-	
 			}
-			if(IsMenuOpen == TRUE)
+			else
 				DisplayMenu();	
 		}		
     }
