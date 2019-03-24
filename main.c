@@ -121,16 +121,19 @@
 //You can define Global Data Elements here
 
 //Selected option variables
-int mainMenuSelectedOption = 2, displayModeSelectedOption = 3, displayIntervaSelectedOption = 3, setTimeSelectedOption = 43, setDateSelectedOption = 48;
+int mainMenuSelectedOption = 1, displayModeSelectedOption = 3, displayIntervaSelectedOption = 3, amPmSelectedOption =  3, setTimeSelectedOption = 43, setDateSelectedOption = 48;
 
 //Time
-int hour = 0, minute = 0, second = 0;
+int tmpHour = 0, tmpMinute = 0, tmpSecond = 0, hour, minute, second;
+
+//Big Digits
+char digitPos[3][2] = {{0,20},{45,63},{90,110}};
 
 //Date
 int month = 1, day = 1;
 
 //Booleans
-BOOL IsClockSet = FALSE, IsMenuOpen = FALSE, IsDigitalDisplay = TRUE, Is12H = TRUE;
+BOOL IsClockSet = FALSE, IsMenuOpen = FALSE, IsDigitalDisplay = TRUE, Is12H = TRUE, IsAM = TRUE;
 
 //	========================	PRIVATE PROTOTYPES	========================
 static void InitializeSystem(void);
@@ -138,6 +141,11 @@ static void ProcessIO(void);
 static void UserInit(void);
 static void YourHighPriorityISRCode();
 static void YourLowPriorityISRCode();
+void AddMinute();
+void AddHour();
+void AddDay();
+void AddMonth();
+
 
 BOOL CheckButtonPressed(void);
 
@@ -225,6 +233,19 @@ BOOL CheckButtonPressed(void);
     //Service the interrupt
     //Clear the interrupt flag
     //Etc.
+	if(INTCONbits.TMR0IF)
+	{
+		TMR0H = 0x48 ;				//Write 0xCE51 to 16 bit Timer0
+		TMR0L = 0xE3 ;
+		
+		second++;
+		if(second > 59)
+		{
+			second = 0;
+			AddMinute();
+		}	
+		INTCONbits.TMR0IF = 0;
+	}	
   
   } //This return will be a "retfie fast", since this is in a #pragma interrupt section 
   #pragma interruptlow YourLowPriorityISRCode
@@ -351,6 +372,80 @@ BOOL CheckButtonPressed(void)
     return FALSE;
 }
 
+void AddMinute()
+{
+	minute++;
+	if(minute > 59)
+	{
+		minute = 0;
+		AddHour();
+	}
+		
+}
+
+void AddHour()
+{
+	hour++;
+	if(Is12H)
+	{
+		if(hour > 12 && IsAM == TRUE)
+		{
+			IsAM = FALSE;
+			hour = 1;
+		}
+		else if(hour > 12 && IsAM == FALSE)
+		{
+			IsAM = TRUE;
+			hour = 1;
+			AddDay();
+		}	
+	}
+	else
+	{
+		if(hour > 24)
+		{
+			hour = 1;
+			AddDay();
+		}
+	}
+}
+
+void AddDay()
+{
+	day++;
+	if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+	{
+		if(day > 31)
+		{
+			day = 1;
+			AddMonth();
+		}
+	}
+	else if(month == 4 || month == 6 || month == 9 || month == 11)
+	{
+		if(day > 30)
+		{
+			day = 1;
+			AddMonth();
+		}
+	}
+	else
+	{
+		if(day > 28)
+		{
+			day = 1;
+			AddMonth();
+		}
+	}
+}
+
+void AddMonth()
+{
+	month++;
+	if(month > 12)
+		month = 1;
+}
+
 //Reads L button
 int ReadsLButton()
 {
@@ -359,7 +454,7 @@ int ReadsLButton()
 	if (btnL < 600)
 	{
 		/* wait for the button to be released */
-		while (btnL < 650)
+		while (btnL < 610)
 		{
 			btnL = mTouchReadButton(3);
 		}
@@ -376,7 +471,7 @@ int ReadsRButton()
 	if (btnR < 600)
 	{
 		/* wait for the button to be released */
-		while (btnR < 650)
+		while (btnR < 610)
 		{
 			btnR = mTouchReadButton(0);
 		}
@@ -432,9 +527,167 @@ int ReadDownButton()
 	return 0;
 }
 
-void DisplayClock()
+void PrintMinutes()
+{
+	int lDigit, rDigit;
+	lDigit = minute / 10;
+	rDigit = minute % 10;
+	switch(lDigit)
+	{
+		case 0: PrintDigit(0x20,digitPos[1][0]);break;
+		case 1: PrintDigit(0x24,digitPos[1][0]);break;
+		case 2: PrintDigit(0x28,digitPos[1][0]);break;
+		case 3: PrintDigit(0x2C,digitPos[1][0]);break;
+		case 4: PrintDigit(0x30,digitPos[1][0]);break;
+		case 5: PrintDigit(0x34,digitPos[1][0]);break;
+	}
+
+	switch(rDigit)
+	{
+		case 0: PrintDigit(0x20,digitPos[1][1]);break;
+		case 1: PrintDigit(0x24,digitPos[1][1]);break;
+		case 2: PrintDigit(0x28,digitPos[1][1]);break;
+		case 3: PrintDigit(0x2C,digitPos[1][1]);break;
+		case 4: PrintDigit(0x30,digitPos[1][1]);break;
+		case 5: PrintDigit(0x34,digitPos[1][1]);break;
+		case 6: PrintDigit(0x38,digitPos[1][1]);break;
+		case 7: PrintDigit(0x3C,digitPos[1][1]);break;
+		case 8: PrintDigit(0x40,digitPos[1][1]);break;
+		case 9: PrintDigit(0x44,digitPos[1][1]);break;
+	}
+}
+
+void PrintSeconds()
+{
+	int lDigit, rDigit;
+	lDigit = second / 10;
+	rDigit = second % 10;
+	switch(lDigit)
+	{
+		case 0: PrintDigit(0x20,digitPos[2][0]);break;
+		case 1: PrintDigit(0x24,digitPos[2][0]);break;
+		case 2: PrintDigit(0x28,digitPos[2][0]);break;
+		case 3: PrintDigit(0x2C,digitPos[2][0]);break;
+		case 4: PrintDigit(0x30,digitPos[2][0]);break;
+		case 5: PrintDigit(0x34,digitPos[2][0]);break;
+	}
+
+	switch(rDigit)
+	{
+		case 0: PrintDigit(0x20,digitPos[2][1]);break;
+		case 1: PrintDigit(0x24,digitPos[2][1]);break;
+		case 2: PrintDigit(0x28,digitPos[2][1]);break;
+		case 3: PrintDigit(0x2C,digitPos[2][1]);break;
+		case 4: PrintDigit(0x30,digitPos[2][1]);break;
+		case 5: PrintDigit(0x34,digitPos[2][1]);break;
+		case 6: PrintDigit(0x38,digitPos[2][1]);break;
+		case 7: PrintDigit(0x3C,digitPos[2][1]);break;
+		case 8: PrintDigit(0x40,digitPos[2][1]);break;
+		case 9: PrintDigit(0x44,digitPos[2][1]);break;
+	}
+}
+
+void Print12HourClock()
+{
+	switch(hour)
+	{
+		case 1: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
+		case 2: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
+		case 3: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
+		case 4: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x30,digitPos[0][1]);break;
+		case 5: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x34,digitPos[0][1]);break;
+		case 6: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x38,digitPos[0][1]);break;
+		case 7: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x3C,digitPos[0][1]);break;
+		case 8: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x40,digitPos[0][1]);break;
+		case 9: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x44,digitPos[0][1]);break;
+		case 10: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
+		case 11: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
+		case 12: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
+	}
+	PrintMinutes();
+	PrintSeconds();
+	if(IsAM)
+		oledPutROMString((ROM_STRING)"AM",7,110);
+	else
+		oledPutROMString((ROM_STRING)"PM",7,110);
+}
+
+void Print24HourClock()
+{
+	switch(hour)
+	{
+		case 1: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
+		case 2: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
+		case 3: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
+		case 4: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x30,digitPos[0][1]);break;
+		case 5: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x34,digitPos[0][1]);break;
+		case 6: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x38,digitPos[0][1]);break;
+		case 7: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x3C,digitPos[0][1]);break;
+		case 8: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x40,digitPos[0][1]);break;
+		case 9: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x44,digitPos[0][1]);break;
+		case 10: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
+		case 11: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
+		case 12: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
+		case 13: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
+		case 14: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x30,digitPos[0][1]);break;
+		case 15: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x34,digitPos[0][1]);break;
+		case 16: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x38,digitPos[0][1]);break;
+		case 17: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x3C,digitPos[0][1]);break;
+		case 18: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x40,digitPos[0][1]);break;
+		case 19: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x44,digitPos[0][1]);break;
+		case 20: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
+		case 21: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
+		case 22: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
+		case 23: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
+		case 24: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
+	}
+	PrintMinutes();
+	PrintSeconds();
+}
+void DisplayDigitalClock()
+{
+	if(Is12H)
+		Print12HourClock();
+	else
+		Print24HourClock();
+}
+
+void DisplayDate()
+{
+	char timeBuffer[10];
+	sprintf(timeBuffer,"%02d/%02d",day,month);
+	oledPutString(timeBuffer, 7, 2);
+}
+
+void DisplayAnalogClock()
 {
 
+}
+
+void DisplayClock()
+{
+	if(IsDigitalDisplay)
+	{
+		DisplayDigitalClock();
+
+		//Print :
+		oledWriteChar1x(0x6F,0xB3 , 37);
+		oledWriteChar1x(0x6F,0xB4 , 37);
+		oledWriteChar1x(0x6F,0xB3 , 82);
+		oledWriteChar1x(0x6F,0xB4 , 82);
+		
+		DisplayDate();
+	}
+		
+	else
+		DisplayAnalogClock();
+}
+
+void DisplaySmallClock()
+{
+	char timeBuffer[10];
+	sprintf(timeBuffer,"%02d:%02d:%02d",hour,minute,second);
+	oledPutString(timeBuffer, 7, 80);
 }
 
 int DisplayModeMenu()
@@ -472,7 +725,7 @@ int DisplayModeMenu()
 		oledPutROMString((ROM_STRING)"*", displayModeSelectedOption, 22);
 		oledPutROMString((ROM_STRING)"*", displayModeSelectedOption, 75);
 		
-		//Check if any option is selected by pressing the black button
+		//Confirm selection by pressing the black button
 		if(CheckButtonPressed())
 		{
 			if(displayModeSelectedOption == 3)
@@ -481,6 +734,10 @@ int DisplayModeMenu()
 				IsDigitalDisplay = FALSE;
 			return 1;
 		}
+		
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
 	}	
 }
 
@@ -519,7 +776,7 @@ int DisplayIntervalMenu()
 		oledPutROMString((ROM_STRING)"*", displayIntervaSelectedOption, 42);
 		oledPutROMString((ROM_STRING)"*", displayIntervaSelectedOption, 70);
 		
-		//Check if any option is selected by pressing the black button
+		//Confirm selection by pressing the black button
 		if(CheckButtonPressed())
 		{
 			if(displayIntervaSelectedOption == 3)
@@ -528,7 +785,76 @@ int DisplayIntervalMenu()
 				Is12H = FALSE;
 			return 1;
 		}
+
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
 	}	
+}
+
+int DisplayAmPmMenu()
+{
+	while(1)
+	{
+		if(Is12H)
+		{
+			int tmpUpBtn, tmpDownBtn;
+			oledPutROMString((ROM_STRING)"AM/PM Menu",0,30);
+			oledPutROMString((ROM_STRING)"AM",3,50);
+			oledPutROMString((ROM_STRING)"PM",6,50);
+		
+			//Navigate the menu through UP & DOWN buttons
+			mTouchCalibrate();
+			tmpUpBtn = ReadUpButton();
+			if(tmpUpBtn == 1)
+			{
+				FillDisplay(0x00); //Clear Screen
+				if(amPmSelectedOption == 6)
+					amPmSelectedOption = 3;
+				else
+					amPmSelectedOption = 6;
+			}
+		
+			tmpDownBtn = ReadDownButton();
+			if(tmpDownBtn == 1)
+			{
+				FillDisplay(0x00); //Clear Screen
+				if(amPmSelectedOption == 3)
+					amPmSelectedOption = 6;
+				else
+					amPmSelectedOption = 3;
+			}
+			
+			//Indicator of selected option	
+			oledPutROMString((ROM_STRING)"*", amPmSelectedOption, 42);
+			oledPutROMString((ROM_STRING)"*", amPmSelectedOption, 64);
+	
+			//Confirm selection by pressing the black button
+			if(CheckButtonPressed())
+			{
+				if(amPmSelectedOption == 3)
+					IsAM = TRUE;
+				else
+					IsAM = FALSE;
+				return 1;
+			}
+		}
+		//Print error if clock is not set to 12H
+		else
+		{
+			oledPutROMString((ROM_STRING)"Clock is not set ", 2, 0);
+			oledPutROMString((ROM_STRING)"to 12H!", 3, 0);
+			oledPutROMString((ROM_STRING)"Press button ", 5, 0);
+			oledPutROMString((ROM_STRING)"to return.", 6, 0);
+			//Press black button to return
+			if(CheckButtonPressed())
+				return 1;
+		}
+
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
+	}
 }
 
 void ChangeHour()
@@ -540,16 +866,16 @@ void ChangeHour()
 	if(tmpUpBtn == 1)
 	{
 		FillDisplay(0x00); //Clear Screen
-		hour++;
+		tmpHour++;
 		if(Is12H)
 		{			
-			if(hour > 12)
-				hour = 1;
+			if(tmpHour > 12)
+				tmpHour = 1;
 		}
 		else
 		{
-			if(hour > 23)
-				hour = 0;
+			if(tmpHour > 23)
+				tmpHour = 0;
 		}
 	}
 
@@ -557,16 +883,16 @@ void ChangeHour()
 	if(tmpDownBtn == 1)
 	{
 		FillDisplay(0x00); //Clear Screen
-		hour--;
+		tmpHour--;
 		if(Is12H)
 		{
-			if(hour < 1)
-				hour = 12;
+			if(tmpHour < 1)
+				tmpHour = 12;
 		}
 		else
 		{
-			if(hour < 0)
-				hour = 23;
+			if(tmpHour < 0)
+				tmpHour = 23;
 		}
 	}	
 }
@@ -580,18 +906,18 @@ void ChangeMinute()
 	if(tmpUpBtn == 1)
 	{
 		FillDisplay(0x00); //Clear Screen
-		minute++;
-		if(minute > 59)	
-			minute = 0;
+		tmpMinute++;
+		if(tmpMinute > 59)	
+			tmpMinute = 0;
 	}
 
 	tmpDownBtn = ReadDownButton();
 	if(tmpDownBtn == 1)
 	{
 		FillDisplay(0x00); //Clear Screen
-		minute--;
-		if(minute < 0)
-			minute = 59;
+		tmpMinute--;
+		if(tmpMinute < 0)
+			tmpMinute = 59;
 	}	
 }
 
@@ -604,18 +930,18 @@ void ChangeSecond()
 	if(tmpUpBtn == 1)
 	{
 		FillDisplay(0x00); //Clear Screen
-		second++;
-		if(second > 59)	
-			second = 0;
+		tmpSecond++;
+		if(tmpSecond > 59)	
+			tmpSecond = 0;
 	}
 
 	tmpDownBtn = ReadDownButton();
 	if(tmpDownBtn == 1)
 	{
 		FillDisplay(0x00); //Clear Screen
-		second--;
-		if(second < 0)
-			second = 59;
+		tmpSecond--;
+		if(tmpSecond < 0)
+			tmpSecond = 59;
 	}
 }
 
@@ -626,7 +952,7 @@ int DisplaySetTimeMenu()
 		char timeBuffer[10];
 		int tmpLeftBtn, tmpRightBtn;
 		oledPutROMString((ROM_STRING)"Set Time Menu",0,25);
-		sprintf(timeBuffer,"%02d:%02d:%02d",hour,minute,second);
+		sprintf(timeBuffer,"%02d:%02d:%02d",tmpHour,tmpMinute,tmpSecond);
 		oledPutString(timeBuffer, 4, 40);
 		
 		//Navigate the menu through LEFT & RIGHT buttons
@@ -671,8 +997,20 @@ int DisplaySetTimeMenu()
 		//Confirm time by pressing the black button
 		if(CheckButtonPressed())
 		{
+			if(hour != 0)
+				hour = tmpHour;
+			else 
+				hour = 24;
+			minute = tmpMinute;
+			second = tmpSecond;
+			if((hour != 0) && (minute != 0) && (second != 0))
+				IsClockSet = TRUE;
 			return 1;
 		}
+
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
 	}
 }
 
@@ -802,6 +1140,10 @@ int DisplaySetDate()
 		{
 			return 1;
 		}
+
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
 	}
 }
 
@@ -818,13 +1160,19 @@ void SelectedSubMenu()
 		int goBack;
 		switch(mainMenuSelectedOption)
 		{
-			case 2: if(DisplayModeMenu() == 1)
+			case 1: if(DisplayModeMenu() == 1)
 					{
 						FillDisplay(0x00); //Clear Screen
 						return;
 					}
 					break;
-			case 3: if(DisplayIntervalMenu() == 1)
+			case 2: if(DisplayIntervalMenu() == 1)
+					{
+						FillDisplay(0x00); //Clear Screen
+						return;
+					}
+					break;
+			case 3: if(DisplayAmPmMenu() == 1)
 					{
 						FillDisplay(0x00); //Clear Screen
 						return;
@@ -864,8 +1212,9 @@ void DisplayMenu()
 	while(1)
 	{
 		int tmpUpBtn, tmpDownBtn, goBack;
-		oledPutROMString((ROM_STRING)"Display Mode",2,6);
-		oledPutROMString((ROM_STRING)"12H/24H Interval",3,6);
+		oledPutROMString((ROM_STRING)"Display Mode",1,6);
+		oledPutROMString((ROM_STRING)"12H/24H Interval",2,6);
+		oledPutROMString((ROM_STRING)"Set AM/PM",3,6);
 		oledPutROMString((ROM_STRING)"Set Time",4,6);
 		oledPutROMString((ROM_STRING)"Set Date",5,6);
 		oledPutROMString((ROM_STRING)"Alarm",6,6);
@@ -881,7 +1230,7 @@ void DisplayMenu()
 		{
 			FillDisplay(0x00); //Clear Screen
 			mainMenuSelectedOption--;
-			if(mainMenuSelectedOption < 2)
+			if(mainMenuSelectedOption < 1)
 				mainMenuSelectedOption = 6;
 		}
 	
@@ -891,7 +1240,7 @@ void DisplayMenu()
 			FillDisplay(0x00); //Clear Screen
 			mainMenuSelectedOption++;
 			if(mainMenuSelectedOption > 6)
-				mainMenuSelectedOption = 2;
+				mainMenuSelectedOption = 1;
 		}
 		
 		//Check if any option is selected by pressing the black button
@@ -905,11 +1254,14 @@ void DisplayMenu()
 		if(goBack == 1)
 		{
 			IsMenuOpen = FALSE;
-			mainMenuSelectedOption = 2;
+			mainMenuSelectedOption = 1;
 			FillDisplay(0x00); //Clear Screen
 			return;
 		}	
-	
+		
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
 	}
 }
 
@@ -938,13 +1290,34 @@ void main(void)
 
     InitializeSystem();
 
+	// Initialize Timer 0
+	T0CON = 0x05;
+	// Initialize Timer Interrupt
+	RCONbits.IPEN = 1 ;			//Prio Enable
+	INTCON2bits.TMR0IP = 1 ;	//Use Hi-Prio
+	INTCON = 0xE0 ;				//Enable Timer Interrupt
+
+	T0CON |= 0x80 ;				//Start the Timer
+
     while(1)							//Main is Usualy an Endless Loop
     {
     // Application-specific tasks.
     // Application related code may be added here
 
 		if(IsClockSet)
-			DisplayClock();
+		{
+			if(IsMenuOpen == FALSE)
+				DisplayClock();
+			else
+				DisplayMenu();
+			if(CheckButtonPressed())
+			{
+				FillDisplay(0x00); //Clear Screen
+				IsMenuOpen = TRUE;
+			}
+				
+		}
+			
 		else
 		{
 			if(IsMenuOpen == FALSE)
