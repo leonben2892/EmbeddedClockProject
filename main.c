@@ -61,6 +61,10 @@
 
 #include "OledGraphics.h"
 
+#include <math.h>
+
+
+
 
 //	========================	CONFIGURATION	========================
 
@@ -136,6 +140,12 @@ int month = 1, day = 1;
 
 //Booleans
 BOOL IsClockSet = FALSE, IsMenuOpen = FALSE, IsDigitalDisplay = TRUE, Is12H = TRUE, IsAM = TRUE;
+
+//Variables for testing
+BOOL testing = TRUE;
+int _x[60], _y[60];
+int radius = 32, bla = 0;
+int x0 = 65, y0 = 31;
 
 //	========================	PRIVATE PROTOTYPES	========================
 static void InitializeSystem(void);
@@ -246,7 +256,7 @@ BOOL CheckButtonPressed(void);
 		}	
 		INTCONbits.TMR0IF = 0;
 	}	
-  
+  	
   } //This return will be a "retfie fast", since this is in a #pragma interrupt section 
   #pragma interruptlow YourLowPriorityISRCode
   void YourLowPriorityISRCode()
@@ -1340,10 +1350,83 @@ void DisplayMenu()
 	}
 }
 
+void Calculate60Points()
+{
+	int i;
+	float space = 0.0f;
+	for(i = 0; i < 60; i++)
+	{
+		_x[i] = x0 + radius*cos(space);
+		_y[i] = y0 + radius*sin(space);
+		space += 0.104f;
+	}
+}
 
+void PrintClockMainLines()
+{	
+	drawLine(_x[0], _y[0], _x[0]-10, _y[0], fat); //Right line
+	
+	drawLine(_x[5], _y[5], _x[5]-5, _y[5]-5, thick); //Diagonal bottom right line 1
+	drawLine(_x[10], _y[10], _x[10]-5, _y[10]-5, thick); //Diagonal bottom right line 2
 
+	drawLine(_x[15], _y[15], _x[15], _y[15]-10, fat); //Bottom line
+	
+	drawLine(_x[20], _y[20], _x[20]+5, _y[20]-5, thick); //Diagonal bottom left line 1
+	drawLine(_x[25], _y[25], _x[25]+5, _y[25]-5, thick); //Diagonal bottom left line 2
+	
+	drawLine(_x[30], _y[30], _x[30]+10, _y[30], fat); //Left line
+	
+	drawLine(_x[35], _y[35], _x[35]+5, _y[35]+5, thick); //Diagonal top left line 1
+	drawLine(_x[40], _y[40], _x[40]+5, _y[40]+5, thick); //Diagonal top left line 2
 
+	drawLine(_x[45], _y[45], _x[45], _y[45]+10, fat); //Top line
 
+	drawLine(_x[50], _y[50], _x[50]-5, _y[50]+5, thick); //Diagonal top right line 1
+	drawLine(_x[55], _y[55], _x[55]-5, _y[55]+5, thick); //Diagonal top right line 2
+
+}
+
+int CalibrateSecondsLineLength(int i)
+{
+	int tmpX = _x[i] - x0;
+	if(fabs(tmpX) < 17)
+	{
+		while(fabs(tmpX) < 17)
+			tmpX++;
+		return tmpX;
+	}
+
+	if(fabs(tmpX) > 17)
+	{
+		while(fabs(tmpX) > 17)
+			tmpX--;
+		return tmpX;
+	}
+}
+
+void DrawAnalogClock()
+{
+	int i=0, w;
+//	char timeBuffer[10];
+//	int x, y;
+//	x = fabs(_x[0] - x0);
+//	y = fabs(_y[0] - y0);
+//	sprintf(timeBuffer,"%d | %d",x,y);
+//	oledPutString(timeBuffer, 0, 0);
+//	drawLine(x0, y0, _x[0], _y[0], thin);
+	PrintClockMainLines();
+	while(1)
+	{
+		w = CalibrateSecondsLineLength(i);
+		drawLine(x0, y0, _x[i]-w, _y[i], thin);
+		DelayMs(100);
+		FillDisplay(0x00); //Clear Screen
+		PrintClockMainLines();
+		i++;
+		if(i > 14)
+			i = 0;
+	}
+}
 
 /********************************************************************
  * Function:        void main(void)
@@ -1364,7 +1447,6 @@ void main(void)
 {
 
     InitializeSystem();
-
 	// Initialize Timer 0
 	T0CON = 0x05;
 	// Initialize Timer Interrupt
@@ -1378,36 +1460,48 @@ void main(void)
     {
     // Application-specific tasks.
     // Application related code may be added here
-
-		if(IsClockSet)
+		if(testing == TRUE)
 		{
-			if(IsMenuOpen == FALSE)
-				DisplayClock();
-			else
-				DisplayMenu();
-			if(CheckButtonPressed())
+			if(bla == 0)
 			{
-				FillDisplay(0x00); //Clear Screen
-				IsMenuOpen = TRUE;
+				Calculate60Points();
+				DrawAnalogClock();	
+				bla = 1;
 			}
-				
-		}
 			
+		}
 		else
 		{
-			if(IsMenuOpen == FALSE)
+			if(IsClockSet)
 			{
-				oledPutROMString((ROM_STRING)"Clock is not set!",3,10);
-				oledPutROMString((ROM_STRING)"Black button for menu",5,2);
+				if(IsMenuOpen == FALSE)
+					DisplayClock();
+				else
+					DisplayMenu();
 				if(CheckButtonPressed())
 				{
-					IsMenuOpen = TRUE;
 					FillDisplay(0x00); //Clear Screen
+					IsMenuOpen = TRUE;
 				}
+					
 			}
+				
 			else
-				DisplayMenu();	
-		}		
+			{
+				if(IsMenuOpen == FALSE)
+				{
+					oledPutROMString((ROM_STRING)"Clock is not set!",3,10);
+					oledPutROMString((ROM_STRING)"Black button for menu",5,2);
+					if(CheckButtonPressed())
+					{
+						IsMenuOpen = TRUE;
+						FillDisplay(0x00); //Clear Screen
+					}
+				}
+				else
+					DisplayMenu();	
+			}	
+		}	
     }
 }//end main
 
