@@ -59,6 +59,8 @@
 
 #include "soft_start.h"
 
+#include "OledGraphics.h"
+
 
 //	========================	CONFIGURATION	========================
 
@@ -141,12 +143,10 @@ static void ProcessIO(void);
 static void UserInit(void);
 static void YourHighPriorityISRCode();
 static void YourLowPriorityISRCode();
-void AddMinute();
-void AddHour();
-void AddDay();
-void AddMonth();
-
-
+void AddMinute(void);
+void AddHour(void);
+void AddDay(void);
+void AddMonth(void);
 BOOL CheckButtonPressed(void);
 
 //	========================	VECTOR REMAPPING	========================
@@ -402,9 +402,9 @@ void AddHour()
 	}
 	else
 	{
-		if(hour > 24)
+		if(hour > 23)
 		{
-			hour = 1;
+			hour = 0;
 			AddDay();
 		}
 	}
@@ -534,26 +534,26 @@ void PrintMinutes()
 	rDigit = minute % 10;
 	switch(lDigit)
 	{
-		case 0: PrintDigit(0x20,digitPos[1][0]);break;
-		case 1: PrintDigit(0x24,digitPos[1][0]);break;
-		case 2: PrintDigit(0x28,digitPos[1][0]);break;
-		case 3: PrintDigit(0x2C,digitPos[1][0]);break;
-		case 4: PrintDigit(0x30,digitPos[1][0]);break;
-		case 5: PrintDigit(0x34,digitPos[1][0]);break;
+		case 0: PrintBigDigit(0x20,digitPos[1][0]);break;
+		case 1: PrintBigDigit(0x24,digitPos[1][0]);break;
+		case 2: PrintBigDigit(0x28,digitPos[1][0]);break;
+		case 3: PrintBigDigit(0x2C,digitPos[1][0]);break;
+		case 4: PrintBigDigit(0x30,digitPos[1][0]);break;
+		case 5: PrintBigDigit(0x34,digitPos[1][0]);break;
 	}
 
 	switch(rDigit)
 	{
-		case 0: PrintDigit(0x20,digitPos[1][1]);break;
-		case 1: PrintDigit(0x24,digitPos[1][1]);break;
-		case 2: PrintDigit(0x28,digitPos[1][1]);break;
-		case 3: PrintDigit(0x2C,digitPos[1][1]);break;
-		case 4: PrintDigit(0x30,digitPos[1][1]);break;
-		case 5: PrintDigit(0x34,digitPos[1][1]);break;
-		case 6: PrintDigit(0x38,digitPos[1][1]);break;
-		case 7: PrintDigit(0x3C,digitPos[1][1]);break;
-		case 8: PrintDigit(0x40,digitPos[1][1]);break;
-		case 9: PrintDigit(0x44,digitPos[1][1]);break;
+		case 0: PrintBigDigit(0x20,digitPos[1][1]);break;
+		case 1: PrintBigDigit(0x24,digitPos[1][1]);break;
+		case 2: PrintBigDigit(0x28,digitPos[1][1]);break;
+		case 3: PrintBigDigit(0x2C,digitPos[1][1]);break;
+		case 4: PrintBigDigit(0x30,digitPos[1][1]);break;
+		case 5: PrintBigDigit(0x34,digitPos[1][1]);break;
+		case 6: PrintBigDigit(0x38,digitPos[1][1]);break;
+		case 7: PrintBigDigit(0x3C,digitPos[1][1]);break;
+		case 8: PrintBigDigit(0x40,digitPos[1][1]);break;
+		case 9: PrintBigDigit(0x44,digitPos[1][1]);break;
 	}
 }
 
@@ -564,26 +564,26 @@ void PrintSeconds()
 	rDigit = second % 10;
 	switch(lDigit)
 	{
-		case 0: PrintDigit(0x20,digitPos[2][0]);break;
-		case 1: PrintDigit(0x24,digitPos[2][0]);break;
-		case 2: PrintDigit(0x28,digitPos[2][0]);break;
-		case 3: PrintDigit(0x2C,digitPos[2][0]);break;
-		case 4: PrintDigit(0x30,digitPos[2][0]);break;
-		case 5: PrintDigit(0x34,digitPos[2][0]);break;
+		case 0: PrintBigDigit(0x20,digitPos[2][0]);break;
+		case 1: PrintBigDigit(0x24,digitPos[2][0]);break;
+		case 2: PrintBigDigit(0x28,digitPos[2][0]);break;
+		case 3: PrintBigDigit(0x2C,digitPos[2][0]);break;
+		case 4: PrintBigDigit(0x30,digitPos[2][0]);break;
+		case 5: PrintBigDigit(0x34,digitPos[2][0]);break;
 	}
 
 	switch(rDigit)
 	{
-		case 0: PrintDigit(0x20,digitPos[2][1]);break;
-		case 1: PrintDigit(0x24,digitPos[2][1]);break;
-		case 2: PrintDigit(0x28,digitPos[2][1]);break;
-		case 3: PrintDigit(0x2C,digitPos[2][1]);break;
-		case 4: PrintDigit(0x30,digitPos[2][1]);break;
-		case 5: PrintDigit(0x34,digitPos[2][1]);break;
-		case 6: PrintDigit(0x38,digitPos[2][1]);break;
-		case 7: PrintDigit(0x3C,digitPos[2][1]);break;
-		case 8: PrintDigit(0x40,digitPos[2][1]);break;
-		case 9: PrintDigit(0x44,digitPos[2][1]);break;
+		case 0: PrintBigDigit(0x20,digitPos[2][1]);break;
+		case 1: PrintBigDigit(0x24,digitPos[2][1]);break;
+		case 2: PrintBigDigit(0x28,digitPos[2][1]);break;
+		case 3: PrintBigDigit(0x2C,digitPos[2][1]);break;
+		case 4: PrintBigDigit(0x30,digitPos[2][1]);break;
+		case 5: PrintBigDigit(0x34,digitPos[2][1]);break;
+		case 6: PrintBigDigit(0x38,digitPos[2][1]);break;
+		case 7: PrintBigDigit(0x3C,digitPos[2][1]);break;
+		case 8: PrintBigDigit(0x40,digitPos[2][1]);break;
+		case 9: PrintBigDigit(0x44,digitPos[2][1]);break;
 	}
 }
 
@@ -591,18 +591,18 @@ void Print12HourClock()
 {
 	switch(hour)
 	{
-		case 1: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
-		case 2: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
-		case 3: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
-		case 4: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x30,digitPos[0][1]);break;
-		case 5: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x34,digitPos[0][1]);break;
-		case 6: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x38,digitPos[0][1]);break;
-		case 7: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x3C,digitPos[0][1]);break;
-		case 8: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x40,digitPos[0][1]);break;
-		case 9: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x44,digitPos[0][1]);break;
-		case 10: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
-		case 11: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
-		case 12: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
+		case 1: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
+		case 2: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
+		case 3: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
+		case 4: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x30,digitPos[0][1]);break;
+		case 5: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x34,digitPos[0][1]);break;
+		case 6: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x38,digitPos[0][1]);break;
+		case 7: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x3C,digitPos[0][1]);break;
+		case 8: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x40,digitPos[0][1]);break;
+		case 9: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x44,digitPos[0][1]);break;
+		case 10: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
+		case 11: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
+		case 12: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
 	}
 	PrintMinutes();
 	PrintSeconds();
@@ -616,30 +616,30 @@ void Print24HourClock()
 {
 	switch(hour)
 	{
-		case 1: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
-		case 2: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
-		case 3: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
-		case 4: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x30,digitPos[0][1]);break;
-		case 5: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x34,digitPos[0][1]);break;
-		case 6: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x38,digitPos[0][1]);break;
-		case 7: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x3C,digitPos[0][1]);break;
-		case 8: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x40,digitPos[0][1]);break;
-		case 9: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x44,digitPos[0][1]);break;
-		case 10: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
-		case 11: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
-		case 12: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
-		case 13: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
-		case 14: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x30,digitPos[0][1]);break;
-		case 15: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x34,digitPos[0][1]);break;
-		case 16: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x38,digitPos[0][1]);break;
-		case 17: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x3C,digitPos[0][1]);break;
-		case 18: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x40,digitPos[0][1]);break;
-		case 19: PrintDigit(0x24,digitPos[0][0]);PrintDigit(0x44,digitPos[0][1]);break;
-		case 20: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
-		case 21: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x24,digitPos[0][1]);break;
-		case 22: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x28,digitPos[0][1]);break;
-		case 23: PrintDigit(0x28,digitPos[0][0]);PrintDigit(0x2C,digitPos[0][1]);break;
-		case 24: PrintDigit(0x20,digitPos[0][0]);PrintDigit(0x20,digitPos[0][1]);break;
+		case 1: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
+		case 2: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
+		case 3: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
+		case 4: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x30,digitPos[0][1]);break;
+		case 5: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x34,digitPos[0][1]);break;
+		case 6: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x38,digitPos[0][1]);break;
+		case 7: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x3C,digitPos[0][1]);break;
+		case 8: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x40,digitPos[0][1]);break;
+		case 9: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x44,digitPos[0][1]);break;
+		case 10: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
+		case 11: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
+		case 12: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
+		case 13: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
+		case 14: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x30,digitPos[0][1]);break;
+		case 15: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x34,digitPos[0][1]);break;
+		case 16: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x38,digitPos[0][1]);break;
+		case 17: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x3C,digitPos[0][1]);break;
+		case 18: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x40,digitPos[0][1]);break;
+		case 19: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x44,digitPos[0][1]);break;
+		case 20: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
+		case 21: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
+		case 22: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
+		case 23: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
+		case 0: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
 	}
 	PrintMinutes();
 	PrintSeconds();
@@ -687,7 +687,19 @@ void DisplaySmallClock()
 {
 	char timeBuffer[10];
 	sprintf(timeBuffer,"%02d:%02d:%02d",hour,minute,second);
-	oledPutString(timeBuffer, 7, 80);
+	if(Is12H)
+	{
+		oledPutString(timeBuffer, 7, 60);
+		if(IsAM)
+			oledPutROMString((ROM_STRING)"AM",7,110);
+		else
+			oledPutROMString((ROM_STRING)"PM",7,110);
+	}
+	else
+	{
+		oledPutString(timeBuffer, 7, 80);
+	}
+		
 }
 
 int DisplayModeMenu()
@@ -697,7 +709,7 @@ int DisplayModeMenu()
 		int tmpUpBtn, tmpDownBtn;
 		oledPutROMString((ROM_STRING)"Display Mode",0,30);
 		oledPutROMString((ROM_STRING)"Digital",3,30);
-		oledPutROMString((ROM_STRING)"Analog",6,30);
+		oledPutROMString((ROM_STRING)"Analog",5,30);
 	
 		//Navigate the menu through UP & DOWN buttons
 		mTouchCalibrate();
@@ -705,10 +717,10 @@ int DisplayModeMenu()
 		if(tmpUpBtn == 1)
 		{
 			FillDisplay(0x00); //Clear Screen
-			if(displayModeSelectedOption == 6)
+			if(displayModeSelectedOption == 5)
 				displayModeSelectedOption = 3;
 			else
-				displayModeSelectedOption = 6;
+				displayModeSelectedOption = 5;
 		}
 	
 		tmpDownBtn = ReadDownButton();
@@ -716,7 +728,7 @@ int DisplayModeMenu()
 		{
 			FillDisplay(0x00); //Clear Screen
 			if(displayModeSelectedOption == 3)
-				displayModeSelectedOption = 6;
+				displayModeSelectedOption = 5;
 			else
 				displayModeSelectedOption = 3;
 		}
@@ -741,6 +753,65 @@ int DisplayModeMenu()
 	}	
 }
 
+void ConvertClock()
+{
+	if(Is12H)
+	{
+		if(IsAM)
+		{
+			if(hour == 12)
+				hour = 0;
+		}
+		else
+		{
+			switch(hour)
+			{
+				case 1: hour = 13;break;
+				case 2: hour = 14;break;
+				case 3: hour = 15;break;
+				case 4: hour = 16;break;
+				case 5: hour = 17;break;
+				case 6: hour = 18;break;
+				case 7: hour = 19;break;
+				case 8: hour = 20;break;
+				case 9: hour = 21;break;
+				case 10: hour = 22;break;
+				case 11: hour = 23;break;
+			}
+		}
+	}
+	else
+	{
+		switch(hour)
+		{
+			case 0: IsAM = TRUE; hour = 12;break;
+			case 1: IsAM = TRUE;break;
+			case 2: IsAM = TRUE;break;
+			case 3: IsAM = TRUE;break;
+			case 4: IsAM = TRUE;break;
+			case 5: IsAM = TRUE;break;
+			case 6: IsAM = TRUE;break;
+			case 7: IsAM = TRUE;break;
+			case 8: IsAM = TRUE;break;
+			case 9: IsAM = TRUE;break;
+			case 10: IsAM = TRUE;break;
+			case 11: IsAM = TRUE;break;
+			case 12: IsAM = FALSE;break;
+			case 13: IsAM = FALSE; hour = 1;break;
+			case 14: IsAM = FALSE; hour = 2;break;
+			case 15: IsAM = FALSE; hour = 3;break;
+			case 16: IsAM = FALSE; hour = 4;break;
+			case 17: IsAM = FALSE; hour = 5;break;
+			case 18: IsAM = FALSE; hour = 6;break;
+			case 19: IsAM = FALSE; hour = 7;break;
+			case 20: IsAM = FALSE; hour = 8;break;
+			case 21: IsAM = FALSE; hour = 9;break;
+			case 22: IsAM = FALSE; hour = 10;break;
+			case 23: IsAM = FALSE; hour = 11;break;
+		}
+	}
+}
+
 int DisplayIntervalMenu()
 {
 	while(1)
@@ -748,7 +819,7 @@ int DisplayIntervalMenu()
 		int tmpUpBtn, tmpDownBtn;
 		oledPutROMString((ROM_STRING)"Interval Menu",0,30);
 		oledPutROMString((ROM_STRING)"12H",3,50);
-		oledPutROMString((ROM_STRING)"24H",6,50);
+		oledPutROMString((ROM_STRING)"24H",5,50);
 	
 		//Navigate the menu through UP & DOWN buttons
 		mTouchCalibrate();
@@ -756,10 +827,10 @@ int DisplayIntervalMenu()
 		if(tmpUpBtn == 1)
 		{
 			FillDisplay(0x00); //Clear Screen
-			if(displayIntervaSelectedOption == 6)
+			if(displayIntervaSelectedOption == 5)
 				displayIntervaSelectedOption = 3;
 			else
-				displayIntervaSelectedOption = 6;
+				displayIntervaSelectedOption = 5;
 		}
 	
 		tmpDownBtn = ReadDownButton();
@@ -767,7 +838,7 @@ int DisplayIntervalMenu()
 		{
 			FillDisplay(0x00); //Clear Screen
 			if(displayIntervaSelectedOption == 3)
-				displayIntervaSelectedOption = 6;
+				displayIntervaSelectedOption = 5;
 			else
 				displayIntervaSelectedOption = 3;
 		}
@@ -776,13 +847,21 @@ int DisplayIntervalMenu()
 		oledPutROMString((ROM_STRING)"*", displayIntervaSelectedOption, 42);
 		oledPutROMString((ROM_STRING)"*", displayIntervaSelectedOption, 70);
 		
-		//Confirm selection by pressing the black button
+		//Confirm selection by pressing the black button + Convert clock to 12H / 24H if needed
 		if(CheckButtonPressed())
 		{
-			if(displayIntervaSelectedOption == 3)
+			if(displayIntervaSelectedOption == 3 && Is12H != TRUE)
+			{
+				if(IsClockSet)
+					ConvertClock();
 				Is12H = TRUE;
-			else
+			}			
+			else if(displayIntervaSelectedOption == 5 && Is12H != FALSE)
+			{
+				if(IsClockSet)
+					ConvertClock();
 				Is12H = FALSE;
+			}		
 			return 1;
 		}
 
@@ -801,7 +880,7 @@ int DisplayAmPmMenu()
 			int tmpUpBtn, tmpDownBtn;
 			oledPutROMString((ROM_STRING)"AM/PM Menu",0,30);
 			oledPutROMString((ROM_STRING)"AM",3,50);
-			oledPutROMString((ROM_STRING)"PM",6,50);
+			oledPutROMString((ROM_STRING)"PM",5,50);
 		
 			//Navigate the menu through UP & DOWN buttons
 			mTouchCalibrate();
@@ -809,10 +888,10 @@ int DisplayAmPmMenu()
 			if(tmpUpBtn == 1)
 			{
 				FillDisplay(0x00); //Clear Screen
-				if(amPmSelectedOption == 6)
+				if(amPmSelectedOption == 5)
 					amPmSelectedOption = 3;
 				else
-					amPmSelectedOption = 6;
+					amPmSelectedOption = 5;
 			}
 		
 			tmpDownBtn = ReadDownButton();
@@ -820,7 +899,7 @@ int DisplayAmPmMenu()
 			{
 				FillDisplay(0x00); //Clear Screen
 				if(amPmSelectedOption == 3)
-					amPmSelectedOption = 6;
+					amPmSelectedOption = 5;
 				else
 					amPmSelectedOption = 3;
 			}
@@ -997,14 +1076,10 @@ int DisplaySetTimeMenu()
 		//Confirm time by pressing the black button
 		if(CheckButtonPressed())
 		{
-			if(hour != 0)
-				hour = tmpHour;
-			else 
-				hour = 24;
+			hour = tmpHour;
 			minute = tmpMinute;
 			second = tmpSecond;
-			if((hour != 0) && (minute != 0) && (second != 0))
-				IsClockSet = TRUE;
+			IsClockSet = TRUE;
 			return 1;
 		}
 
