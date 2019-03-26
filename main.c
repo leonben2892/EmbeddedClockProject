@@ -143,8 +143,8 @@ BOOL IsClockSet = FALSE, IsMenuOpen = FALSE, IsDigitalDisplay = TRUE, Is12H = TR
 
 //Variables for testing
 BOOL testing = TRUE;
-int _x[60], _y[60];
 int radius = 32, bla = 0;
+int _x[60], _y[60];
 int x0 = 65, y0 = 31;
 
 //	========================	PRIVATE PROTOTYPES	========================
@@ -158,6 +158,7 @@ void AddHour(void);
 void AddDay(void);
 void AddMonth(void);
 BOOL CheckButtonPressed(void);
+
 
 //	========================	VECTOR REMAPPING	========================
 #if defined(__18CXX)
@@ -537,129 +538,62 @@ int ReadDownButton()
 	return 0;
 }
 
-void PrintMinutes()
+void PrintDigitalTime(int timeType)
 {
 	int lDigit, rDigit;
-	lDigit = minute / 10;
-	rDigit = minute % 10;
+	if(timeType == 0)//Prints hour
+	{
+		lDigit = hour / 10;
+		rDigit = hour % 10;
+	}
+	else if(timeType == 1)//Prints minute
+	{
+		lDigit = minute / 10;
+		rDigit = minute % 10;
+	}
+	else//Prints seconds
+	{
+		lDigit = second / 10;
+		rDigit = second % 10;
+	}
+
 	switch(lDigit)
 	{
-		case 0: PrintBigDigit(0x20,digitPos[1][0]);break;
-		case 1: PrintBigDigit(0x24,digitPos[1][0]);break;
-		case 2: PrintBigDigit(0x28,digitPos[1][0]);break;
-		case 3: PrintBigDigit(0x2C,digitPos[1][0]);break;
-		case 4: PrintBigDigit(0x30,digitPos[1][0]);break;
-		case 5: PrintBigDigit(0x34,digitPos[1][0]);break;
+		case 0: PrintBigDigit(0x20,digitPos[timeType][0]);break;
+		case 1: PrintBigDigit(0x24,digitPos[timeType][0]);break;
+		case 2: PrintBigDigit(0x28,digitPos[timeType][0]);break;
+		case 3: PrintBigDigit(0x2C,digitPos[timeType][0]);break;
+		case 4: PrintBigDigit(0x30,digitPos[timeType][0]);break;
+		case 5: PrintBigDigit(0x34,digitPos[timeType][0]);break;
 	}
 
 	switch(rDigit)
 	{
-		case 0: PrintBigDigit(0x20,digitPos[1][1]);break;
-		case 1: PrintBigDigit(0x24,digitPos[1][1]);break;
-		case 2: PrintBigDigit(0x28,digitPos[1][1]);break;
-		case 3: PrintBigDigit(0x2C,digitPos[1][1]);break;
-		case 4: PrintBigDigit(0x30,digitPos[1][1]);break;
-		case 5: PrintBigDigit(0x34,digitPos[1][1]);break;
-		case 6: PrintBigDigit(0x38,digitPos[1][1]);break;
-		case 7: PrintBigDigit(0x3C,digitPos[1][1]);break;
-		case 8: PrintBigDigit(0x40,digitPos[1][1]);break;
-		case 9: PrintBigDigit(0x44,digitPos[1][1]);break;
+		case 0: PrintBigDigit(0x20,digitPos[timeType][1]);break;
+		case 1: PrintBigDigit(0x24,digitPos[timeType][1]);break;
+		case 2: PrintBigDigit(0x28,digitPos[timeType][1]);break;
+		case 3: PrintBigDigit(0x2C,digitPos[timeType][1]);break;
+		case 4: PrintBigDigit(0x30,digitPos[timeType][1]);break;
+		case 5: PrintBigDigit(0x34,digitPos[timeType][1]);break;
+		case 6: PrintBigDigit(0x38,digitPos[timeType][1]);break;
+		case 7: PrintBigDigit(0x3C,digitPos[timeType][1]);break;
+		case 8: PrintBigDigit(0x40,digitPos[timeType][1]);break;
+		case 9: PrintBigDigit(0x44,digitPos[timeType][1]);break;
 	}
 }
 
-void PrintSeconds()
-{
-	int lDigit, rDigit;
-	lDigit = second / 10;
-	rDigit = second % 10;
-	switch(lDigit)
-	{
-		case 0: PrintBigDigit(0x20,digitPos[2][0]);break;
-		case 1: PrintBigDigit(0x24,digitPos[2][0]);break;
-		case 2: PrintBigDigit(0x28,digitPos[2][0]);break;
-		case 3: PrintBigDigit(0x2C,digitPos[2][0]);break;
-		case 4: PrintBigDigit(0x30,digitPos[2][0]);break;
-		case 5: PrintBigDigit(0x34,digitPos[2][0]);break;
-	}
-
-	switch(rDigit)
-	{
-		case 0: PrintBigDigit(0x20,digitPos[2][1]);break;
-		case 1: PrintBigDigit(0x24,digitPos[2][1]);break;
-		case 2: PrintBigDigit(0x28,digitPos[2][1]);break;
-		case 3: PrintBigDigit(0x2C,digitPos[2][1]);break;
-		case 4: PrintBigDigit(0x30,digitPos[2][1]);break;
-		case 5: PrintBigDigit(0x34,digitPos[2][1]);break;
-		case 6: PrintBigDigit(0x38,digitPos[2][1]);break;
-		case 7: PrintBigDigit(0x3C,digitPos[2][1]);break;
-		case 8: PrintBigDigit(0x40,digitPos[2][1]);break;
-		case 9: PrintBigDigit(0x44,digitPos[2][1]);break;
-	}
-}
-
-void Print12HourClock()
-{
-	switch(hour)
-	{
-		case 1: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
-		case 2: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
-		case 3: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
-		case 4: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x30,digitPos[0][1]);break;
-		case 5: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x34,digitPos[0][1]);break;
-		case 6: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x38,digitPos[0][1]);break;
-		case 7: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x3C,digitPos[0][1]);break;
-		case 8: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x40,digitPos[0][1]);break;
-		case 9: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x44,digitPos[0][1]);break;
-		case 10: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
-		case 11: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
-		case 12: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
-	}
-	PrintMinutes();
-	PrintSeconds();
-	if(IsAM)
-		oledPutROMString((ROM_STRING)"AM",7,110);
-	else
-		oledPutROMString((ROM_STRING)"PM",7,110);
-}
-
-void Print24HourClock()
-{
-	switch(hour)
-	{
-		case 1: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
-		case 2: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
-		case 3: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
-		case 4: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x30,digitPos[0][1]);break;
-		case 5: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x34,digitPos[0][1]);break;
-		case 6: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x38,digitPos[0][1]);break;
-		case 7: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x3C,digitPos[0][1]);break;
-		case 8: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x40,digitPos[0][1]);break;
-		case 9: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x44,digitPos[0][1]);break;
-		case 10: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
-		case 11: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
-		case 12: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
-		case 13: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
-		case 14: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x30,digitPos[0][1]);break;
-		case 15: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x34,digitPos[0][1]);break;
-		case 16: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x38,digitPos[0][1]);break;
-		case 17: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x3C,digitPos[0][1]);break;
-		case 18: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x40,digitPos[0][1]);break;
-		case 19: PrintBigDigit(0x24,digitPos[0][0]);PrintBigDigit(0x44,digitPos[0][1]);break;
-		case 20: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
-		case 21: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x24,digitPos[0][1]);break;
-		case 22: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x28,digitPos[0][1]);break;
-		case 23: PrintBigDigit(0x28,digitPos[0][0]);PrintBigDigit(0x2C,digitPos[0][1]);break;
-		case 0: PrintBigDigit(0x20,digitPos[0][0]);PrintBigDigit(0x20,digitPos[0][1]);break;
-	}
-	PrintMinutes();
-	PrintSeconds();
-}
 void DisplayDigitalClock()
 {
+	PrintDigitalTime(0); //Hour
+	PrintDigitalTime(1); //Minute
+	PrintDigitalTime(2); //Second
 	if(Is12H)
-		Print12HourClock();
-	else
-		Print24HourClock();
+	{
+		if(IsAM)
+			oledPutROMString((ROM_STRING)"AM",7,110);
+		else
+			oledPutROMString((ROM_STRING)"PM",7,110);
+	}
 }
 
 void DisplayDate()
@@ -685,12 +619,11 @@ void DisplayClock()
 		oledWriteChar1x(0x6F,0xB4 , 37);
 		oledWriteChar1x(0x6F,0xB3 , 82);
 		oledWriteChar1x(0x6F,0xB4 , 82);
-		
-		DisplayDate();
 	}
 		
 	else
 		DisplayAnalogClock();
+	DisplayDate();
 }
 
 void DisplaySmallClock()
@@ -1352,14 +1285,27 @@ void DisplayMenu()
 
 void Calculate60Points()
 {
-	int i;
-	float space = 0.0f;
-	for(i = 0; i < 60; i++)
+	int i,j = 0;
+	float angle;
+	float space = (2*3.14)/60;
+	for(i=0; i<60; i++)
 	{
-		_x[i] = x0 + radius*cos(space);
-		_y[i] = y0 + radius*sin(space);
-		space += 0.104f;
+		angle = space * i;
+		if(i+15 < 60)
+		{
+			_x[i+15] = x0 + radius * cos(angle);
+			_y[i+15] = y0 + radius * sin(angle);
+		}
+		else
+		{
+			_x[j] = x0 + radius * cos(angle);
+			_y[j] = y0 + radius * sin(angle);
+			j++;
+		}
+
+		
 	}
+	
 }
 
 void PrintClockMainLines()
@@ -1386,45 +1332,14 @@ void PrintClockMainLines()
 
 }
 
-int CalibrateSecondsLineLength(int i)
-{
-	int tmpX = _x[i] - x0;
-	if(fabs(tmpX) < 17)
-	{
-		while(fabs(tmpX) < 17)
-			tmpX++;
-		return tmpX;
-	}
-
-	if(fabs(tmpX) > 17)
-	{
-		while(fabs(tmpX) > 17)
-			tmpX--;
-		return tmpX;
-	}
-}
-
 void DrawAnalogClock()
 {
-	int i=0, w;
-//	char timeBuffer[10];
-//	int x, y;
-//	x = fabs(_x[0] - x0);
-//	y = fabs(_y[0] - y0);
-//	sprintf(timeBuffer,"%d | %d",x,y);
-//	oledPutString(timeBuffer, 0, 0);
-//	drawLine(x0, y0, _x[0], _y[0], thin);
-	PrintClockMainLines();
-	while(1)
+	int i=0;
+	//PrintClockMainLines();
+	for(i; i<60; i++)
 	{
-		w = CalibrateSecondsLineLength(i);
-		drawLine(x0, y0, _x[i]-w, _y[i], thin);
-		DelayMs(100);
-		FillDisplay(0x00); //Clear Screen
-		PrintClockMainLines();
-		i++;
-		if(i > 14)
-			i = 0;
+		drawLine(x0, y0, _x[i], _y[i], thin);
+		DelayMs(5);
 	}
 }
 
