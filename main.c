@@ -61,8 +61,6 @@
 
 #include "OledGraphics.h"
 
-#include <math.h>
-
 
 
 
@@ -141,11 +139,14 @@ int month = 1, day = 1;
 //Booleans
 BOOL IsClockSet = FALSE, IsMenuOpen = FALSE, IsDigitalDisplay = TRUE, Is12H = TRUE, IsAM = TRUE;
 
-//Variables for testing
-BOOL testing = TRUE;
-int radius = 32, bla = 0;
-int _x[60], _y[60];
-int x0 = 65, y0 = 31;
+//Analog Clock
+BOOL IsAnalogTimeUpdated = FALSE;
+BYTE radius = 18;
+rom BYTE _xClockHands[60] = {65,66,68,70,72,73,75,77,78,79,80,81,82,82,82,83,82,82,82,81,80,79,78,77,75,74,72,70,68,66,65,63,61,59,57,56,54,52,51,50,49,48,47,47,47,47,47,47,47,48,49,50,51,52,54,55,57,59,61,63};
+rom BYTE _yClockHands[60] = {13,13,13,13,14,15,16,17,18,20,21,23,25,27,29,31,32,34,36,38,40,41,43,44,45,46,47,48,48,48,49,48,48,48,47,46,45,44,43,41,40,38,36,34,32,31,29,27,25,23,22,20,18,17,16,15,14,13,13,13};
+rom BYTE _x[60] = {65,68,71,74,78,80,83,86,88,90,92,94,95,96,96,97,96,96,95,94,92,90,88,86,83,81,78,74,71,68,65,61,58,55,51,49,46,43,41,39,37,35,34,33,33,33,33,33,34,35,37,39,41,43,46,48,51,55,58,61};
+rom BYTE _y[60] = {-1,0,0,0,1,3,5,7,9,12,14,17,21,24,27,31,34,37,40,44,47,49,52,54,56,58,60,61,62,62,63,62,62,61,60,58,56,54,52,49,47,44,40,37,34,31,27,24,21,17,15,12,9,7,5,3,1,0,0,0};
+BYTE xC = 65, yC = 31, analogHour =0;
 
 //	========================	PRIVATE PROTOTYPES	========================
 static void InitializeSystem(void);
@@ -153,10 +154,15 @@ static void ProcessIO(void);
 static void UserInit(void);
 static void YourHighPriorityISRCode();
 static void YourLowPriorityISRCode();
+void AddSecond(void);
 void AddMinute(void);
 void AddHour(void);
 void AddDay(void);
 void AddMonth(void);
+void SetAnalogHour(void);
+void DisplayAnalogClock(void);
+void PrintClockMainLines(void);
+void ConvertClock(void);
 BOOL CheckButtonPressed(void);
 
 
@@ -249,12 +255,8 @@ BOOL CheckButtonPressed(void);
 		TMR0H = 0x48 ;				//Write 0xCE51 to 16 bit Timer0
 		TMR0L = 0xE3 ;
 		
-		second++;
-		if(second > 59)
-		{
-			second = 0;
-			AddMinute();
-		}	
+		AddSecond();	
+		IsAnalogTimeUpdated = FALSE;
 		INTCONbits.TMR0IF = 0;
 	}	
   	
@@ -383,6 +385,16 @@ BOOL CheckButtonPressed(void)
     return FALSE;
 }
 
+void AddSecond()
+{
+	second++;
+	if(second > 59)
+	{
+		second = 0;
+		AddMinute();
+	}
+}
+
 void AddMinute()
 {
 	minute++;
@@ -390,13 +402,13 @@ void AddMinute()
 	{
 		minute = 0;
 		AddHour();
-	}
-		
+	}	
 }
 
 void AddHour()
 {
 	hour++;
+	SetAnalogHour();
 	if(Is12H)
 	{
 		if(hour > 12 && IsAM == TRUE)
@@ -603,9 +615,47 @@ void DisplayDate()
 	oledPutString(timeBuffer, 7, 2);
 }
 
+void PrintClockMainLines()
+{	
+	drawLine(_x[0], _y[0], _x[0], _y[0]+10, fat); //Top Line
+	
+	drawLine(_x[5], _y[5], _x[5]-5, _y[5]+5, thick); //Diagonal top right line 1
+	drawLine(_x[10], _y[10], _x[10]-5, _y[10]+5, thick); //Diagonal top right line 2
+
+	drawLine(_x[15], _y[15], _x[15]-10, _y[15], fat); //Right line
+	
+	drawLine(_x[20], _y[20], _x[20]-5, _y[20]-5, thick); //Diagonal bottom right line 1
+	drawLine(_x[25], _y[25], _x[25]-5, _y[25]-5, thick); //Diagonal bottom right line 2
+	
+	drawLine(_x[30], _y[30], _x[30], _y[30]-10, fat); //Bottom line
+	
+	drawLine(_x[35], _y[35], _x[35]+5, _y[35]-5, thick); //Diagonal bottom left line 1
+	drawLine(_x[40], _y[40], _x[40]+5, _y[40]-5, thick); //Diagonal bottom left line 2
+
+	drawLine(_x[45], _y[45], _x[45]+10, _y[45], fat); //Left line
+
+	drawLine(_x[50], _y[50], _x[50]+5, _y[50]+5, thick); //Diagonal top left line 1
+	drawLine(_x[55], _y[55], _x[55]+5, _y[55]+5, thick); //Diagonal top left line 2
+
+}
+
 void DisplayAnalogClock()
 {
-
+	if(IsAnalogTimeUpdated == FALSE)
+	{
+		FillDisplay(0x00);
+		PrintClockMainLines();
+		drawLine(xC, yC, _xClockHands[second], _yClockHands[second], thin);
+		drawLine(xC, yC, _xClockHands[second-1], _yClockHands[second], thin);
+		drawLine(xC, yC, _xClockHands[minute], _yClockHands[minute], thick);
+		drawLine(xC, yC, _xClockHands[analogHour], _yClockHands[analogHour], fat);
+			
+		if(IsAM)
+			oledPutROMString((ROM_STRING)"AM",7,110);
+		else
+			oledPutROMString((ROM_STRING)"PM",7,110);
+		IsAnalogTimeUpdated = TRUE;
+	}
 }
 
 void DisplayClock()
@@ -686,7 +736,12 @@ int DisplayModeMenu()
 			if(displayModeSelectedOption == 3)
 				IsDigitalDisplay = TRUE;
 			else
-				IsDigitalDisplay = FALSE;
+			{
+				if(Is12H == FALSE && IsClockSet == TRUE)
+					ConvertClock();
+				Is12H = TRUE;
+				IsDigitalDisplay = FALSE;			
+			}		
 			return 1;
 		}
 		
@@ -967,6 +1022,37 @@ void ChangeSecond()
 	}
 }
 
+void SetAnalogHour()
+{
+	switch(hour)
+	{
+		case 0:
+		case 12: analogHour=0;break;
+		case 1:
+		case 13: analogHour=5;break;
+		case 2:
+		case 14: analogHour=10;break;
+		case 3:
+		case 15: analogHour=15;break;
+		case 4:
+		case 16: analogHour=20;break;
+		case 5:
+		case 17: analogHour=25;break;
+		case 6:
+		case 18: analogHour=30;break;
+		case 7:
+		case 19: analogHour=35;break;
+		case 8:
+		case 20: analogHour=40;break;
+		case 9:
+		case 21: analogHour=45;break;
+		case 10:
+		case 22: analogHour=50;break;
+		case 11:
+		case 23: analogHour=55;break;
+	}
+}
+
 int DisplaySetTimeMenu()
 {
 	while(1)
@@ -1022,6 +1108,7 @@ int DisplaySetTimeMenu()
 			hour = tmpHour;
 			minute = tmpMinute;
 			second = tmpSecond;
+			SetAnalogHour();
 			IsClockSet = TRUE;
 			return 1;
 		}
@@ -1054,6 +1141,11 @@ void ChangeMonth()
 		if(month < 1)
 			month = 12;
 	}
+	
+	if(month == 2 && day > 28)
+		day = 28;
+	else if((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+		day = 30;
 }
 
 void ChangeDay()
@@ -1283,66 +1375,6 @@ void DisplayMenu()
 	}
 }
 
-void Calculate60Points()
-{
-	int i,j = 0;
-	float angle;
-	float space = (2*3.14)/60;
-	for(i=0; i<60; i++)
-	{
-		angle = space * i;
-		if(i+15 < 60)
-		{
-			_x[i+15] = x0 + radius * cos(angle);
-			_y[i+15] = y0 + radius * sin(angle);
-		}
-		else
-		{
-			_x[j] = x0 + radius * cos(angle);
-			_y[j] = y0 + radius * sin(angle);
-			j++;
-		}
-
-		
-	}
-	
-}
-
-void PrintClockMainLines()
-{	
-	drawLine(_x[0], _y[0], _x[0]-10, _y[0], fat); //Right line
-	
-	drawLine(_x[5], _y[5], _x[5]-5, _y[5]-5, thick); //Diagonal bottom right line 1
-	drawLine(_x[10], _y[10], _x[10]-5, _y[10]-5, thick); //Diagonal bottom right line 2
-
-	drawLine(_x[15], _y[15], _x[15], _y[15]-10, fat); //Bottom line
-	
-	drawLine(_x[20], _y[20], _x[20]+5, _y[20]-5, thick); //Diagonal bottom left line 1
-	drawLine(_x[25], _y[25], _x[25]+5, _y[25]-5, thick); //Diagonal bottom left line 2
-	
-	drawLine(_x[30], _y[30], _x[30]+10, _y[30], fat); //Left line
-	
-	drawLine(_x[35], _y[35], _x[35]+5, _y[35]+5, thick); //Diagonal top left line 1
-	drawLine(_x[40], _y[40], _x[40]+5, _y[40]+5, thick); //Diagonal top left line 2
-
-	drawLine(_x[45], _y[45], _x[45], _y[45]+10, fat); //Top line
-
-	drawLine(_x[50], _y[50], _x[50]-5, _y[50]+5, thick); //Diagonal top right line 1
-	drawLine(_x[55], _y[55], _x[55]-5, _y[55]+5, thick); //Diagonal top right line 2
-
-}
-
-void DrawAnalogClock()
-{
-	int i=0;
-	//PrintClockMainLines();
-	for(i; i<60; i++)
-	{
-		drawLine(x0, y0, _x[i], _y[i], thin);
-		DelayMs(5);
-	}
-}
-
 /********************************************************************
  * Function:        void main(void)
  *
@@ -1375,47 +1407,34 @@ void main(void)
     {
     // Application-specific tasks.
     // Application related code may be added here
-		if(testing == TRUE)
+		if(IsClockSet)
 		{
-			if(bla == 0)
+			if(IsMenuOpen == FALSE)
+				DisplayClock();
+			else
+				DisplayMenu();
+			if(CheckButtonPressed())
 			{
-				Calculate60Points();
-				DrawAnalogClock();	
-				bla = 1;
-			}
-			
-		}
-		else
-		{
-			if(IsClockSet)
-			{
-				if(IsMenuOpen == FALSE)
-					DisplayClock();
-				else
-					DisplayMenu();
-				if(CheckButtonPressed())
-				{
-					FillDisplay(0x00); //Clear Screen
-					IsMenuOpen = TRUE;
-				}
-					
+				FillDisplay(0x00); //Clear Screen
+				IsMenuOpen = TRUE;
 			}
 				
-			else
+		}
+			
+		else
+		{
+			if(IsMenuOpen == FALSE)
 			{
-				if(IsMenuOpen == FALSE)
+				oledPutROMString((ROM_STRING)"Clock is not set!",3,10);
+				oledPutROMString((ROM_STRING)"Black button for menu",5,2);
+				if(CheckButtonPressed())
 				{
-					oledPutROMString((ROM_STRING)"Clock is not set!",3,10);
-					oledPutROMString((ROM_STRING)"Black button for menu",5,2);
-					if(CheckButtonPressed())
-					{
-						IsMenuOpen = TRUE;
-						FillDisplay(0x00); //Clear Screen
-					}
+					IsMenuOpen = TRUE;
+					FillDisplay(0x00); //Clear Screen
 				}
-				else
-					DisplayMenu();	
-			}	
+			}
+			else
+				DisplayMenu();	
 		}	
     }
 }//end main
