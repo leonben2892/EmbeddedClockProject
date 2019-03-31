@@ -127,6 +127,11 @@
 //Selected option variables
 int mainMenuSelectedOption = 0, displayModeSelectedOption = 3, displayIntervaSelectedOption = 3;
 int amPmSelectedOption =  3, setTimeSelectedOption = 43, setDateSelectedOption = 48, setAnalogDesignSelectedOption = 2;
+int alarmMainMenuSelectedOption = 2, alarmTimeSelectedOption = 43;
+
+//Alarm variables
+int alarmHour, alarmMinute;
+BOOL IsAlarmSet = FALSE;
 
 //Time
 int tmpHour = 1, tmpMinute = 0, tmpSecond = 0, hour, minute, second;
@@ -635,14 +640,14 @@ void PrintClockMainLines(int designType)
 			
 	if(designType == 2 || designType == 4)
 	{
-		drawLine(_x[5], _y[5], _x[5]-5, _y[5]+5, thick); //Diagonal top right line 1
-		drawLine(_x[10], _y[10], _x[10]-5, _y[10]+5, thick); //Diagonal top right line 2
-		drawLine(_x[20], _y[20], _x[20]-5, _y[20]-5, thick); //Diagonal bottom right line 1
-		drawLine(_x[25], _y[25], _x[25]-5, _y[25]-5, thick); //Diagonal bottom right line 2
-		drawLine(_x[35], _y[35], _x[35]+5, _y[35]-5, thick); //Diagonal bottom left line 1
-		drawLine(_x[40], _y[40], _x[40]+5, _y[40]-5, thick); //Diagonal bottom left line 2
-		drawLine(_x[50], _y[50], _x[50]+5, _y[50]+5, thick); //Diagonal top left line 1
-		drawLine(_x[55], _y[55], _x[55]+5, _y[55]+5, thick); //Diagonal top left line 2
+		drawLine(_x[5], _y[5], _x[5]-5, _y[5]+5, thin); //Diagonal top right line 1
+		drawLine(_x[10], _y[10], _x[10]-5, _y[10]+5, thin); //Diagonal top right line 2
+		drawLine(_x[20], _y[20], _x[20]-5, _y[20]-5, thin); //Diagonal bottom right line 1
+		drawLine(_x[25], _y[25], _x[25]-5, _y[25]-5, thin); //Diagonal bottom right line 2
+		drawLine(_x[35], _y[35], _x[35]+5, _y[35]-5, thin); //Diagonal bottom left line 1
+		drawLine(_x[40], _y[40], _x[40]+5, _y[40]-5, thin); //Diagonal bottom left line 2
+		drawLine(_x[50], _y[50], _x[50]+5, _y[50]+5, thin); //Diagonal top left line 1
+		drawLine(_x[55], _y[55], _x[55]+5, _y[55]+5, thin); //Diagonal top left line 2
 	}		
 }
 
@@ -757,62 +762,72 @@ int DisplayModeMenu()
 	}	
 }
 
-void ConvertClock()
+void ConvertClockTo24H()
 {
-	if(Is12H)
+	if(IsAM)
 	{
-		if(IsAM)
-		{
-			if(hour == 12)
-				hour = 0;
-		}
-		else
-		{
-			switch(hour)
-			{
-				case 1: hour = 13;break;
-				case 2: hour = 14;break;
-				case 3: hour = 15;break;
-				case 4: hour = 16;break;
-				case 5: hour = 17;break;
-				case 6: hour = 18;break;
-				case 7: hour = 19;break;
-				case 8: hour = 20;break;
-				case 9: hour = 21;break;
-				case 10: hour = 22;break;
-				case 11: hour = 23;break;
-			}
-		}
+		if(hour == 12)
+			hour = 0;
 	}
 	else
 	{
 		switch(hour)
 		{
-			case 0: IsAM = TRUE; hour = 12;break;
-			case 1: IsAM = TRUE;break;
-			case 2: IsAM = TRUE;break;
-			case 3: IsAM = TRUE;break;
-			case 4: IsAM = TRUE;break;
-			case 5: IsAM = TRUE;break;
-			case 6: IsAM = TRUE;break;
-			case 7: IsAM = TRUE;break;
-			case 8: IsAM = TRUE;break;
-			case 9: IsAM = TRUE;break;
-			case 10: IsAM = TRUE;break;
-			case 11: IsAM = TRUE;break;
-			case 12: IsAM = FALSE;break;
-			case 13: IsAM = FALSE; hour = 1;break;
-			case 14: IsAM = FALSE; hour = 2;break;
-			case 15: IsAM = FALSE; hour = 3;break;
-			case 16: IsAM = FALSE; hour = 4;break;
-			case 17: IsAM = FALSE; hour = 5;break;
-			case 18: IsAM = FALSE; hour = 6;break;
-			case 19: IsAM = FALSE; hour = 7;break;
-			case 20: IsAM = FALSE; hour = 8;break;
-			case 21: IsAM = FALSE; hour = 9;break;
-			case 22: IsAM = FALSE; hour = 10;break;
-			case 23: IsAM = FALSE; hour = 11;break;
+			case 1: hour = 13;break;
+			case 2: hour = 14;break;
+			case 3: hour = 15;break;
+			case 4: hour = 16;break;
+			case 5: hour = 17;break;
+			case 6: hour = 18;break;
+			case 7: hour = 19;break;
+			case 8: hour = 20;break;
+			case 9: hour = 21;break;
+			case 10: hour = 22;break;
+			case 11: hour = 23;break;
 		}
+	}
+}
+
+void ConvertClockTo12H()
+{
+	switch(hour)
+	{
+		case 0: IsAM = TRUE; hour = 12;break;
+		case 1: IsAM = TRUE;break;
+		case 2: IsAM = TRUE;break;
+		case 3: IsAM = TRUE;break;
+		case 4: IsAM = TRUE;break;
+		case 5: IsAM = TRUE;break;
+		case 6: IsAM = TRUE;break;
+		case 7: IsAM = TRUE;break;
+		case 8: IsAM = TRUE;break;
+		case 9: IsAM = TRUE;break;
+		case 10: IsAM = TRUE;break;
+		case 11: IsAM = TRUE;break;
+		case 12: IsAM = FALSE;break;
+		case 13: IsAM = FALSE; hour = 1;break;
+		case 14: IsAM = FALSE; hour = 2;break;
+		case 15: IsAM = FALSE; hour = 3;break;
+		case 16: IsAM = FALSE; hour = 4;break;
+		case 17: IsAM = FALSE; hour = 5;break;
+		case 18: IsAM = FALSE; hour = 6;break;
+		case 19: IsAM = FALSE; hour = 7;break;
+		case 20: IsAM = FALSE; hour = 8;break;
+		case 21: IsAM = FALSE; hour = 9;break;
+		case 22: IsAM = FALSE; hour = 10;break;
+		case 23: IsAM = FALSE; hour = 11;break;
+	}
+}
+
+void ConvertClock()
+{
+	if(Is12H == TRUE)
+	{
+		ConvertClockTo24H();
+	}
+	else
+	{
+		ConvertClockTo12H();
 	}
 }
 
@@ -954,7 +969,7 @@ int DisplayAmPmMenu()
 	}
 }
 
-void ChangeHour()
+void ChangeHour(BOOL IsSettingAlarm)
 {
 	int tmpUpBtn, tmpDownBtn;
 	//Set hour through UP & DOWN buttons
@@ -964,7 +979,7 @@ void ChangeHour()
 	{
 		FillDisplay(0x00); //Clear Screen
 		tmpHour++;
-		if(Is12H)
+		if((Is12H == TRUE) && (IsSettingAlarm == FALSE))
 		{			
 			if(tmpHour > 12)
 				tmpHour = 1;
@@ -981,7 +996,7 @@ void ChangeHour()
 	{
 		FillDisplay(0x00); //Clear Screen
 		tmpHour--;
-		if(Is12H)
+		if((Is12H == TRUE) && (IsSettingAlarm == FALSE))
 		{
 			if(tmpHour < 1)
 				tmpHour = 12;
@@ -1124,7 +1139,7 @@ int DisplaySetTimeMenu()
 		//Change hour / minute / second
 		switch(setTimeSelectedOption)
 		{
-			case 43: ChangeHour();break;
+			case 43: ChangeHour(FALSE);break;
 			case 61: ChangeMinute();break;
 			case 79: ChangeSecond();break;
 		}
@@ -1286,9 +1301,126 @@ int DisplaySetDate()
 	}
 }
 
+
+void SetAlarmTimeMenu()
+{
+	while(1)
+	{
+		char timeBuffer[10];
+		int tmpLeftBtn, tmpRightBtn;
+		oledPutROMString((ROM_STRING)"Alarm Time Menu",0,10);
+		sprintf(timeBuffer,"%02d:%02d",tmpHour,tmpMinute);
+		oledPutString(timeBuffer, 4, 40);
+
+		//Navigate the menu through LEFT & RIGHT buttons
+		mTouchCalibrate();
+		tmpRightBtn = ReadsRButton();
+		if(tmpRightBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			switch(alarmTimeSelectedOption)
+			{
+				case 43: alarmTimeSelectedOption = 61;break;
+				case 61: alarmTimeSelectedOption = 43;break;
+			}
+		}
+
+		tmpLeftBtn = ReadsLButton();
+		if(tmpLeftBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			switch(alarmTimeSelectedOption)
+			{
+				case 43: alarmTimeSelectedOption = 61;break;
+				case 61: alarmTimeSelectedOption = 43;break;
+			}
+		}
+	
+		//Indicator of selected option	
+		//43 - hour | 61 - minute
+		oledPutROMString((ROM_STRING)"*", 3, alarmTimeSelectedOption);
+		oledPutROMString((ROM_STRING)"*", 5, alarmTimeSelectedOption);
+
+		//Change hour / minute
+		switch(alarmTimeSelectedOption)
+		{
+			case 43: ChangeHour(TRUE);break;
+			case 61: ChangeMinute();break;
+		}
+
+		//Confirm alarm time by pressing the black button
+		if(CheckButtonPressed())
+		{
+			alarmHour = tmpHour;
+			alarmMinute = tmpMinute;
+			IsAlarmSet = TRUE;
+			ResetTempTime();
+			alarmTimeSelectedOption = 43;
+			FillDisplay(0x00); //Clear Screen
+			return;
+		}
+
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
+
+	}
+	
+}
+
+void ToggleAlarmOnOff()
+{
+	oledPutROMString((ROM_STRING)"Toggle Alarm",0,10);
+}
+
 int DisplayAlarmMenu()
 {
-	oledPutROMString((ROM_STRING)"Alarm Menu",0,10);
+	while(1)
+	{
+		int tmpUpBtn, tmpDownBtn;
+		oledPutROMString((ROM_STRING)"Alarm Menu",0,30);
+		oledPutROMString((ROM_STRING)"Set Alarm Time",2,20);
+		oledPutROMString((ROM_STRING)"Toggle ON/OFF",4,20);
+
+		//Navigate the menu through UP & DOWN buttons
+		mTouchCalibrate();
+		tmpUpBtn = ReadUpButton();
+		if(tmpUpBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			alarmMainMenuSelectedOption -= 2;
+			if(alarmMainMenuSelectedOption < 2)
+				alarmMainMenuSelectedOption = 4;
+		}
+	
+		tmpDownBtn = ReadDownButton();
+		if(tmpDownBtn == 1)
+		{
+			FillDisplay(0x00); //Clear Screen
+			alarmMainMenuSelectedOption += 2;
+			if(alarmMainMenuSelectedOption > 4)
+				alarmMainMenuSelectedOption = 2;
+		}
+
+		//Indicator of selected option	
+		oledPutROMString((ROM_STRING)"*", alarmMainMenuSelectedOption, 12);
+		oledPutROMString((ROM_STRING)"*", alarmMainMenuSelectedOption, 105);
+
+		//Confirm selected option by pressing the black button
+		if(CheckButtonPressed())
+		{
+			FillDisplay(0x00); //Clear Screen
+			if(alarmMainMenuSelectedOption == 2)
+				SetAlarmTimeMenu();
+			else if(alarmMainMenuSelectedOption == 4)
+				ToggleAlarmOnOff();
+		}
+
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
+	}
+	
 }
 
 int DisplayAnalogDesignMenu()
