@@ -129,7 +129,7 @@ int mainMenuSelectedOption = 0, displayModeSelectedOption = 3, displayIntervaSel
 int amPmSelectedOption =  3, setTimeSelectedOption = 43, setDateSelectedOption = 48, setAnalogDesignSelectedOption = 2;
 
 //Time
-int tmpHour = 0, tmpMinute = 0, tmpSecond = 0, hour, minute, second;
+int tmpHour = 1, tmpMinute = 0, tmpSecond = 0, hour, minute, second;
 
 //Big Digits
 char digitPos[3][2] = {{0,20},{45,63},{90,110}};
@@ -141,7 +141,7 @@ int month = 1, day = 1;
 BOOL IsClockSet = FALSE, IsMenuOpen = FALSE, IsDigitalDisplay = TRUE, Is12H = TRUE, IsAM = TRUE;
 
 //Analog Clock
-BOOL IsAnalogTimeUpdated = FALSE, IsPrintedFirstTime = FALSE;
+BOOL IsAnalogTimeUpdated = FALSE;
 BYTE radius = 18;
 rom BYTE _xClockHands[60] = {65,66,68,70,72,73,75,77,78,79,80,81,82,82,82,83,82,82,82,81,80,79,78,77,75,74,72,70,68,66,65,63,61,59,57,56,54,52,51,50,49,48,47,47,47,47,47,47,47,48,49,50,51,52,54,55,57,59,61,63};
 rom BYTE _yClockHands[60] = {13,13,13,13,14,15,16,17,18,20,21,23,25,27,29,31,32,34,36,38,40,41,43,44,45,46,47,48,48,48,49,48,48,48,47,46,45,44,43,41,40,38,36,34,32,31,29,27,25,23,22,20,18,17,16,15,14,13,13,13};
@@ -619,48 +619,31 @@ void DisplayDate()
 void PrintClockMainLines(int designType)
 {	
 	if(designType == 2 || designType == 6)
+	{
 		drawLine(_x[0], _y[0], _x[0], _y[0]+10, fat); //Top Line
+		drawLine(_x[15], _y[15], _x[15]-10, _y[15], fat); //Right line
+		drawLine(_x[30], _y[30], _x[30], _y[30]-10, fat); //Bottom line
+		drawLine(_x[45], _y[45], _x[45]+10, _y[45], fat); //Left line
+	}	
 	else
+	{
 		drawLine(_x[0], _y[0], _x[0], _y[0]+10, thin); //Top Line	
-	
+		drawLine(_x[15], _y[15], _x[15]-10, _y[15], thin); //Right line
+		drawLine(_x[30], _y[30], _x[30], _y[30]-10, thin); //Bottom line
+		drawLine(_x[45], _y[45], _x[45]+10, _y[45], thin); //Left line
+	}
+			
 	if(designType == 2 || designType == 4)
 	{
 		drawLine(_x[5], _y[5], _x[5]-5, _y[5]+5, thick); //Diagonal top right line 1
 		drawLine(_x[10], _y[10], _x[10]-5, _y[10]+5, thick); //Diagonal top right line 2
-	}
-
-	if(designType == 2 || designType == 6)
-		drawLine(_x[15], _y[15], _x[15]-10, _y[15], fat); //Right line
-	else
-		drawLine(_x[15], _y[15], _x[15]-10, _y[15], thin); //Right line
-	
-	if(designType == 2 || designType == 4)
-	{
 		drawLine(_x[20], _y[20], _x[20]-5, _y[20]-5, thick); //Diagonal bottom right line 1
 		drawLine(_x[25], _y[25], _x[25]-5, _y[25]-5, thick); //Diagonal bottom right line 2
-	}
-
-	if(designType == 2 || designType == 6)	
-		drawLine(_x[30], _y[30], _x[30], _y[30]-10, fat); //Bottom line
-	else
-		drawLine(_x[30], _y[30], _x[30], _y[30]-10, thin); //Bottom line
-	
-	if(designType == 2 || designType == 4)
-	{
 		drawLine(_x[35], _y[35], _x[35]+5, _y[35]-5, thick); //Diagonal bottom left line 1
 		drawLine(_x[40], _y[40], _x[40]+5, _y[40]-5, thick); //Diagonal bottom left line 2
-	}
-
-	if(designType == 2 || designType == 6)
-		drawLine(_x[45], _y[45], _x[45]+10, _y[45], fat); //Left line
-	else
-		drawLine(_x[45], _y[45], _x[45]+10, _y[45], thin); //Left line
-
-	if(designType == 2 || designType == 4)
-	{
 		drawLine(_x[50], _y[50], _x[50]+5, _y[50]+5, thick); //Diagonal top left line 1
 		drawLine(_x[55], _y[55], _x[55]+5, _y[55]+5, thick); //Diagonal top left line 2
-	}
+	}		
 }
 
 void DisplayAnalogClock()
@@ -1090,6 +1073,13 @@ void SetAnalogHour()
 	}
 }
 
+void ResetTempTime()
+{
+	tmpHour = 1;
+	tmpMinute = 0;
+	tmpSecond = 0;
+}
+
 int DisplaySetTimeMenu()
 {
 	while(1)
@@ -1145,6 +1135,7 @@ int DisplaySetTimeMenu()
 			hour = tmpHour;
 			minute = tmpMinute;
 			second = tmpSecond;
+			ResetTempTime();
 			SetAnalogHour();
 			IsClockSet = TRUE;
 			setTimeSelectedOption = 43;
