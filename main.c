@@ -127,11 +127,11 @@
 //Selected option variables
 int mainMenuSelectedOption = 0, displayModeSelectedOption = 3, displayIntervaSelectedOption = 3;
 int amPmSelectedOption =  3, setTimeSelectedOption = 43, setDateSelectedOption = 48, setAnalogDesignSelectedOption = 2;
-int alarmMainMenuSelectedOption = 2, alarmTimeSelectedOption = 43;
+int alarmMainMenuSelectedOption = 2, alarmTimeSelectedOption = 43, toggleAlarmSelectedOption = 3;
 
 //Alarm variables
 int alarmHour, alarmMinute;
-BOOL IsAlarmSet = FALSE;
+BOOL IsAlarmSet = FALSE, IsAlarmActive = FALSE;
 
 //Time
 int tmpHour = 1, tmpMinute = 0, tmpSecond = 0, hour, minute, second;
@@ -1363,21 +1363,82 @@ void SetAlarmTimeMenu()
 		//If the clock is set - display small clock while navigating the menu
 		if(IsClockSet)
 			DisplaySmallClock();
-
-	}
-	
+	}	
 }
 
 void ToggleAlarmOnOff()
 {
-	oledPutROMString((ROM_STRING)"Toggle Alarm",0,10);
+	while(1)
+	{
+		if(IsAlarmSet == TRUE)
+		{		
+			int tmpUpBtn, tmpDownBtn;
+			oledPutROMString((ROM_STRING)"Toggle Alarm",0,25);
+			oledPutROMString((ROM_STRING)"ON",3,55);
+			oledPutROMString((ROM_STRING)"OFF",5,55);
+		
+			//Navigate the menu through UP & DOWN buttons
+			mTouchCalibrate();
+			tmpUpBtn = ReadUpButton();
+			if(tmpUpBtn == 1)
+			{
+				FillDisplay(0x00); //Clear Screen
+				if(toggleAlarmSelectedOption == 5)
+					toggleAlarmSelectedOption = 3;
+				else
+					toggleAlarmSelectedOption = 5;
+			}
+		
+			tmpDownBtn = ReadDownButton();
+			if(tmpDownBtn == 1)
+			{
+				FillDisplay(0x00); //Clear Screen
+				if(toggleAlarmSelectedOption == 3)
+					toggleAlarmSelectedOption = 5;
+				else
+					toggleAlarmSelectedOption = 3;
+			}
+			
+			//Indicator of selected option	
+			oledPutROMString((ROM_STRING)"*", toggleAlarmSelectedOption, 47);
+			oledPutROMString((ROM_STRING)"*", toggleAlarmSelectedOption, 73);
+	
+			//Confirm selection by pressing the black button
+			if(CheckButtonPressed())
+			{
+				if(toggleAlarmSelectedOption == 3)
+					IsAlarmActive = TRUE;
+				else
+					IsAlarmActive = FALSE;
+				FillDisplay(0x00); //Clear Screen
+				return;
+			}
+		}
+		else
+		{
+			oledPutROMString((ROM_STRING)"Alarm Clock has not ", 2, 0);
+			oledPutROMString((ROM_STRING)"been set yet!", 3, 0);
+			oledPutROMString((ROM_STRING)"Press button ", 5, 0);
+			oledPutROMString((ROM_STRING)"to return.", 6, 0);
+			//Press black button to return
+			if(CheckButtonPressed())
+			{
+				FillDisplay(0x00); //Clear Screen
+				return;
+			}			
+		}
+
+		//If the clock is set - display small clock while navigating the menu
+		if(IsClockSet)
+			DisplaySmallClock();
+	}
 }
 
 int DisplayAlarmMenu()
 {
 	while(1)
 	{
-		int tmpUpBtn, tmpDownBtn;
+		int tmpUpBtn, tmpDownBtn, tmpLeftBtn;
 		oledPutROMString((ROM_STRING)"Alarm Menu",0,30);
 		oledPutROMString((ROM_STRING)"Set Alarm Time",2,20);
 		oledPutROMString((ROM_STRING)"Toggle ON/OFF",4,20);
@@ -1414,6 +1475,13 @@ int DisplayAlarmMenu()
 				SetAlarmTimeMenu();
 			else if(alarmMainMenuSelectedOption == 4)
 				ToggleAlarmOnOff();
+		}
+
+		//Go back to main menu by pressing L touch button
+		tmpLeftBtn = ReadsLButton();
+		if(tmpLeftBtn == 1)
+		{
+			return 1;
 		}
 
 		//If the clock is set - display small clock while navigating the menu
