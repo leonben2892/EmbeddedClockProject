@@ -124,14 +124,16 @@
 #pragma udata
 //You can define Global Data Elements here
 
+
 //Selected option variables
 int mainMenuSelectedOption = 0, displayModeSelectedOption = 3, displayIntervaSelectedOption = 3;
 int amPmSelectedOption =  3, setTimeSelectedOption = 43, setDateSelectedOption = 48, setAnalogDesignSelectedOption = 2;
 int alarmMainMenuSelectedOption = 2, alarmTimeSelectedOption = 43, toggleAlarmSelectedOption = 3;
 
 //Alarm variables
-int alarmHour, alarmMinute;
-BOOL IsAlarmSet = FALSE, IsAlarmActive = FALSE;
+int alarmHour, alarmMinute, alarmTimer = 20;
+BOOL IsAlarmSet = FALSE, IsAlarmActive = FALSE, IsAlarmTriggered = FALSE;
+static char disp = 0;
 
 //Time
 int tmpHour = 1, tmpMinute = 0, tmpSecond = 0, hour, minute, second;
@@ -169,6 +171,8 @@ void SetAnalogHour(void);
 void DisplayAnalogClock(void);
 void PrintClockMainLines(int);
 void ConvertClock(void);
+void PlayAlarm(void);
+void StopAlarm(void);
 BOOL CheckButtonPressed(void);
 
 
@@ -260,9 +264,18 @@ BOOL CheckButtonPressed(void);
 	{
 		TMR0H = 0x48 ;				//Write 0xCE51 to 16 bit Timer0
 		TMR0L = 0xE3 ;
-		
 		AddSecond();	
-		IsAnalogTimeUpdated = FALSE;
+
+		if(IsDigitalDisplay == FALSE)
+			IsAnalogTimeUpdated = FALSE;
+
+		if(IsAlarmTriggered == TRUE)
+		{
+			PlayAlarm();
+			if(alarmTimer == 0)
+				StopAlarm();
+		}
+
 		INTCONbits.TMR0IF = 0;
 	}	
   	
@@ -391,6 +404,51 @@ BOOL CheckButtonPressed(void)
     return FALSE;
 }
 
+void PlayAlarm()
+{
+	WriteCommand(disp ? 0xA6 : 0xA7);	//Change Display
+	disp = !disp;
+	alarmTimer--;
+}
+
+void StopAlarm()
+{
+	IsAlarmSet = FALSE;
+	IsAlarmActive = FALSE;
+	IsAlarmTriggered = FALSE;
+	toggleAlarmSelectedOption = 5;
+	alarmTimer = 20;
+	FillDisplay(0x00);
+	WriteCommand(0xA6);			// Normal display
+}
+
+void CheckAlarm()
+{
+	if(Is12H == TRUE)
+	{
+		if(hour >= 1 && hour <= 11 && IsAM == TRUE)
+		{
+			if(alarmHour == hour && alarmMinute == minute)
+				IsAlarmTriggered = TRUE;
+		}
+		else
+		{
+			if(((IsAM == TRUE && hour == 12 && alarmHour == 0) || (IsAM == FALSE && hour == 12 && alarmHour == 12) || 
+				(IsAM == FALSE && hour == 1 && alarmHour == 13) || (IsAM == FALSE && hour == 2 && alarmHour == 14) ||
+				(IsAM == FALSE && hour == 3 && alarmHour == 15) || (IsAM == FALSE && hour == 4 && alarmHour == 16) ||
+				(IsAM == FALSE && hour == 5 && alarmHour == 17) || (IsAM == FALSE && hour == 6 && alarmHour == 18) ||
+				(IsAM == FALSE && hour == 7 && alarmHour == 19) || (IsAM == FALSE && hour == 8 && alarmHour == 20) ||
+				(IsAM == FALSE && hour == 9 && alarmHour == 21) || (IsAM == FALSE && hour == 10 && alarmHour == 22)||
+				(IsAM == FALSE && hour == 11 && alarmHour == 23)) && alarmMinute == minute){IsAlarmTriggered = TRUE;}
+		}
+	}
+	else
+	{
+		if(alarmHour == hour && alarmMinute == minute)
+			IsAlarmTriggered = TRUE;
+	}
+}
+
 void AddSecond()
 {
 	second++;
@@ -404,6 +462,10 @@ void AddSecond()
 void AddMinute()
 {
 	minute++;
+
+	if(IsAlarmActive == TRUE)
+		CheckAlarm();
+
 	if(minute > 59)
 	{
 		minute = 0;
@@ -669,8 +731,24 @@ void DisplayAnalogClock()
 		oledPutROMString((ROM_STRING)"PM",7,110);	
 }
 
-void DisplayClock()
+void PrintAlarmIcon()
 {
+	oledWriteChar1x(0x3C, 0xB0, 0);
+	oledWriteChar1x(0X6F, 0xB0, 5);
+	oledWriteChar1x(0x3E, 0xB0, 10);
+}
+
+void DisplayClock()
+{	
+	//Turn OFF alarm
+	if(CheckButtonPressed() && IsAlarmTriggered == TRUE)
+	{
+		StopAlarm();
+	}
+
+	if(IsAlarmActive == TRUE)
+		PrintAlarmIcon();
+
 	if(IsDigitalDisplay)
 	{
 		DisplayDigitalClock();
@@ -680,10 +758,10 @@ void DisplayClock()
 		oledWriteChar1x(0x6F,0xB4 , 37);
 		oledWriteChar1x(0x6F,0xB3 , 82);
 		oledWriteChar1x(0x6F,0xB4 , 82);
-	}
-		
+	}		
 	else
 		DisplayAnalogClock();
+
 	DisplayDate();
 }
 
@@ -1696,7 +1774,7 @@ void main(void)
 				DisplayClock();
 			else
 				DisplayMenu();
-			if(CheckButtonPressed())
+			if(IsAlarmTriggered == FALSE && CheckButtonPressed())
 			{
 				FillDisplay(0x00); //Clear Screen
 				IsMenuOpen = TRUE;
