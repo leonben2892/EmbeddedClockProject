@@ -1,5 +1,5 @@
 MPLINK 5.00, LINKER
-Linker Map File - Created Fri Apr 05 23:41:09 2019
+Linker Map File - Created Sun Apr 07 19:28:31 2019
 
                                  Section Info
                   Section       Type    Address   Location Size(Bytes)
@@ -13,57 +13,57 @@ REMAPPED_HIGH_INTERRUPT_VECTOR       code   0x00a008    program   0x000006
            .code___init.o       code   0x00a00e    program   0x000002
 REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                    .cinit    romdata   0x00a01e    program   0x00001a
-             .code_main.o       code   0x00a038    program   0x003086
-         .code_vfprintf.o       code   0x00d0be    program   0x000c22
-             .code_oled.o       code   0x00dce0    program   0x00071c
-     .code_OledGraphics.o       code   0x00e3fc    program   0x000700
-          .romdata_oled.o    romdata   0x00eafc    program   0x0002d5
-      .idata_vfprintf.o_i    romdata   0x00edd1    program   0x000000
-       .romdata_fxm3232.o    romdata   0x00edd1    program   0x000000
-          .romdata_putc.o    romdata   0x00edd1    program   0x000000
-    .romdata__user_putc.o    romdata   0x00edd1    program   0x000000
-       .romdata_sprintf.o    romdata   0x00edd1    program   0x000000
-      .romdata_fxd1616u.o    romdata   0x00edd1    program   0x000000
-    .idata_soft_start.o_i    romdata   0x00edd1    program   0x000001
-  .romdata_OledGraphics.o    romdata   0x00edd1    program   0x000000
-           .code_BMA150.o       code   0x00edd2    program   0x000274
-           .code_mtouch.o       code   0x00f046    program   0x0001e4
-             .stringtable    romdata   0x00f22a    program   0x0001dd
-          .romdata_main.o    romdata   0x00f407    program   0x0000f0
-         .idata_c018i.o_i    romdata   0x00f4f7    program   0x000000
-         .romdata_c018i.o    romdata   0x00f4f7    program   0x000000
-    .idata__user_putc.o_i    romdata   0x00f4f7    program   0x000000
-          .idata_putc.o_i    romdata   0x00f4f7    program   0x000000
-       .idata_fxm3232.o_i    romdata   0x00f4f7    program   0x000000
-      .romdata_fxd3232u.o    romdata   0x00f4f7    program   0x000000
-      .idata_fxd3232u.o_i    romdata   0x00f4f7    program   0x000000
-       .idata_sprintf.o_i    romdata   0x00f4f7    program   0x000000
-        .romdata___init.o    romdata   0x00f4f7    program   0x000000
-        .idata___init.o_i    romdata   0x00f4f7    program   0x000000
-      .idata_fxd1616u.o_i    romdata   0x00f4f7    program   0x000000
-          .idata_oled.o_i    romdata   0x00f4f7    program   0x000000
-  .idata_OledGraphics.o_i    romdata   0x00f4f7    program   0x000000
-        .idata_BMA150.o_i    romdata   0x00f4f7    program   0x000000
-        .romdata_BMA150.o    romdata   0x00f4f7    program   0x000000
-        .idata_mtouch.o_i    romdata   0x00f4f7    program   0x000000
-        .romdata_mtouch.o    romdata   0x00f4f7    program   0x000000
-    .romdata_soft_start.o    romdata   0x00f4f7    program   0x000000
-            .code_c018i.o       code   0x00f4f8    program   0x000000
-       .code_soft_start.o       code   0x00f4f8    program   0x0000f0
-          .code_sprintf.o       code   0x00f5e8    program   0x0000ac
-                     PROG       code   0x00f694    program   0x0000a6
-               _cinit_scn       code   0x00f73a    program   0x00009e
-             .code_putc.o       code   0x00f7d8    program   0x000084
-          .code_fxm3232.o       code   0x00f85c    program   0x000070
-                   STRING       code   0x00f8cc    program   0x000066
-         .code_fxd3232u.o       code   0x00f932    program   0x000048
-         .code_fxd1616u.o       code   0x00f97a    program   0x00002c
-                    CTYPE       code   0x00f9a6    program   0x000024
-                    .code       code   0x00f9ca    program   0x000020
-             _startup_scn       code   0x00f9ea    program   0x00001c
-                    STDIO       code   0x00fa06    program   0x00001c
-      .romdata_vfprintf.o    romdata   0x00fa22    program   0x000011
-          .idata_main.o_i    romdata   0x00fa33    program   0x000039
+             .code_main.o       code   0x00a038    program   0x00309a
+         .code_vfprintf.o       code   0x00d0d2    program   0x000c22
+             .code_oled.o       code   0x00dcf4    program   0x00071c
+     .code_OledGraphics.o       code   0x00e410    program   0x000700
+          .romdata_oled.o    romdata   0x00eb10    program   0x0002d5
+      .idata_vfprintf.o_i    romdata   0x00ede5    program   0x000000
+       .romdata_fxm3232.o    romdata   0x00ede5    program   0x000000
+          .romdata_putc.o    romdata   0x00ede5    program   0x000000
+    .romdata__user_putc.o    romdata   0x00ede5    program   0x000000
+       .romdata_sprintf.o    romdata   0x00ede5    program   0x000000
+      .romdata_fxd1616u.o    romdata   0x00ede5    program   0x000000
+    .idata_soft_start.o_i    romdata   0x00ede5    program   0x000001
+  .romdata_OledGraphics.o    romdata   0x00ede5    program   0x000000
+           .code_BMA150.o       code   0x00ede6    program   0x000274
+           .code_mtouch.o       code   0x00f05a    program   0x0001e4
+             .stringtable    romdata   0x00f23e    program   0x0001dd
+          .romdata_main.o    romdata   0x00f41b    program   0x0000f0
+         .idata_c018i.o_i    romdata   0x00f50b    program   0x000000
+         .romdata_c018i.o    romdata   0x00f50b    program   0x000000
+    .idata__user_putc.o_i    romdata   0x00f50b    program   0x000000
+          .idata_putc.o_i    romdata   0x00f50b    program   0x000000
+       .idata_fxm3232.o_i    romdata   0x00f50b    program   0x000000
+      .romdata_fxd3232u.o    romdata   0x00f50b    program   0x000000
+      .idata_fxd3232u.o_i    romdata   0x00f50b    program   0x000000
+       .idata_sprintf.o_i    romdata   0x00f50b    program   0x000000
+        .romdata___init.o    romdata   0x00f50b    program   0x000000
+        .idata___init.o_i    romdata   0x00f50b    program   0x000000
+      .idata_fxd1616u.o_i    romdata   0x00f50b    program   0x000000
+          .idata_oled.o_i    romdata   0x00f50b    program   0x000000
+  .idata_OledGraphics.o_i    romdata   0x00f50b    program   0x000000
+        .idata_BMA150.o_i    romdata   0x00f50b    program   0x000000
+        .romdata_BMA150.o    romdata   0x00f50b    program   0x000000
+        .idata_mtouch.o_i    romdata   0x00f50b    program   0x000000
+        .romdata_mtouch.o    romdata   0x00f50b    program   0x000000
+    .romdata_soft_start.o    romdata   0x00f50b    program   0x000000
+            .code_c018i.o       code   0x00f50c    program   0x000000
+       .code_soft_start.o       code   0x00f50c    program   0x0000f0
+          .code_sprintf.o       code   0x00f5fc    program   0x0000ac
+                     PROG       code   0x00f6a8    program   0x0000a6
+               _cinit_scn       code   0x00f74e    program   0x00009e
+             .code_putc.o       code   0x00f7ec    program   0x000084
+          .code_fxm3232.o       code   0x00f870    program   0x000070
+                   STRING       code   0x00f8e0    program   0x000066
+         .code_fxd3232u.o       code   0x00f946    program   0x000048
+         .code_fxd1616u.o       code   0x00f98e    program   0x00002c
+                    CTYPE       code   0x00f9ba    program   0x000024
+                    .code       code   0x00f9de    program   0x000020
+             _startup_scn       code   0x00f9fe    program   0x00001c
+                    STDIO       code   0x00fa1a    program   0x00001c
+      .romdata_vfprintf.o    romdata   0x00fa36    program   0x000011
+          .idata_main.o_i    romdata   0x00fa47    program   0x000039
       .config_fff8_main.o    romdata   0x00fff8    program   0x000001
       .config_fff9_main.o    romdata   0x00fff9    program   0x000001
       .config_fffa_main.o    romdata   0x00fffa    program   0x000001
@@ -127,127 +127,127 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                             0x000008    0x00000d      
                             0x000018    0x00001d      
                             0x00a000    0x00a00f      
-                            0x00a018    0x00f4f6      
-                            0x00f4f8    0x00fa6b      
+                            0x00a018    0x00f50a      
+                            0x00f50c    0x00fa7f      
                             0x00fff8    0x00ffff      
-            23165 out of 65538 program addresses used, program memory utilization is 35%
+            23185 out of 65538 program addresses used, program memory utilization is 35%
 
 
 
                               Symbols - Sorted by Name
                      Name    Address   Location    Storage File                     
                 ---------  ---------  ---------  --------- ---------                
-                   AddDay   0x00a4aa    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                   AddDay   0x00a4be    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                   AddHour   0x00a43a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                 AddMinute   0x00a412    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                 AddMonth   0x00a568    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                 AddMonth   0x00a57c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                 AddSecond   0x00a3f4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          AppPowerDisable   0x00f544    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-           AppPowerEnable   0x00f4f8    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-            AppPowerReady   0x00f550    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-          BMA150_ReadByte   0x00ef98    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-         BMA150_WriteByte   0x00eeb6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                ChangeDay   0x00c2c8    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               ChangeHour   0x00bc40    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ChangeMinute   0x00bd22    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              ChangeMonth   0x00c1bc    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ChangeSecond   0x00bdc6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          AppPowerDisable   0x00f558    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+           AppPowerEnable   0x00f50c    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+            AppPowerReady   0x00f564    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+          BMA150_ReadByte   0x00efac    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+         BMA150_WriteByte   0x00eeca    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                ChangeDay   0x00c2dc    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               ChangeHour   0x00bc54    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ChangeMinute   0x00bd36    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              ChangeMonth   0x00c1d0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ChangeSecond   0x00bdda    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                CheckAlarm   0x00a1f4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
        CheckButtonPressed   0x00a140    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ConvertClock   0x00b862    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        ConvertClockTo12H   0x00b6ee    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        ConvertClockTo24H   0x00b630    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                   D1616S   0x00f6b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x00f6c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x00f6c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x00f6d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x00f6a6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DelayMs   0x00dce0    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         DisplayAlarmMenu   0x00c9e2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          DisplayAmPmMenu   0x00ba68    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-       DisplayAnalogClock   0x00b1d0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-  DisplayAnalogDesignMenu   0x00cb88    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             DisplayClock   0x00b37a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              DisplayDate   0x00ac9c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-      DisplayDigitalClock   0x00ac32    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-      DisplayIntervalMenu   0x00b870    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              DisplayMenu   0x00ce3c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          DisplayModeMenu   0x00b4c6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-           DisplaySetDate   0x00c4a2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-       DisplaySetTimeMenu   0x00bfc2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        DisplaySmallClock   0x00b3fc    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                 DrawMask   0x00e4e2    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-                 FXD1616S   0x00f694    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXD1616U   0x00f97a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                 FXD3232U   0x00f932    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-                 FXM1616S   0x00f6e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                  FXM3232   0x00f85c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
-              FillDisplay   0x00df02    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+             ConvertClock   0x00b876    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ConvertClockTo12H   0x00b702    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ConvertClockTo24H   0x00b644    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                   D1616S   0x00f6ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00f6d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00f6d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x00f6ea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x00f6ba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DelayMs   0x00dcf4    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         DisplayAlarmMenu   0x00c9f6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          DisplayAmPmMenu   0x00ba7c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       DisplayAnalogClock   0x00b1e4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+  DisplayAnalogDesignMenu   0x00cb9c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             DisplayClock   0x00b38e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              DisplayDate   0x00acb0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+      DisplayDigitalClock   0x00ac46    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+      DisplayIntervalMenu   0x00b884    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              DisplayMenu   0x00ce50    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          DisplayModeMenu   0x00b4da    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           DisplaySetDate   0x00c4b6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       DisplaySetTimeMenu   0x00bfd6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        DisplaySmallClock   0x00b410    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                 DrawMask   0x00e4f6    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+                 FXD1616S   0x00f6a8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXD1616U   0x00f98e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                 FXD3232U   0x00f946    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+                 FXM1616S   0x00f6f4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                  FXM3232   0x00f870    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
+              FillDisplay   0x00df16    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
                  High_ISR   0x000008    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                  InitADC   0x00f05e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               InitBma150   0x00edd2    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-                 InitCTMU   0x00f046    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                  InitADC   0x00f072    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               InitBma150   0x00ede6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+                 InitCTMU   0x00f05a    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
          InitializeSystem   0x00a12e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                   Low_ISR   0x000018    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                 PlayAlarm   0x00a1a2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-           PrintAlarmIcon   0x00b338    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-            PrintBigDigit   0x00e296    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-      PrintClockMainLines   0x00ad10    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         PrintDigitalTime   0x00a806    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                 ReadData   0x00e3fc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-           ReadDownButton   0x00a788    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        ReadPotenziometer   0x00a682    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ReadUpButton   0x00a708    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ReadsLButton   0x00a586    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ReadsRButton   0x00a606    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           PrintAlarmIcon   0x00b34c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+            PrintBigDigit   0x00e2aa    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+      PrintClockMainLines   0x00ad24    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         PrintDigitalTime   0x00a81a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                 ReadData   0x00e410    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+           ReadDownButton   0x00a79c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ReadPotenziometer   0x00a696    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadUpButton   0x00a71c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsLButton   0x00a59a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsRButton   0x00a61a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
         Remapped_High_ISR   0x00a008    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
          Remapped_Low_ISR   0x00a018    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              ResetDevice   0x00dd38    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-            ResetTempTime   0x00bfb0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          SelectedSubMenu   0x00cd02    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         SetAlarmTimeMenu   0x00c63e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-            SetAnalogHour   0x00be6a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               SetOLEDPos   0x00e51e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-              SpiPinRemap   0x00ee92    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+              ResetDevice   0x00dd4c    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+            ResetTempTime   0x00bfc4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          SelectedSubMenu   0x00cd16    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         SetAlarmTimeMenu   0x00c652    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+            SetAnalogHour   0x00be7e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               SetOLEDPos   0x00e532    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+              SpiPinRemap   0x00eea6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
                 StopAlarm   0x00a1cc    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               TSIGN1616A   0x00f72c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-         ToggleAlarmOnOff   0x00c808    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               TSIGN1616A   0x00f740    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+         ToggleAlarmOnOff   0x00c81c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                  UserInit   0x00a114    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             WriteCommand   0x00deb2    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                WriteData   0x00deda    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+             WriteCommand   0x00dec6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                WriteData   0x00deee    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
   YourHighPriorityISRCode   0x00a038    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
    YourLowPriorityISRCode   0x00a0f2    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                   _2jEnd   0x00f91c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-         ___else_lbl00009   0x00ef80    program     static                          
-           ___if_lbl00001   0x00ee18    program     static                          
-           ___if_lbl00005   0x00eede    program     static                          
-           ___if_lbl00008   0x00ef88    program     static                          
-       ___return_lbl00000   0x00f978    program     static                          
+                   _2jEnd   0x00f930    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+         ___else_lbl00009   0x00ef94    program     static                          
+           ___if_lbl00001   0x00ee2c    program     static                          
+           ___if_lbl00005   0x00eef2    program     static                          
+           ___if_lbl00008   0x00ef9c    program     static                          
+       ___return_lbl00000   0x00f98c    program     static                          
        ___return_lbl00000   0x00a004    program     static                          
-       ___return_lbl00000   0x00e430    program     static                          
-       ___return_lbl00000   0x00f9a4    program     static                          
-       ___return_lbl00000   0x00ee7e    program     static                          
-       ___return_lbl00000   0x00f8ca    program     static                          
+       ___return_lbl00000   0x00e444    program     static                          
+       ___return_lbl00000   0x00f9b8    program     static                          
+       ___return_lbl00000   0x00ee92    program     static                          
+       ___return_lbl00000   0x00f8de    program     static                          
        ___return_lbl00000   0x000004    program     static                          
        ___return_lbl00001   0x00a00c    program     static                          
-       ___return_lbl00001   0x00fa04    program     static                          
+       ___return_lbl00001   0x00fa18    program     static                          
        ___return_lbl00002   0x00a01c    program     static                          
-       ___return_lbl00002   0x00f7d6    program     static                          
-       ___return_lbl00003   0x00f154    program     static                          
-       ___return_lbl00003   0x00ef8e    program     static                          
+       ___return_lbl00002   0x00f7ea    program     static                          
+       ___return_lbl00003   0x00f168    program     static                          
+       ___return_lbl00003   0x00efa2    program     static                          
        ___return_lbl00003   0x00000c    program     static                          
        ___return_lbl00004   0x00001c    program     static                          
-       ___return_lbl00012   0x00f03e    program     static                          
-        ___while_lbl00004   0x00f136    program     static                          
-        ___while_lbl00005   0x00f13a    program     static                          
-        ___while_lbl00006   0x00eee8    program     static                          
-        ___while_lbl00007   0x00eeec    program     static                          
-        ___while_lbl00010   0x00ef88    program     static                          
-        ___while_lbl00011   0x00ef8c    program     static                          
-        ___while_lbl00013   0x00efac    program     static                          
-        ___while_lbl00014   0x00efb0    program     static                          
-        ___while_lbl00015   0x00f034    program     static                          
-        ___while_lbl00016   0x00f038    program     static                          
+       ___return_lbl00012   0x00f052    program     static                          
+        ___while_lbl00004   0x00f14a    program     static                          
+        ___while_lbl00005   0x00f14e    program     static                          
+        ___while_lbl00006   0x00eefc    program     static                          
+        ___while_lbl00007   0x00ef00    program     static                          
+        ___while_lbl00010   0x00ef9c    program     static                          
+        ___while_lbl00011   0x00efa0    program     static                          
+        ___while_lbl00013   0x00efc0    program     static                          
+        ___while_lbl00014   0x00efc4    program     static                          
+        ___while_lbl00015   0x00f048    program     static                          
+        ___while_lbl00016   0x00f04c    program     static                          
                __config_0   0x00fff8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_1   0x00fff9    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_2   0x00fffa    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
@@ -257,160 +257,160 @@ REMAPPED_LOW_INTERRUPT_VECTOR       code   0x00a018    program   0x000006
                __config_6   0x00fffe    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_7   0x00ffff    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                    __init   0x00a00e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\__init.c
-                   __pa_0   0x00d9fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_0   0x00f1de    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_1   0x00da06    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_1   0x00f1ee    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                  __pa_10   0x00daba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_11   0x00dac8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_12   0x00dade    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_13   0x00daf8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_14   0x00db10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_15   0x00db20    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_16   0x00db36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_17   0x00db48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_18   0x00db5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_19   0x00db64    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_2   0x00f202    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_2   0x00da10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_20   0x00db74    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_21   0x00db84    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_22   0x00db94    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_23   0x00dba0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_24   0x00dbae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_25   0x00dbb6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_26   0x00dbc0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_27   0x00dbca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_28   0x00dbd2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_29   0x00dbe0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_3   0x00da1a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_3   0x00f216    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                  __pa_30   0x00dbfc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_31   0x00dc16    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_32   0x00dc30    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_33   0x00dc48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_34   0x00dc52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_35   0x00dc60    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_36   0x00dc68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_37   0x00dc72    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_38   0x00dc82    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_39   0x00dc90    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_4   0x00da32    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_40   0x00dc9c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_41   0x00dca8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_42   0x00dcb0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_43   0x00dcba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_44   0x00dcc0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_45   0x00dcca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_46   0x00dcd6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_5   0x00da46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_6   0x00da62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_7   0x00da6c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_8   0x00da78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_9   0x00da9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-               __string_0   0x00f404    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_1   0x00f401    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_10   0x00f3b4    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_11   0x00f3a4    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_12   0x00f397    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_13   0x00f389    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_14   0x00f37e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_15   0x00f373    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_16   0x00f361    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_17   0x00f359    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_18   0x00f34b    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_19   0x00f33d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_2   0x00f3f7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_20   0x00f32d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_21   0x00f323    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_22   0x00f316    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_23   0x00f313    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_24   0x00f30f    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_25   0x00f2fa    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_26   0x00f2ec    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_27   0x00f2e1    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_28   0x00f2d2    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_29   0x00f2c4    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_3   0x00f3e8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_30   0x00f2b1    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_31   0x00f2a7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_32   0x00f29d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_33   0x00f293    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_34   0x00f282    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_35   0x00f278    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_36   0x00f26f    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_37   0x00f266    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_38   0x00f260    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_39   0x00f252    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_4   0x00f3db    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_40   0x00f240    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_41   0x00f22a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_5   0x00f3d3    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_6   0x00f3cc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_7   0x00f3ca    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_8   0x00f3bc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_9   0x00f3b8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __tmplbl_0   0x00eed2    program     static                          
-               __tmplbl_1   0x00eeca    program     static                          
-              __tmplbl_42   0x00db94    program     static                          
-              __tmplbl_43   0x00d9dc    program     static                          
-              __tmplbl_44   0x00d9c2    program     static                          
-              __tmplbl_85   0x00d114    program     static                          
-            __zero_memory   0x00f9ca    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                _do_cinit   0x00f73a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                   __pa_0   0x00da12    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_0   0x00f1f2    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_1   0x00da1a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_1   0x00f202    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                  __pa_10   0x00dace    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_11   0x00dadc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_12   0x00daf2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_13   0x00db0c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_14   0x00db24    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_15   0x00db34    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_16   0x00db4a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_17   0x00db5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_18   0x00db6e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_19   0x00db78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_2   0x00f216    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_2   0x00da24    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_20   0x00db88    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_21   0x00db98    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_22   0x00dba8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_23   0x00dbb4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_24   0x00dbc2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_25   0x00dbca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_26   0x00dbd4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_27   0x00dbde    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_28   0x00dbe6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_29   0x00dbf4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_3   0x00da2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_3   0x00f22a    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                  __pa_30   0x00dc10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_31   0x00dc2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_32   0x00dc44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_33   0x00dc5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_34   0x00dc66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_35   0x00dc74    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_36   0x00dc7c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_37   0x00dc86    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_38   0x00dc96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_39   0x00dca4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_4   0x00da46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_40   0x00dcb0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_41   0x00dcbc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_42   0x00dcc4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_43   0x00dcce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_44   0x00dcd4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_45   0x00dcde    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_46   0x00dcea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_5   0x00da5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_6   0x00da76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_7   0x00da80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_8   0x00da8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_9   0x00daae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+               __string_0   0x00f418    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_1   0x00f415    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_10   0x00f3c8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_11   0x00f3b8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_12   0x00f3ab    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_13   0x00f39d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_14   0x00f392    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_15   0x00f387    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_16   0x00f375    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_17   0x00f36d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_18   0x00f35f    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_19   0x00f351    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_2   0x00f40b    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_20   0x00f341    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_21   0x00f337    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_22   0x00f32a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_23   0x00f327    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_24   0x00f323    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_25   0x00f30e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_26   0x00f300    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_27   0x00f2f5    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_28   0x00f2e6    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_29   0x00f2d8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_3   0x00f3fc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_30   0x00f2c5    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_31   0x00f2bb    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_32   0x00f2b1    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_33   0x00f2a7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_34   0x00f296    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_35   0x00f28c    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_36   0x00f283    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_37   0x00f27a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_38   0x00f274    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_39   0x00f266    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_4   0x00f3ef    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_40   0x00f254    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_41   0x00f23e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_5   0x00f3e7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_6   0x00f3e0    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_7   0x00f3de    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_8   0x00f3d0    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_9   0x00f3cc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __tmplbl_0   0x00eee6    program     static                          
+               __tmplbl_1   0x00eede    program     static                          
+              __tmplbl_42   0x00dba8    program     static                          
+              __tmplbl_43   0x00d9f0    program     static                          
+              __tmplbl_44   0x00d9d6    program     static                          
+              __tmplbl_85   0x00d128    program     static                          
+            __zero_memory   0x00f9de    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                _do_cinit   0x00f74e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
                    _entry   0x000000    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                   _false   0x00f974    program     static                          
+                   _false   0x00f988    program     static                          
                    _reset   0x00a000    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                 _startup   0x00f9ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-              _usart_putc   0x00fa06    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
+                 _startup   0x00f9fe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+              _usart_putc   0x00fa1a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
                _user_putc   0x00a006    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\_user_putc.c
-                       _x   0x00f47f    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             _xClockHands   0x00f407    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                       _y   0x00f4bb    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             _yClockHands   0x00f443    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          bigDigit2dArray   0x00eafc    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                compare_l   0x00f9e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                copy_loop   0x00f7ac    program     static                          
-            copy_one_byte   0x00f7b2    program     static                          
-                     done   0x00f7d6    program     static                          
-             done_copying   0x00f7c0    program     static                          
-                 drawLine   0x00e74e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-                  endloop   0x00f9a0    program     static                          
-                g_pucFont   0x00ebf6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                  isdigit   0x00f9a6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
-                     jEnd   0x00f8e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                     jEnd   0x00f91e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-                    jLoop   0x00f906    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-                    jLoop   0x00f8dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                   jMatch   0x00f9c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
-                 jNoMatch   0x00f9c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
-                     loop   0x00fa16    program     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
-                     loop   0x00f984    program     static                          
-                     loop   0x00f940    program     static                          
-                     loop   0x00f9fa    program     static                          
-                   loop_h   0x00f9d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_l   0x00f9e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-          mTouchCalibrate   0x00f168    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               mTouchInit   0x00f092    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         mTouchReadButton   0x00f098    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                     main   0x00d024    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             oledPutImage   0x00e1de    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledPutROMString   0x00e100    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-            oledPutString   0x00e172    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-          oledWriteChar1x   0x00e0aa    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledWriteCharRaw   0x00df72    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                     putc   0x00f7d8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\putc.c
-                 s_digits   0x00fa22    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-            s_put_n_chars   0x00d0be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                setXPixel   0x00e694    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-               setYPixels   0x00e56e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-                  sprintf   0x00f5e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sprintf.c
-                   strlen   0x00f8cc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                strlenpgm   0x00f8e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-                     swap   0x00e43a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-                     test   0x00f754    program     static                          
-                 vfprintf   0x00d0ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-               zero_block   0x00f9d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                       _x   0x00f493    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             _xClockHands   0x00f41b    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                       _y   0x00f4cf    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             _yClockHands   0x00f457    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          bigDigit2dArray   0x00eb10    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                compare_l   0x00f9f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                copy_loop   0x00f7c0    program     static                          
+            copy_one_byte   0x00f7c6    program     static                          
+                     done   0x00f7ea    program     static                          
+             done_copying   0x00f7d4    program     static                          
+                 drawLine   0x00e762    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+                  endloop   0x00f9b4    program     static                          
+                g_pucFont   0x00ec0a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                  isdigit   0x00f9ba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
+                     jEnd   0x00f8fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                     jEnd   0x00f932    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+                    jLoop   0x00f91a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+                    jLoop   0x00f8f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                   jMatch   0x00f9da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
+                 jNoMatch   0x00f9dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
+                     loop   0x00fa2a    program     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
+                     loop   0x00f998    program     static                          
+                     loop   0x00f954    program     static                          
+                     loop   0x00fa0e    program     static                          
+                   loop_h   0x00f9ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_l   0x00f9f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+          mTouchCalibrate   0x00f17c    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               mTouchInit   0x00f0a6    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         mTouchReadButton   0x00f0ac    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                     main   0x00d038    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             oledPutImage   0x00e1f2    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledPutROMString   0x00e114    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+            oledPutString   0x00e186    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+          oledWriteChar1x   0x00e0be    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledWriteCharRaw   0x00df86    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                     putc   0x00f7ec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\putc.c
+                 s_digits   0x00fa36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+            s_put_n_chars   0x00d0d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                setXPixel   0x00e6a8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+               setYPixels   0x00e582    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+                  sprintf   0x00f5fc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sprintf.c
+                   strlen   0x00f8e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                strlenpgm   0x00f8fc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+                     swap   0x00e44e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+                     test   0x00f768    program     static                          
+                 vfprintf   0x00d0fe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+               zero_block   0x00f9ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON0   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                ADCON0bits   0x000fc2       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
                    ADCON1   0x000fc1       data     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
@@ -951,247 +951,247 @@ toggleAlarmSelectedOption   0x000072       data     extern C:\Users\Leon\Documen
                 AddSecond   0x00a3f4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                 AddMinute   0x00a412    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                   AddHour   0x00a43a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                   AddDay   0x00a4aa    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                 AddMonth   0x00a568    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ReadsLButton   0x00a586    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ReadsRButton   0x00a606    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        ReadPotenziometer   0x00a682    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ReadUpButton   0x00a708    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-           ReadDownButton   0x00a788    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         PrintDigitalTime   0x00a806    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-      DisplayDigitalClock   0x00ac32    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              DisplayDate   0x00ac9c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-      PrintClockMainLines   0x00ad10    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-       DisplayAnalogClock   0x00b1d0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-           PrintAlarmIcon   0x00b338    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             DisplayClock   0x00b37a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        DisplaySmallClock   0x00b3fc    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          DisplayModeMenu   0x00b4c6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        ConvertClockTo24H   0x00b630    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-        ConvertClockTo12H   0x00b6ee    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ConvertClock   0x00b862    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-      DisplayIntervalMenu   0x00b870    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          DisplayAmPmMenu   0x00ba68    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               ChangeHour   0x00bc40    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ChangeMinute   0x00bd22    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             ChangeSecond   0x00bdc6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-            SetAnalogHour   0x00be6a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-            ResetTempTime   0x00bfb0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-       DisplaySetTimeMenu   0x00bfc2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              ChangeMonth   0x00c1bc    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                ChangeDay   0x00c2c8    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-           DisplaySetDate   0x00c4a2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         SetAlarmTimeMenu   0x00c63e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         ToggleAlarmOnOff   0x00c808    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-         DisplayAlarmMenu   0x00c9e2    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-  DisplayAnalogDesignMenu   0x00cb88    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-          SelectedSubMenu   0x00cd02    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              DisplayMenu   0x00ce3c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                     main   0x00d024    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-            s_put_n_chars   0x00d0be    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                 vfprintf   0x00d0ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-              __tmplbl_85   0x00d114    program     static                          
-              __tmplbl_44   0x00d9c2    program     static                          
-              __tmplbl_43   0x00d9dc    program     static                          
-                   __pa_0   0x00d9fe    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_1   0x00da06    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_2   0x00da10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_3   0x00da1a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_4   0x00da32    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_5   0x00da46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_6   0x00da62    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_7   0x00da6c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_8   0x00da78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                   __pa_9   0x00da9a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_10   0x00daba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_11   0x00dac8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_12   0x00dade    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_13   0x00daf8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_14   0x00db10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_15   0x00db20    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_16   0x00db36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_17   0x00db48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_18   0x00db5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_19   0x00db64    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_20   0x00db74    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_21   0x00db84    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_22   0x00db94    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-              __tmplbl_42   0x00db94    program     static                          
-                  __pa_23   0x00dba0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_24   0x00dbae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_25   0x00dbb6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_26   0x00dbc0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_27   0x00dbca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_28   0x00dbd2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_29   0x00dbe0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_30   0x00dbfc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_31   0x00dc16    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_32   0x00dc30    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_33   0x00dc48    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_34   0x00dc52    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_35   0x00dc60    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_36   0x00dc68    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_37   0x00dc72    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_38   0x00dc82    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_39   0x00dc90    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_40   0x00dc9c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_41   0x00dca8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_42   0x00dcb0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_43   0x00dcba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_44   0x00dcc0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_45   0x00dcca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  __pa_46   0x00dcd6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
-                  DelayMs   0x00dce0    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-              ResetDevice   0x00dd38    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-             WriteCommand   0x00deb2    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                WriteData   0x00deda    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-              FillDisplay   0x00df02    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledWriteCharRaw   0x00df72    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-          oledWriteChar1x   0x00e0aa    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-         oledPutROMString   0x00e100    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-            oledPutString   0x00e172    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-             oledPutImage   0x00e1de    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-            PrintBigDigit   0x00e296    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                 ReadData   0x00e3fc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-       ___return_lbl00000   0x00e430    program     static                          
-                     swap   0x00e43a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-                 DrawMask   0x00e4e2    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-               SetOLEDPos   0x00e51e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-               setYPixels   0x00e56e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-                setXPixel   0x00e694    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-                 drawLine   0x00e74e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
-          bigDigit2dArray   0x00eafc    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-                g_pucFont   0x00ebf6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
-               InitBma150   0x00edd2    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-           ___if_lbl00001   0x00ee18    program     static                          
-       ___return_lbl00000   0x00ee7e    program     static                          
-              SpiPinRemap   0x00ee92    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-         BMA150_WriteByte   0x00eeb6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-               __tmplbl_1   0x00eeca    program     static                          
-               __tmplbl_0   0x00eed2    program     static                          
-           ___if_lbl00005   0x00eede    program     static                          
-        ___while_lbl00006   0x00eee8    program     static                          
-        ___while_lbl00007   0x00eeec    program     static                          
-         ___else_lbl00009   0x00ef80    program     static                          
-           ___if_lbl00008   0x00ef88    program     static                          
-        ___while_lbl00010   0x00ef88    program     static                          
-        ___while_lbl00011   0x00ef8c    program     static                          
-       ___return_lbl00003   0x00ef8e    program     static                          
-          BMA150_ReadByte   0x00ef98    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
-        ___while_lbl00013   0x00efac    program     static                          
-        ___while_lbl00014   0x00efb0    program     static                          
-        ___while_lbl00015   0x00f034    program     static                          
-        ___while_lbl00016   0x00f038    program     static                          
-       ___return_lbl00012   0x00f03e    program     static                          
-                 InitCTMU   0x00f046    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                  InitADC   0x00f05e    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-               mTouchInit   0x00f092    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-         mTouchReadButton   0x00f098    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-        ___while_lbl00004   0x00f136    program     static                          
-        ___while_lbl00005   0x00f13a    program     static                          
-       ___return_lbl00003   0x00f154    program     static                          
-          mTouchCalibrate   0x00f168    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_0   0x00f1de    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_1   0x00f1ee    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_2   0x00f202    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-                   __pa_3   0x00f216    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
-              __string_41   0x00f22a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_40   0x00f240    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_39   0x00f252    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_38   0x00f260    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_37   0x00f266    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_36   0x00f26f    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_35   0x00f278    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_34   0x00f282    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_33   0x00f293    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_32   0x00f29d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_31   0x00f2a7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_30   0x00f2b1    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_29   0x00f2c4    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_28   0x00f2d2    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_27   0x00f2e1    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_26   0x00f2ec    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_25   0x00f2fa    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_24   0x00f30f    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_23   0x00f313    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_22   0x00f316    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_21   0x00f323    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_20   0x00f32d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_19   0x00f33d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_18   0x00f34b    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_17   0x00f359    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_16   0x00f361    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_15   0x00f373    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_14   0x00f37e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_13   0x00f389    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_12   0x00f397    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_11   0x00f3a4    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-              __string_10   0x00f3b4    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_9   0x00f3b8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_8   0x00f3bc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_7   0x00f3ca    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_6   0x00f3cc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_5   0x00f3d3    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_4   0x00f3db    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_3   0x00f3e8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_2   0x00f3f7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_1   0x00f401    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-               __string_0   0x00f404    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             _xClockHands   0x00f407    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-             _yClockHands   0x00f443    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                       _x   0x00f47f    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-                       _y   0x00f4bb    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
-           AppPowerEnable   0x00f4f8    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-          AppPowerDisable   0x00f544    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-            AppPowerReady   0x00f550    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
-                  sprintf   0x00f5e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sprintf.c
-                 FXD1616S   0x00f694    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  DA1616S   0x00f6a6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                   D1616S   0x00f6b6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 D1616SOK   0x00f6c0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                D1616SNEG   0x00f6c4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                  D1616SX   0x00f6d6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
-                 FXM1616S   0x00f6e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-               TSIGN1616A   0x00f72c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
-                _do_cinit   0x00f73a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     test   0x00f754    program     static                          
-                copy_loop   0x00f7ac    program     static                          
-            copy_one_byte   0x00f7b2    program     static                          
-             done_copying   0x00f7c0    program     static                          
-       ___return_lbl00002   0x00f7d6    program     static                          
-                     done   0x00f7d6    program     static                          
-                     putc   0x00f7d8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\putc.c
-                  FXM3232   0x00f85c    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
-       ___return_lbl00000   0x00f8ca    program     static                          
-                   strlen   0x00f8cc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                    jLoop   0x00f8dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                     jEnd   0x00f8e6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
-                strlenpgm   0x00f8e8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-                    jLoop   0x00f906    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-                   _2jEnd   0x00f91c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-                     jEnd   0x00f91e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
-                 FXD3232U   0x00f932    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
-                     loop   0x00f940    program     static                          
-                   _false   0x00f974    program     static                          
-       ___return_lbl00000   0x00f978    program     static                          
-                 FXD1616U   0x00f97a    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
-                     loop   0x00f984    program     static                          
-                  endloop   0x00f9a0    program     static                          
-       ___return_lbl00000   0x00f9a4    program     static                          
-                  isdigit   0x00f9a6    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
-                   jMatch   0x00f9c6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
-                 jNoMatch   0x00f9c8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
-            __zero_memory   0x00f9ca    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_h   0x00f9d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-               zero_block   0x00f9d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                compare_l   0x00f9e0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                   loop_l   0x00f9e2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
-                 _startup   0x00f9ea    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
-                     loop   0x00f9fa    program     static                          
-       ___return_lbl00001   0x00fa04    program     static                          
-              _usart_putc   0x00fa06    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
-                     loop   0x00fa16    program     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
-                 s_digits   0x00fa22    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   AddDay   0x00a4be    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                 AddMonth   0x00a57c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsLButton   0x00a59a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadsRButton   0x00a61a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ReadPotenziometer   0x00a696    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ReadUpButton   0x00a71c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           ReadDownButton   0x00a79c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         PrintDigitalTime   0x00a81a    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+      DisplayDigitalClock   0x00ac46    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              DisplayDate   0x00acb0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+      PrintClockMainLines   0x00ad24    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       DisplayAnalogClock   0x00b1e4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           PrintAlarmIcon   0x00b34c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             DisplayClock   0x00b38e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        DisplaySmallClock   0x00b410    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          DisplayModeMenu   0x00b4da    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ConvertClockTo24H   0x00b644    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+        ConvertClockTo12H   0x00b702    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ConvertClock   0x00b876    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+      DisplayIntervalMenu   0x00b884    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          DisplayAmPmMenu   0x00ba7c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               ChangeHour   0x00bc54    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ChangeMinute   0x00bd36    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             ChangeSecond   0x00bdda    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+            SetAnalogHour   0x00be7e    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+            ResetTempTime   0x00bfc4    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+       DisplaySetTimeMenu   0x00bfd6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              ChangeMonth   0x00c1d0    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                ChangeDay   0x00c2dc    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           DisplaySetDate   0x00c4b6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         SetAlarmTimeMenu   0x00c652    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         ToggleAlarmOnOff   0x00c81c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+         DisplayAlarmMenu   0x00c9f6    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+  DisplayAnalogDesignMenu   0x00cb9c    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+          SelectedSubMenu   0x00cd16    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              DisplayMenu   0x00ce50    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                     main   0x00d038    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+            s_put_n_chars   0x00d0d2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                 vfprintf   0x00d0fe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+              __tmplbl_85   0x00d128    program     static                          
+              __tmplbl_44   0x00d9d6    program     static                          
+              __tmplbl_43   0x00d9f0    program     static                          
+                   __pa_0   0x00da12    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_1   0x00da1a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_2   0x00da24    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_3   0x00da2e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_4   0x00da46    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_5   0x00da5a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_6   0x00da76    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_7   0x00da80    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_8   0x00da8c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                   __pa_9   0x00daae    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_10   0x00dace    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_11   0x00dadc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_12   0x00daf2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_13   0x00db0c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_14   0x00db24    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_15   0x00db34    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_16   0x00db4a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_17   0x00db5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_18   0x00db6e    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_19   0x00db78    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_20   0x00db88    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_21   0x00db98    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_22   0x00dba8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+              __tmplbl_42   0x00dba8    program     static                          
+                  __pa_23   0x00dbb4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_24   0x00dbc2    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_25   0x00dbca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_26   0x00dbd4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_27   0x00dbde    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_28   0x00dbe6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_29   0x00dbf4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_30   0x00dc10    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_31   0x00dc2a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_32   0x00dc44    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_33   0x00dc5c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_34   0x00dc66    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_35   0x00dc74    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_36   0x00dc7c    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_37   0x00dc86    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_38   0x00dc96    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_39   0x00dca4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_40   0x00dcb0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_41   0x00dcbc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_42   0x00dcc4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_43   0x00dcce    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_44   0x00dcd4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_45   0x00dcde    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  __pa_46   0x00dcea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
+                  DelayMs   0x00dcf4    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+              ResetDevice   0x00dd4c    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+             WriteCommand   0x00dec6    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                WriteData   0x00deee    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+              FillDisplay   0x00df16    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledWriteCharRaw   0x00df86    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+          oledWriteChar1x   0x00e0be    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+         oledPutROMString   0x00e114    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+            oledPutString   0x00e186    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+             oledPutImage   0x00e1f2    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+            PrintBigDigit   0x00e2aa    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                 ReadData   0x00e410    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+       ___return_lbl00000   0x00e444    program     static                          
+                     swap   0x00e44e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+                 DrawMask   0x00e4f6    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+               SetOLEDPos   0x00e532    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+               setYPixels   0x00e582    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+                setXPixel   0x00e6a8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+                 drawLine   0x00e762    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\OledGraphics.c
+          bigDigit2dArray   0x00eb10    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+                g_pucFont   0x00ec0a    program     extern C:\Users\Leon\Documents\Embedded Cores\Microchip\OLED driver\oled.c
+               InitBma150   0x00ede6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+           ___if_lbl00001   0x00ee2c    program     static                          
+       ___return_lbl00000   0x00ee92    program     static                          
+              SpiPinRemap   0x00eea6    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+         BMA150_WriteByte   0x00eeca    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+               __tmplbl_1   0x00eede    program     static                          
+               __tmplbl_0   0x00eee6    program     static                          
+           ___if_lbl00005   0x00eef2    program     static                          
+        ___while_lbl00006   0x00eefc    program     static                          
+        ___while_lbl00007   0x00ef00    program     static                          
+         ___else_lbl00009   0x00ef94    program     static                          
+           ___if_lbl00008   0x00ef9c    program     static                          
+        ___while_lbl00010   0x00ef9c    program     static                          
+        ___while_lbl00011   0x00efa0    program     static                          
+       ___return_lbl00003   0x00efa2    program     static                          
+          BMA150_ReadByte   0x00efac    program     extern C:\Program Files (x86)\Microchip\Microchip\BMA150 driver\BMA150.c
+        ___while_lbl00013   0x00efc0    program     static                          
+        ___while_lbl00014   0x00efc4    program     static                          
+        ___while_lbl00015   0x00f048    program     static                          
+        ___while_lbl00016   0x00f04c    program     static                          
+       ___return_lbl00012   0x00f052    program     static                          
+                 InitCTMU   0x00f05a    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                  InitADC   0x00f072    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+               mTouchInit   0x00f0a6    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+         mTouchReadButton   0x00f0ac    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+        ___while_lbl00004   0x00f14a    program     static                          
+        ___while_lbl00005   0x00f14e    program     static                          
+       ___return_lbl00003   0x00f168    program     static                          
+          mTouchCalibrate   0x00f17c    program     extern C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_0   0x00f1f2    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_1   0x00f202    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_2   0x00f216    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+                   __pa_3   0x00f22a    program     static C:\Program Files (x86)\Microchip\Microchip\mTouch\mtouch.c
+              __string_41   0x00f23e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_40   0x00f254    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_39   0x00f266    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_38   0x00f274    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_37   0x00f27a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_36   0x00f283    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_35   0x00f28c    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_34   0x00f296    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_33   0x00f2a7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_32   0x00f2b1    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_31   0x00f2bb    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_30   0x00f2c5    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_29   0x00f2d8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_28   0x00f2e6    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_27   0x00f2f5    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_26   0x00f300    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_25   0x00f30e    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_24   0x00f323    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_23   0x00f327    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_22   0x00f32a    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_21   0x00f337    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_20   0x00f341    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_19   0x00f351    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_18   0x00f35f    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_17   0x00f36d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_16   0x00f375    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_15   0x00f387    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_14   0x00f392    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_13   0x00f39d    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_12   0x00f3ab    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_11   0x00f3b8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+              __string_10   0x00f3c8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_9   0x00f3cc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_8   0x00f3d0    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_7   0x00f3de    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_6   0x00f3e0    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_5   0x00f3e7    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_4   0x00f3ef    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_3   0x00f3fc    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_2   0x00f40b    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_1   0x00f415    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+               __string_0   0x00f418    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             _xClockHands   0x00f41b    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+             _yClockHands   0x00f457    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                       _x   0x00f493    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+                       _y   0x00f4cf    program     extern C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
+           AppPowerEnable   0x00f50c    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+          AppPowerDisable   0x00f558    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+            AppPowerReady   0x00f564    program     extern C:\Program Files (x86)\Microchip\Microchip\Soft Start\soft_start.c
+                  sprintf   0x00f5fc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\sprintf.c
+                 FXD1616S   0x00f6a8    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  DA1616S   0x00f6ba    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                   D1616S   0x00f6ca    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 D1616SOK   0x00f6d4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                D1616SNEG   0x00f6d8    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                  D1616SX   0x00f6ea    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616s.asm
+                 FXM1616S   0x00f6f4    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+               TSIGN1616A   0x00f740    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm1616s.asm
+                _do_cinit   0x00f74e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     test   0x00f768    program     static                          
+                copy_loop   0x00f7c0    program     static                          
+            copy_one_byte   0x00f7c6    program     static                          
+             done_copying   0x00f7d4    program     static                          
+       ___return_lbl00002   0x00f7ea    program     static                          
+                     done   0x00f7ea    program     static                          
+                     putc   0x00f7ec    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\putc.c
+                  FXM3232   0x00f870    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxm3232.c
+       ___return_lbl00000   0x00f8de    program     static                          
+                   strlen   0x00f8e0    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                    jLoop   0x00f8f0    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                     jEnd   0x00f8fa    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\strlen.asm
+                strlenpgm   0x00f8fc    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+                    jLoop   0x00f91a    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+                   _2jEnd   0x00f930    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+                     jEnd   0x00f932    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\slenpgm.asm
+                 FXD3232U   0x00f946    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd3232u.c
+                     loop   0x00f954    program     static                          
+                   _false   0x00f988    program     static                          
+       ___return_lbl00000   0x00f98c    program     static                          
+                 FXD1616U   0x00f98e    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\math\fxd1616u.c
+                     loop   0x00f998    program     static                          
+                  endloop   0x00f9b4    program     static                          
+       ___return_lbl00000   0x00f9b8    program     static                          
+                  isdigit   0x00f9ba    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
+                   jMatch   0x00f9da    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
+                 jNoMatch   0x00f9dc    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\isdigit.asm
+            __zero_memory   0x00f9de    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_h   0x00f9ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+               zero_block   0x00f9ec    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                compare_l   0x00f9f4    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                   loop_l   0x00f9f6    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\proc\p18f46j50.asm
+                 _startup   0x00f9fe    program     extern E:\3.46\pic18-lt\cxx-framework\src\traditional\startup\c018i.c
+                     loop   0x00fa0e    program     static                          
+       ___return_lbl00001   0x00fa18    program     static                          
+              _usart_putc   0x00fa1a    program     extern E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
+                     loop   0x00fa2a    program     static E:\3.46\pic18-lt\cxx-framework\src\pmc_common\USART\_usartpc.asm
+                 s_digits   0x00fa36    program     static E:\3.46\pic18-lt\cxx-framework\src\traditional\stdclib\vfprintf.c
                __config_0   0x00fff8    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_1   0x00fff9    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c
                __config_2   0x00fffa    program     static C:\Users\Leon\Documents\Embedded Cores\Shenkar\ClockProject\main.c

@@ -123,8 +123,7 @@
 //	========================	Global VARIABLES	========================
 #pragma udata
 //You can define Global Data Elements here
-
-
+ 
 //Selected option variables
 int mainMenuSelectedOption = 0, displayModeSelectedOption = 3, displayIntervaSelectedOption = 3;
 int amPmSelectedOption =  3, setTimeSelectedOption = 43, setDateSelectedOption = 48, setAnalogDesignSelectedOption = 2;
@@ -479,16 +478,21 @@ void AddHour()
 	SetAnalogHour();
 	if(Is12H)
 	{
-		if(hour > 12 && IsAM == TRUE)
-		{
-			IsAM = FALSE;
+		if(hour > 12)
 			hour = 1;
-		}
-		else if(hour > 12 && IsAM == FALSE)
+		else
 		{
-			IsAM = TRUE;
-			hour = 1;
-			AddDay();
+			if(hour > 11 && IsAM == TRUE)
+			{
+				IsAM = FALSE;
+				hour = 12;
+			}
+			else if(hour > 11 && IsAM == FALSE)
+			{
+				IsAM = TRUE;
+				hour = 12;
+				AddDay();
+			}
 		}	
 	}
 	else
@@ -1778,10 +1782,8 @@ void main(void)
 			{
 				FillDisplay(0x00); //Clear Screen
 				IsMenuOpen = TRUE;
-			}
-				
-		}
-			
+			}				
+		}			
 		else
 		{
 			if(IsMenuOpen == FALSE)
