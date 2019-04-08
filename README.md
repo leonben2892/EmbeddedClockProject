@@ -47,7 +47,9 @@ Designing & implementing a clock which includes the following:
 ### Interval Menu
 ![IntervalMenu](https://user-images.githubusercontent.com/12692788/55684939-964b7600-5959-11e9-8ae6-82cca09c9aae.jpg)
 
-**Description:** Choosing the clock interval mode.
+**Description:** If clock is set to digital mode then the user can choose between 12H / 24H. Error message will appear when clock is set to analog mode:
+
+![ClockIsSetToAnalog](https://user-images.githubusercontent.com/12692788/55715146-cf88f200-59fc-11e9-961b-2961b8461502.jpg)
 
 **Navigation**
 * Upper Option - UP Key
@@ -69,11 +71,11 @@ Designing & implementing a clock which includes the following:
 ### Set Time Menu
 ![SetTime](https://user-images.githubusercontent.com/12692788/55685007-40c39900-595a-11e9-9510-e6c2804e88bd.jpg)
 
-**Description:** Setting the clock time. When the clock time is set, a small digital display will appear in the bottom right corner throughout menu navigation. (The small digital display is based on the selected 12H / 24H & AM /PM)
+**Description:** Setting the clock time. When the clock time is set, a small digital display will appear in the bottom right corner throughout menu navigation. 
 
 | | ||
 | ------------- | ------------- | ------------- |
-| ![MainMenuSmallClock](https://user-images.githubusercontent.com/12692788/55685489-9e0e1900-595f-11e9-86ee-58d62bbf1e59.jpg) | ![AlarmMenu](https://user-images.githubusercontent.com/12692788/55685492-a8c8ae00-595f-11e9-93db-bc3920b4dd5a.jpg)  | ![SetDate](https://user-images.githubusercontent.com/12692788/55685504-ba11ba80-595f-11e9-9db3-6aead940f005.jpg)  |
+| ![MainMenuSmallClock](https://user-images.githubusercontent.com/12692788/55685489-9e0e1900-595f-11e9-86ee-58d62bbf1e59.jpg) | ![SmallClock1](https://user-images.githubusercontent.com/12692788/55715422-5e960a00-59fd-11e9-9d29-bc1a020144e5.jpg) | ![SmallClock2](https://user-images.githubusercontent.com/12692788/55715482-7ec5c900-59fd-11e9-8926-678429298015.jpg)  |
 
 **Navigation**
 * Changing numbers - UP /DOWN keys
@@ -101,7 +103,7 @@ Designing & implementing a clock which includes the following:
 
 **Set Alarm Time Navigation:** 
 * Changing numbers - UP /DOWN keys
-* Switch between Hour/Minuteh - L / R keys
+* Switch between Hour/Minute - L / R keys
 * Confirm alarm time / Return - Black button
 
 2. Toggle alarm ON / OFF
@@ -144,7 +146,7 @@ Designing & implementing a clock which includes the following:
 
 | Design v1  | Design v2 | Design v3 |
 | ------------- | ------------- | -------------|
-| ![Design1](https://user-images.githubusercontent.com/12692788/55685357-bc731500-595d-11e9-913e-067f347f872e.jpg) | ![Design2](https://user-images.githubusercontent.com/12692788/55685358-c85ed700-595d-11e9-8278-fbb7cdc0f1c4.jpg)  | ![Design3](https://user-images.githubusercontent.com/12692788/55685374-03f9a100-595e-11e9-9118-5f64110e1290.jpg)|
+| ![Design1](https://user-images.githubusercontent.com/12692788/55685357-bc731500-595d-11e9-913e-067f347f872e.jpg) | ![Design2](https://user-images.githubusercontent.com/12692788/55685358-c85ed700-595d-11e9-8278-fbb7cdc0f1c4.jpg)  | ![DesignV3](https://user-images.githubusercontent.com/12692788/55715383-4b833a00-59fd-11e9-8cb7-38f03168fe7b.jpg)|
 
 **Description:** Displaying time in analog mode.
 
@@ -169,4 +171,3 @@ Designing & implementing a clock which includes the following:
 
 **Head Lecturer & Tutor** 
 * Dr. Amit Resh
-
